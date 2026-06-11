@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "inStock": true,
+      "title": "Hoş Geldin Bebeğim",
+      "category": "Hediyelik & Peluş",
+      "description": "Yeni doğum, doğum günleri vb kutlamalarda kişiye özel tasarım ürünlerini sizlerle birlikte tasarlıyoruz",
+      "image1": "images/b.jpg"
+    }
+  ]
+}
