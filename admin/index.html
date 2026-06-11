@@ -1,13 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yönetim Paneli - Hisli Balon</title>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hisli Balon | Yönetim Panelli Mağaza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
-  <body>
-    <!-- Yönetim Paneli Yazılımı -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  </body>
+</head>
+<body class="bg-gray-50 p-8">
+    <h1 class="text-3xl font-bold text-center mb-10">Ürünlerimiz</h1>
+    <div id="urun-listesi" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Ürünler buraya otomatik gelecek -->
+    </div>
+
+    <script>
+        fetch('urunler.json')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('urun-listesi');
+                data.products.forEach(p => {
+                    list.innerHTML += `
+                        <div class="bg-white p-4 rounded-xl shadow">
+                            <img src="${p.image1}" class="w-full h-64 object-cover rounded-lg mb-4">
+                            <h2 class="text-xl font-bold">${p.title}</h2>
+                            <p class="text-sm text-gray-600">${p.description}</p>
+                            <span class="block mt-2 font-bold ${p.inStock ? 'text-green-600' : 'text-red-600'}">
+                                ${p.inStock ? 'Stokta Var' : 'Tükendi'}
+                            </span>
+                        </div>
+                    `;
+                });
+            });
+    </script>
+</body>
 </html>
