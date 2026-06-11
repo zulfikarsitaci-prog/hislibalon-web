@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: ""
+public_folder: ""
+
+collections:
+  - label: "Mağaza Yönetimi"
+    name: "magaza"
+    files:
+      - label: "Katalog & Ürünler"
+        name: "urunler"
+        file: "urunler.json"
+        fields:
+          - label: "Ürün Listesi"
+            name: "products"
+            widget: "list"
+            fields:
+              - {label: "Ürün Adı", name: "title", widget: "string"}
+              - {label: "Kategori", name: "category", widget: "select", options: ["Çiçekli Aranjmanlar", "Hediyelik & Peluş"]}
+              - {label: "Açıklama", name: "description", widget: "text"}
+              - {label: "Stokta Var Mı?", name: "inStock", widget: "boolean", default: true}
+              - {label: "Ana Fotoğraf", name: "image1", widget: "image"}
+              - {label: "2. Fotoğraf (Opsiyonel)", name: "image2", widget: "image", required: false}
+              - {label: "3. Fotoğraf (Opsiyonel)", name: "image3", widget: "image", required: false}
