@@ -1,3 +1,11 @@
 {
-  "products": []
+  "products": [
+    {
+      "inStock": true,
+      "title": "özel günleriniz için tasarlandı",
+      "category": "Hediyelik & Peluş",
+      "description": "özel anlarınıza destek olmak için buradayız",
+      "image1": "images/b.jpg"
+    }
+  ]
 }
