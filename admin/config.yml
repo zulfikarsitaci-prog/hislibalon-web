@@ -6,14 +6,19 @@ media_folder: "images"
 public_folder: "images"
 
 collections:
-  - name: "urunler"
+  - name: "magaza"
     label: "Katalog & Ürünler"
-    folder: "urunler"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Ürün Adı", name: "title", widget: "string"}
-      - {label: "Kategori", name: "category", widget: "select", options: ["Çiçekli Aranjmanlar", "Hediyelik & Peluş"]}
-      - {label: "Açıklama", name: "description", widget: "text"}
-      - {label: "Stokta Var Mı?", name: "inStock", widget: "boolean", default: true}
-      - {label: "Ana Fotoğraf", name: "image1", widget: "image"}
+    files:
+      - label: "Ürünler"
+        name: "urunler"
+        file: "urunler.json"
+        fields:
+          - label: "Ürün Listesi"
+            name: "products"
+            widget: "list"
+            fields:
+              - {label: "Ürün Adı", name: "title", widget: "string"}
+              - {label: "Kategori", name: "category", widget: "select", options: ["Çiçekli Aranjmanlar", "Hediyelik & Peluş"]}
+              - {label: "Açıklama", name: "description", widget: "text"}
+              - {label: "Stokta Var Mı?", name: "inStock", widget: "boolean", default: true}
+              - {label: "Ana Fotoğraf", name: "image1", widget: "image"}
