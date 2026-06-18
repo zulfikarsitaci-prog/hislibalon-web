@@ -1,360 +1,58 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-	<script src="[https://identity.netlify.com/v1/netlify-identity-widget.js](https://identity.netlify.com/v1/netlify-identity-widget.js)"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y4V69XW3T"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-1Y4V69XW3T');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hisli Balon | Söke - Premium Tasarım Balonlar</title>
+    <title>Hisli Balon | Ürünlerimiz</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #FAFAFA;
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3, .serif {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .tab-content { display: none; animation: fadeIn 0.5s ease-in-out; }
-        .tab-active { display: block; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        blush: '#F9E0E3',
-                        rosegold: '#B76E79',
-                        offwhite: '#FAFAFA'
-                    }
-                }
-            }
-        }
-
-        function konseptSec(konseptID) {
-            document.getElementById('cicekli-bolum').classList.remove('tab-active');
-            document.getElementById('hediyelik-bolum').classList.remove('tab-active');
-            
-            document.getElementById(konseptID).classList.add('tab-active');
-            document.getElementById(konseptID).scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    </script>
 </head>
-<body class="antialiased text-gray-800">
-
-    <main class="w-full min-h-screen bg-offwhite relative overflow-hidden">
-        
-        <header class="min-h-screen w-full flex flex-col justify-center items-center text-center px-4 md:px-8 relative bg-gradient-to-b from-white to-blush/40 pb-16">
-            <div class="mb-4 text-rosegold mt-10">
-                <i class="fa-solid fa-wand-magic-sparkles text-4xl"></i>
-            </div>
-            <h1 class="text-4xl md:text-6xl font-bold text-rosegold tracking-wide mb-2 serif">HİSLİ BALON</h1>
-            <p class="text-xs md:text-sm font-medium tracking-[0.3em] text-gray-500 uppercase mb-10">Söke</p>
-            
-            <h2 class="text-xl md:text-3xl text-gray-800 font-light mb-12 serif">Ne Göndermek İstersiniz?</h2>
-            
-            <div class="flex flex-col md:flex-row gap-6 w-full max-w-4xl mx-auto">
-                <button onclick="konseptSec('cicekli-bolum')" class="flex-1 group relative overflow-hidden rounded-3xl border border-rosegold/30 bg-white p-8 shadow-lg hover:shadow-2xl hover:border-rosegold transition-all duration-500 transform hover:-translate-y-2">
-                    <div class="absolute inset-0 bg-blush/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-                    <div class="relative z-10 flex flex-col items-center">
-                        <i class="fa-solid fa-seedling text-5xl text-rosegold mb-4"></i>
-                        <h3 class="text-2xl font-bold text-gray-800 serif mb-2">Çiçekli Aranjmanlar</h3>
-                        <p class="text-sm text-gray-500">Taze, şoklanmış veya premium yapay çiçekli özel balonlar.</p>
-                    </div>
-                </button>
-
-                <button onclick="konseptSec('hediyelik-bolum')" class="flex-1 group relative overflow-hidden rounded-3xl border border-rosegold/30 bg-white p-8 shadow-lg hover:shadow-2xl hover:border-rosegold transition-all duration-500 transform hover:-translate-y-2">
-                    <div class="absolute inset-0 bg-blush/10 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-                    <div class="relative z-10 flex flex-col items-center">
-                        <i class="fa-solid fa-gift text-5xl text-rosegold mb-4"></i>
-                        <h3 class="text-2xl font-bold text-gray-800 serif mb-2">Hediyelik & Peluşlu</h3>
-                        <p class="text-sm text-gray-500">Sevimli peluş ayıcıklar, amigurumi figürleri ve hediyelikler.</p>
-                    </div>
-                </button>
-            </div>
-        </header>
-
-        <div id="cicekli-bolum" class="tab-content pt-12">
-            <section class="max-w-7xl mx-auto px-4 md:px-8">
-                <h3 class="text-2xl md:text-3xl text-rosegold serif font-bold border-b-2 border-blush pb-3 mb-8 text-center md:text-left"><i class="fa-solid fa-seedling mr-2"></i> Çiçekli Premium Aranjmanlar</h3>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pb-12">
-                    
-                    <article class="border border-rosegold/30 rounded-2xl p-5 bg-white shadow-sm flex flex-col hover:shadow-md transition w-full">
-                        <div class="aspect-square bg-blush/20 rounded-xl mb-3 flex items-center justify-center overflow-hidden">
-                            <img id="id-incili-ortanca" src="z.jpg" onclick="büyükEkranAc(this.src)" alt="Hisli Balon" class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in">
-                        </div>
-                        <div class="flex gap-2 mb-4">
-                            <img src="incili_ortanca_1.jpg" onclick="document.getElementById('id-incili-ortanca').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-rosegold/50 cursor-pointer hover:opacity-80 transition">
-                            <img src="incili_ortanca_2.jpg" onclick="document.getElementById('id-incili-ortanca').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                            <img src="incili_ortanca_3.jpg" onclick="document.getElementById('id-incili-ortanca').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-800 serif mb-2">İncili Ortanca Zarafeti</h4>
-                        <p class="text-sm text-gray-600 font-light mb-6 flex-grow">Zarif ortancaların asaletini, inci detayları ve pırıltılı led ışıklarla birleştiren kişiye özel lüks tasarım balon.</p>
-                        <div class="space-y-2 mt-auto">
-                            <a href="https://api.whatsapp.com/send?phone=905373568453&text=Merhaba,%20İncili%20Ortanca%20Zarafeti%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 bg-blush text-rosegold font-semibold py-3 rounded-xl text-sm hover:opacity-80 transition-opacity"><i class="fa-brands fa-whatsapp"></i> Özel Fiyat Alın</a>
-                            <a href="https://shopier.com/HisliBalon" target="_blank" class="w-full flex items-center justify-center gap-2 border border-rosegold text-rosegold py-3 rounded-xl text-sm hover:bg-rosegold hover:text-white transition-colors"><i class="fa-regular fa-credit-card"></i> Kredi Kartı İle Al</a>
-                        </div>
-                    </article>
-
-                    <article class="border border-rosegold/30 rounded-2xl p-5 bg-white shadow-sm flex flex-col hover:shadow-md transition w-full">
-                        <div class="aspect-square bg-blush/20 rounded-xl mb-3 flex items-center justify-center overflow-hidden">
-                            <img id="id-ugurlu-kokina" src="k.jpg" onclick="büyükEkranAc(this.src)" alt="Hisli Balon" class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in">
-                        </div>
-                        <div class="flex gap-2 mb-4">
-                            <img src="ugurlu_kokina_1.jpg" onclick="document.getElementById('id-ugurlu-kokina').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-rosegold/50 cursor-pointer hover:opacity-80 transition">
-                            <img src="ugurlu_kokina_2.jpg" onclick="document.getElementById('id-ugurlu-kokina').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                            <img src="ugurlu_kokina_3.jpg" onclick="document.getElementById('id-ugurlu-kokina').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-800 serif mb-2">Uğurlu Kokina Neşesi</h4>
-                        <p class="text-sm text-gray-600 font-light mb-6 flex-grow">Şans ve uğur getirdiğine inanılan canlı kırmızı kokinalarla hazırlanan, neşe dolu ve canlı aranjman serisi.</p>
-                        <div class="space-y-2 mt-auto">
-                            <a href="https://api.whatsapp.com/send?phone=905373568453&text=Merhaba,%20Uğurlu%20Kokina%20Neşesi%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 bg-blush text-rosegold font-semibold py-3 rounded-xl text-sm hover:opacity-80 transition-opacity"><i class="fa-brands fa-whatsapp"></i> Özel Fiyat Alın</a>
-                            <a href="https://shopier.com/HisliBalon" target="_blank" class="w-full flex items-center justify-center gap-2 border border-rosegold text-rosegold py-3 rounded-xl text-sm hover:bg-rosegold hover:text-white transition-colors"><i class="fa-regular fa-credit-card"></i> Kredi Kartı İle Al</a>
-                        </div>
-                    </article>
-		    <article class="border border-rosegold/30 rounded-2xl p-5 bg-white shadow-sm flex flex-col hover:shadow-md transition w-full">
-                        <div class="aspect-square bg-blush/20 rounded-xl mb-3 flex items-center justify-center overflow-hidden">
-                            <img id="id-ozel-tasarım" src="ozel.jpg" onclick="büyükEkranAc(this.src)" alt="Hisli Balon" class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in">
-                        </div>
-                        <div class="flex gap-2 mb-4">
-                            <img src="ugurlu_kokina_1.jpg" onclick="document.getElementById('id-ugurlu-kokina').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-rosegold/50 cursor-pointer hover:opacity-80 transition">
-                            <img src="ugurlu_kokina_2.jpg" onclick="document.getElementById('id-ugurlu-kokina').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                            <img src="ugurlu_kokina_3.jpg" onclick="document.getElementById('id-ugurlu-kokina').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-800 serif mb-2">Kişiye Özel Tasarım</h4>
-                        <p class="text-sm text-gray-600 font-light mb-6 flex-grow">Hayatınızın en özel anlarını taşıyan, büyülü bir dokunuş, zamanın ötesinde bir anı hediye etmek isterseniz.</p>
-                        <div class="space-y-2 mt-auto">
-                            <a href="https://api.whatsapp.com/send?phone=905373568453&text=Merhaba,%20özel%20tasarım%20ürün%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 bg-blush text-rosegold font-semibold py-3 rounded-xl text-sm hover:opacity-80 transition-opacity"><i class="fa-brands fa-whatsapp"></i> Özel Fiyat Alın</a>
-                            <a href="https://shopier.com/HisliBalon" target="_blank" class="w-full flex items-center justify-center gap-2 border border-rosegold text-rosegold py-3 rounded-xl text-sm hover:bg-rosegold hover:text-white transition-colors"><i class="fa-regular fa-credit-card"></i> Kredi Kartı İle Al</a>
-                        </div>
-                    </article>
-
-                    <article class="border border-rosegold/30 rounded-2xl p-5 bg-white shadow-sm flex flex-col hover:shadow-md transition w-full">
-                        <div class="aspect-square bg-blush/20 rounded-xl mb-3 flex items-center justify-center overflow-hidden">
-                            <img id="id-beyaz-lale" src="3.jpg" onclick="büyükEkranAc(this.src)" alt="Hisli Balon" class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in">
-                        </div>
-                        <div class="flex gap-2 mb-4">
-                            <img src="beyaz_lale_1.jpg" onclick="document.getElementById('id-beyaz-lale').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-rosegold/50 cursor-pointer hover:opacity-80 transition">
-                            <img src="beyaz_lale_2.jpg" onclick="document.getElementById('id-beyaz-lale').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                            <img src="beyaz_lale_3.jpg" onclick="document.getElementById('id-beyaz-lale').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-800 serif mb-2">Beyaz Lale Zarafeti</h4>
-                        <p class="text-sm text-gray-600 font-light mb-6 flex-grow">Asil ve duru duruşuyla büyüleyen, lüks kağıt süslemeleri ve uçuşan harfleriyle göz kamaştıran lale serisi.</p>
-                        <div class="space-y-2 mt-auto">
-                            <a href="https://api.whatsapp.com/send?phone=905373568453&text=Merhaba,%20Beyaz%20Lale%20Zarafeti%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 bg-blush text-rosegold font-semibold py-3 rounded-xl text-sm hover:opacity-80 transition-opacity"><i class="fa-brands fa-whatsapp"></i> Özel Fiyat Alın</a>
-                            <a href="https://shopier.com/HisliBalon" target="_blank" class="w-full flex items-center justify-center gap-2 border border-rosegold text-rosegold py-3 rounded-xl text-sm hover:bg-rosegold hover:text-white transition-colors"><i class="fa-regular fa-credit-card"></i> Kredi Kartı İle Al</a>
-                        </div>
-                    </article>
-
-                    <article class="border border-rosegold/30 rounded-2xl p-5 bg-white shadow-sm flex flex-col hover:shadow-md transition w-full">
-                        <div class="aspect-square bg-blush/20 rounded-xl mb-3 flex items-center justify-center overflow-hidden">
-                            <img id="id-cay-gulu" src="cay_gulu_1.jpg" onclick="büyükEkranAc(this.src)" alt="Hisli Balon" class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in">
-                        </div>
-                        <div class="flex gap-2 mb-4">
-                            <img src="cay_gulu_1.jpg" onclick="document.getElementById('id-cay-gulu').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-rosegold/50 cursor-pointer hover:opacity-80 transition">
-                            <img src="cay_gulu_2.jpg" onclick="document.getElementById('id-cay-gulu').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                            <img src="cay_gulu_3.jpg" onclick="document.getElementById('id-cay-gulu').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-800 serif mb-2">Çay Gülü Zarafeti</h4>
-                        <p class="text-sm text-gray-600 font-light mb-6 flex-grow">Nostaljik ve romantik tonlardaki çay gülleriyle bezenmiş, evlilik yıldönümü ve özel günlerin vazgeçilmez klasiği.</p>
-                        <div class="space-y-2 mt-auto">
-                            <a href="https://api.whatsapp.com/send?phone=905373568453&text=Merhaba,%20Çay%20Gülü%20Zarafeti%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 bg-blush text-rosegold font-semibold py-3 rounded-xl text-sm hover:opacity-80 transition-opacity"><i class="fa-brands fa-whatsapp"></i> Özel Fiyat Alın</a>
-                            <a href="https://shopier.com/HisliBalon" target="_blank" class="w-full flex items-center justify-center gap-2 border border-rosegold text-rosegold py-3 rounded-xl text-sm hover:bg-rosegold hover:text-white transition-colors"><i class="fa-regular fa-credit-card"></i> Kredi Kartı İle Al</a>
-                        </div>
-                    </article>
-
-                    <article class="border border-rosegold/30 rounded-2xl p-5 bg-white shadow-sm flex flex-col hover:shadow-md transition w-full">
-                        <div class="aspect-square bg-blush/20 rounded-xl mb-3 flex items-center justify-center overflow-hidden">
-                            <img id="id-karanfil" src="karanfil_1.jpg" onclick="büyükEkranAc(this.src)" alt="Hisli Balon" class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in">
-                        </div>
-                        <div class="flex gap-2 mb-4">
-                            <img src="karanfil_1.jpg" onclick="document.getElementById('id-karanfil').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-rosegold/50 cursor-pointer hover:opacity-80 transition">
-                            <img src="karanfil_2.jpg" onclick="document.getElementById('id-karanfil').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                            <img src="karanfil_3.jpg" onclick="document.getElementById('id-karanfil').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-800 serif mb-2">Karanfil Çiçeği Küresi</h4>
-                        <p class="text-sm text-gray-600 font-light mb-6 flex-grow">Sevginin ve sadakatin simgesi özel karanfillerle dolu, uzun süre kalıcılığını koruyan anlamlı tasarım.</p>
-                        <div class="space-y-2 mt-auto">
-                            <a href="https://api.whatsapp.com/send?phone=905373568453&text=Merhaba,%20Karanfil%20Çiçeği%20Küresi%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 bg-blush text-rosegold font-semibold py-3 rounded-xl text-sm hover:opacity-80 transition-opacity"><i class="fa-brands fa-whatsapp"></i> Özel Fiyat Alın</a>
-                            <a href="https://shopier.com/HisliBalon" target="_blank" class="w-full flex items-center justify-center gap-2 border border-rosegold text-rosegold py-3 rounded-xl text-sm hover:bg-rosegold hover:text-white transition-colors"><i class="fa-regular fa-credit-card"></i> Kredi Kartı İle Al</a>
-                        </div>
-                    </article>
-
-                    <article class="border border-rosegold/30 rounded-2xl p-5 bg-white shadow-sm flex flex-col hover:shadow-md transition w-full">
-                        <div class="aspect-square bg-blush/20 rounded-xl mb-3 flex items-center justify-center overflow-hidden">
-                            <img id="id-kasim-pati" src="kasim_pati_1.jpg" onclick="büyükEkranAc(this.src)" alt="Hisli Balon" class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in">
-                        </div>
-                        <div class="flex gap-2 mb-4">
-                            <img src="kasim_pati_1.jpg" onclick="document.getElementById('id-kasim-pati').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-rosegold/50 cursor-pointer hover:opacity-80 transition">
-                            <img src="kasim_pati_2.jpg" onclick="document.getElementById('id-kasim-pati').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                            <img src="kasim_pati_3.jpg" onclick="document.getElementById('id-kasim-pati').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-800 serif mb-2">Kasım Patı Esintisi</h4>
-                        <p class="text-sm text-gray-600 font-light mb-6 flex-grow">Kendine has şık katmanları ve göz alıcı renk tonlarıyla hazırlanan, sıcacık bir tebrik ve kutlama balonu.</p>
-                        <div class="space-y-2 mt-auto">
-                            <a href="https://api.whatsapp.com/send?phone=905373568453&text=Merhaba,%20Kasım%20Patı%20Esintisi%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 bg-blush text-rosegold font-semibold py-3 rounded-xl text-sm hover:opacity-80 transition-opacity"><i class="fa-brands fa-whatsapp"></i> Özel Fiyat Alın</a>
-                            <a href="https://shopier.com/HisliBalon" target="_blank" class="w-full flex items-center justify-center gap-2 border border-rosegold text-rosegold py-3 rounded-xl text-sm hover:bg-rosegold hover:text-white transition-colors"><i class="fa-regular fa-credit-card"></i> Kredi Kartı İle Al</a>
-                        </div>
-                    </article>
-
-                    <article class="border border-rosegold/30 rounded-2xl p-5 bg-white shadow-sm flex flex-col hover:shadow-md transition w-full">
-                        <div class="aspect-square bg-blush/20 rounded-xl mb-3 flex items-center justify-center overflow-hidden">
-                            <img id="id-krizantem" src="krizantem_1.jpg" onclick="büyükEkranAc(this.src)" alt="Hisli Balon" class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in">
-                        </div>
-                        <div class="flex gap-2 mb-4">
-                            <img src="krizantem_1.jpg" onclick="document.getElementById('id-krizantem').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-rosegold/50 cursor-pointer hover:opacity-80 transition">
-                            <img src="krizantem_2.jpg" onclick="document.getElementById('id-krizantem').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                            <img src="krizantem_3.jpg" onclick="document.getElementById('id-krizantem').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-800 serif mb-2">Krizantem Kutlaması</h4>
-                        <p class="text-sm text-gray-600 font-light mb-6 flex-grow">Doğum günleri ve başarı kutlamaları için cıvıl cıvıl krizantemlerin pırıltılı led ışıklarla birleştiği enerjik konsept.</p>
-                        <div class="space-y-2 mt-auto">
-                            <a href="https://api.whatsapp.com/send?phone=905373568453&text=Merhaba,%20Krizantem%20Kutlaması%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 bg-blush text-rosegold font-semibold py-3 rounded-xl text-sm hover:opacity-80 transition-opacity"><i class="fa-brands fa-whatsapp"></i> Özel Fiyat Alın</a>
-                            <a href="https://shopier.com/HisliBalon" target="_blank" class="w-full flex items-center justify-center gap-2 border border-rosegold text-rosegold py-3 rounded-xl text-sm hover:bg-rosegold hover:text-white transition-colors"><i class="fa-regular fa-credit-card"></i> Kredi Kartı İle Al</a>
-                        </div>
-                    </article>
-
-                    <article class="border border-blush rounded-2xl p-5 bg-offwhite shadow-sm flex flex-col justify-center items-center text-center opacity-90 w-full min-h-[450px]">
-                        <div class="aspect-square w-full bg-gradient-to-br from-blush/10 to-white rounded-xl mb-4 flex flex-col items-center justify-center overflow-hidden border-2 border-dashed border-rosegold/40">
-                            <i class="fa-solid fa-hourglass-half text-4xl text-rosegold/50 mb-3 animate-pulse"></i>
-                            <span class="text-rosegold/80 font-medium serif tracking-widest text-sm uppercase">Yeni Modeller</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-800 serif mb-2">Yeni Tasarımlar Yolda</h4>
-                        <p class="text-sm text-gray-500 font-light flex-grow mb-6">Atölyemizde özenle hazırlanan yeni çiçekli konseptlerimiz çok yakında burada olacak.</p>
-                        <a href="https://api.whatsapp.com/send?phone=905373568453&text=Merhaba,%20çiçekli%20balonlar%20için%20özel%20sipariş%20vermek%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 bg-blush text-rosegold font-semibold py-3 rounded-xl text-sm hover:bg-rosegold hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i> Özel Sipariş İçin Yazın</a>
-                    </article>
-<article class="border border-gray-200 rounded-2xl p-5 bg-white shadow-sm flex flex-col opacity-75 w-full relative">
+<body class="bg-gray-50 p-8">
     
-    <div class="aspect-square bg-gray-100 rounded-xl mb-3 flex items-center justify-center overflow-hidden relative">
-        <img src="y.jpg" alt="Tükendi" class="w-full h-full object-cover opacity-50 filter grayscale-[30%]">
-        
-        <div class="absolute inset-0 flex items-center justify-center bg-black/10">
-            <span class="bg-gray-900/90 text-white text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-xl border border-white/20 shadow-lg">
-                <i class="fa-solid fa-circle-minus mr-1 text-blush"></i> Tükendi
-            </span>
-        </div>
-    </div>
-    
-    <div class="flex gap-2 mb-4 opacity-40 pointer-events-none">
-        <img src="incili_ortanca_1.jpg" class="w-12 h-12 rounded-lg object-cover border border-gray-300">
-        <img src="incili_ortanca_2.jpg" class="w-12 h-12 rounded-lg object-cover border border-gray-300">
-    </div>
-    
-    <h4 class="text-lg font-bold text-gray-400 serif mb-2 line-through">Amigurumi ile sevdiklerinize unutulmaz bir an</h4>
-    <p class="text-sm text-gray-400 font-light mb-6 flex-grow">Bu özel tasarımımız geçici olarak stok dışıdır. Yeni seriler için bizimle iletişime geçebilirsiniz.</p>
-    
-    <div class="space-y-2 mt-auto">
-        <button disabled class="w-full flex items-center justify-center gap-2 bg-gray-100 text-gray-400 font-medium py-3 rounded-xl text-sm cursor-not-allowed">
-            Stokta Yok
-        </button>
-        <button disabled class="w-full flex items-center justify-center gap-2 border border-gray-200 text-gray-300 py-3 rounded-xl text-sm cursor-not-allowed">
-            Kredi Kartı Aktif Değil
-        </button>
-    </div>
-</article>
-                </div>
-            </section>
-        </div>
+    <h1 class="text-3xl font-bold text-center mb-10">Hisli Balon Ürünlerimiz</h1>
 
-        <div id="hediyelik-bolum" class="tab-content pt-12">
-            <section class="max-w-7xl mx-auto px-4 md:px-8">
-                <h3 class="text-2xl md:text-3xl text-rosegold serif font-bold border-b-2 border-blush pb-3 mb-8 text-center md:text-left"><i class="fa-solid fa-gift mr-2"></i> Hediyelik & Peluş Serisi</h3>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pb-12">
-                    
-                    <article class="border border-rosegold/30 rounded-2xl p-5 bg-white shadow-sm flex flex-col hover:shadow-md transition w-full">
-                        <div class="aspect-square bg-blush/20 rounded-xl mb-3 flex items-center justify-center overflow-hidden">
-                            <img id="id-sevimli-tavsan" src="a.jpg" onclick="büyükEkranAc(this.src)" alt="Hisli Balon" class="w-full h-full object-cover transition-opacity duration-300 cursor-zoom-in">
-                        </div>
-                        <div class="flex gap-2 mb-4">
-                            <img src="sevimli_tavsan_1.jpg" onclick="document.getElementById('id-sevimli-tavsan').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-rosegold/50 cursor-pointer hover:opacity-80 transition">
-                            <img src="sevimli_tavsan_2.jpg" onclick="document.getElementById('id-sevimli-tavsan').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                            <img src="sevimli_tavsan_3.jpg" onclick="document.getElementById('id-sevimli-tavsan').src=this.src" class="w-12 h-12 rounded-lg object-cover border border-gray-200 cursor-pointer hover:opacity-80 transition">
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-800 serif mb-2">Sevimli Ayıcık Küresi</h4>
-                        <p class="text-sm text-gray-600 font-light mb-6 flex-grow">Amigurumi ayıcık figürü ve yumuşacık ışıkların birleştiği, çocuk odaları ve sevdikleriniz için ömürlük hatıra balonu.</p>
-                        <div class="space-y-2 mt-auto">
-                            <a href="https://api.whatsapp.com/send?phone=905373568453&text=Merhaba,%20Sevimli%20ayıcık%20Amigurumi%20Küresi%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 bg-blush text-rosegold font-semibold py-3 rounded-xl text-sm hover:opacity-80 transition-opacity"><i class="fa-brands fa-whatsapp"></i> Özel Fiyat Alın</a>
-                            <a href="https://shopier.com/HisliBalon" target="_blank" class="w-full flex items-center justify-center gap-2 border border-rosegold text-rosegold py-3 rounded-xl text-sm hover:bg-rosegold hover:text-white transition-colors"><i class="fa-regular fa-credit-card"></i> Kredi Kartı İle Al</a>
-                        </div>
-                    </article>
-
-                    <article class="border border-blush rounded-2xl p-5 bg-offwhite shadow-sm flex flex-col justify-center items-center text-center opacity-90 w-full min-h-[450px]">
-                        <div class="aspect-square w-full bg-gradient-to-br from-blush/10 to-white rounded-xl mb-4 flex flex-col items-center justify-center overflow-hidden border-2 border-dashed border-rosegold/40">
-                            <i class="fa-solid fa-gift text-4xl text-rosegold/50 mb-3"></i>
-                            <span class="text-rosegold/80 font-medium serif tracking-widest text-sm uppercase">Çok Yakında</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-gray-800 serif mb-2">Yeni Sürprizler Yolda</h4>
-                        <p class="text-sm text-gray-500 font-light flex-grow mb-6">Farklı peluş karakterler ve anı fotoğraflı özel sürpriz kutu tasarımlarımız çok yakında listelenecektir.</p>
-                        <a href="https://api.whatsapp.com/send?phone=905373568453&text=Merhaba,%20peluşlu%20balonlar%20için%20özel%20sipariş%20vermek%20istiyorum." target="_blank" class="w-full flex items-center justify-center gap-2 bg-blush text-rosegold font-semibold py-3 rounded-xl text-sm hover:bg-rosegold hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i> Özel Sipariş İçin Yazın</a>
-                    </article>
-                </div>
-            </section>
-        </div>
-
-        <footer class="w-full bg-gradient-to-t from-blush/40 to-white pt-16 pb-20 px-6 text-center border-t border-blush/50 mt-16">
-            <div class="mb-8 flex justify-center space-x-6">
-                <a href="https://instagram.com/hislibalon" target="_blank" class="w-14 h-14 flex items-center justify-center rounded-full bg-white text-rosegold shadow-md border border-rosegold/20 hover:scale-110 transition-transform">
-                    <i class="fa-brands fa-instagram text-2xl"></i>
-                </a>
-                <a href="https://api.whatsapp.com/send?phone=905373568453" target="_blank" class="w-14 h-14 flex items-center justify-center rounded-full bg-white text-rosegold shadow-md border border-rosegold/20 hover:scale-110 transition-transform">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                </a>
-            </div>
-            
-            <a href="https://instagram.com/hislibalon" class="block text-rosegold font-medium mb-8 serif text-xl hover:underline">
-                @hislibalon
-            </a>
-            
-            <div class="max-w-2xl mx-auto bg-white/80 p-6 rounded-xl border border-rosegold/20 text-sm text-gray-600 font-light leading-relaxed">
-                <p><i class="fa-solid fa-truck-fast text-rosegold mr-2"></i> Söke içi belirlenen noktalara elden teslimatımız mevcuttur.</p>
-                <p class="mt-2">Şehir dışı gönderimler ve özel tasarımlar için lütfen iletişime geçiniz.</p>
-            </div>
-        </footer>
-        
-    </main>
-
-    <div id="lightbox-modal" onclick="büyükEkranKapat()" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-zoom-out">
-        <button class="absolute top-6 right-6 text-white text-3xl opacity-70 hover:opacity-100 transition">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        <img id="lightbox-img" src="" alt="Hisli Balon Detay Görüntü" class="max-w-full max-h-[85vh] rounded-2xl object-contain shadow-2xl border border-white/10">
+    <div id="urun-vitrini" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <p class="text-center w-full text-gray-500">Ürünler yükleniyor...</p>
     </div>
 
     <script>
-        function büyükEkranAc(resimYolu) {
-            if(resimYolu && (resimYolu.includes('.jpg') || resimYolu.includes('.jpeg') || resimYolu.includes('.png'))) {
-                document.getElementById('lightbox-img').src = resimYolu;
-                document.getElementById('lightbox-modal').classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; 
-            }
-        }
+        fetch('urunler.json')
+            .then(response => response.json())
+            .then(data => {
+                const vitrin = document.getElementById('urun-vitrini');
+                vitrin.innerHTML = ''; 
+                
+                if(!data.products || data.products.length === 0) {
+                    vitrin.innerHTML = '<p class="text-center w-full text-gray-500">Henüz ürün eklenmemiş.</p>';
+                    return;
+                }
 
-        function büyükEkranKapat() {
-            document.getElementById('lightbox-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto'; 
-        }
+                data.products.forEach(urun => {
+                    // Resim yolunu düzeltme
+                    const imageUrl = urun.image1 ? urun.image1.replace('/images/', 'images/') : '';
+
+                    // Ürün Kartı Tasarımı
+                    const card = `
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+                            <img src="${imageUrl}" alt="${urun.title}" class="w-full h-64 object-cover">
+                            <div class="p-4">
+                                <span class="text-xs text-pink-500 font-semibold uppercase">${urun.category}</span>
+                                <h2 class="text-xl font-bold text-gray-800 mt-1">${urun.title}</h2>
+                                <p class="text-gray-600 mt-2 text-sm">${urun.description}</p>
+                                <div class="mt-4">
+                                    ${urun.inStock 
+                                        ? '<span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Stokta Var</span>' 
+                                        : '<span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">Tükendi</span>'}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    vitrin.innerHTML += card;
+                });
+            })
+            .catch(error => {
+                console.error("Hata:", error);
+                document.getElementById('urun-vitrini').innerHTML = '<p class="text-center w-full text-red-500">Ürünler bulunamadı. Lütfen panelden ürün ekleyin.</p>';
+            });
     </script>
-
 </body>
 </html>
