@@ -9,18 +9,20 @@ collections:
   - name: "magaza"
     label: "Katalog & Ürünler"
     files:
-      - label: "Ürünler"
+      - label: "Tüm Ürünler"
         name: "urunler"
         file: "urunler.json"
         fields:
-          - label: "Ürün Listesi"
+          - label: "Ürün Listeniz (Düzenlemek için ürün adına tıklayın)"
             name: "products"
             widget: "list"
+            summary: '📌 {{fields.title}} ({{fields.category}})'
+            collapsed: false
             fields:
               - {label: "Ürün Adı", name: "title", widget: "string"}
               - {label: "Kategori", name: "category", widget: "select", options: ["Çiçekli Aranjmanlar", "Hediyelik & Peluş"]}
-              - {label: "Fiyat (İsteğe Bağlı, Örn: 450 TL)", name: "price", widget: "string", required: false}
+              - {label: "Fiyat (Örn: 450 TL)", name: "price", widget: "string", required: false}
+              - {label: "Shopier Linki (Varsa linki yapıştırın)", name: "shopier", widget: "string", required: false}
               - {label: "Açıklama", name: "description", widget: "text"}
               - {label: "Stokta Var Mı?", name: "inStock", widget: "boolean", default: true}
-              - {label: "Shopier Linki (İsteğe Bağlı)", name: "shopier", widget: "string", required: false}
               - {label: "Ana Fotoğraf", name: "image1", widget: "image"}
