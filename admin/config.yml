@@ -19,6 +19,7 @@ collections:
             fields:
               - {label: "Ürün Adı", name: "title", widget: "string"}
               - {label: "Kategori", name: "category", widget: "select", options: ["Çiçekli Aranjmanlar", "Hediyelik & Peluş"]}
+              - {label: "Fiyat (İsteğe Bağlı, Örn: 450 TL)", name: "price", widget: "string", required: false}
               - {label: "Açıklama", name: "description", widget: "text"}
               - {label: "Stokta Var Mı?", name: "inStock", widget: "boolean", default: true}
               - {label: "Shopier Linki (İsteğe Bağlı)", name: "shopier", widget: "string", required: false}
