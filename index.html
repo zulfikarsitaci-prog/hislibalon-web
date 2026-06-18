@@ -5,13 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hisli Balon | Söke</title>
     
-    <!-- Zarif Fontlar (Playfair Display ve Nunito) -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- İkonlar (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Tailwind CSS ve Özel Renk Ayarları -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,40 +14,25 @@
                 extend: {
                     colors: {
                         brand: {
-                            bg: '#fffbfb',       /* Uçuk pudra arka plan */
-                            text: '#94666f',     /* Açık gül kurusu metin */
-                            dark: '#6e4950',     /* Koyu gül kurusu başlıklar */
-                            border: '#f2e1e3',   /* Kutu kenarlıkları */
-                            btnBg: '#faeaea',    /* Özel Fiyat Alın butonu arka planı */
-                            btnBorder: '#f0d8dc' /* Buton kenarlığı */
+                            bg: '#fffbfb', text: '#94666f', dark: '#6e4950', border: '#f2e1e3', btnBg: '#faeaea', btnBorder: '#f0d8dc'
                         }
                     },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"Nunito"', 'sans-serif'],
-                    }
+                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['"Nunito"', 'sans-serif'] }
                 }
             }
         }
     </script>
-    <style>
-        body { background-color: #fffbfb; scroll-behavior: smooth; }
-    </style>
+    <style>body { background-color: #fffbfb; scroll-behavior: smooth; }</style>
 </head>
 <body class="font-sans text-gray-700 antialiased">
 
-    <!-- HERO / LOGO ALANI -->
     <header class="text-center pt-20 pb-10">
-        <div class="flex justify-center mb-4 text-brand-text text-3xl">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-        </div>
+        <div class="flex justify-center mb-4 text-brand-text text-3xl"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
         <h1 class="text-5xl md:text-6xl font-serif font-bold text-brand-text tracking-widest uppercase">HİSLİ BALON</h1>
         <p class="text-xs tracking-[0.4em] text-brand-dark mt-3 uppercase font-semibold">Söke</p>
-        
         <h2 class="text-3xl font-serif text-brand-dark mt-16">Ne Göndermek İstersiniz?</h2>
     </header>
 
-    <!-- KATEGORİ YÖNLENDİRME KARTLARI -->
     <section class="max-w-4xl mx-auto px-6 mb-24">
         <div class="flex flex-col md:flex-row justify-center gap-6">
             <a href="#cicekli" class="bg-white rounded-3xl shadow-sm border border-brand-border p-10 text-center flex-1 hover:shadow-md transition duration-300">
@@ -60,7 +40,6 @@
                 <h3 class="text-2xl font-bold font-serif text-brand-dark">Çiçekli Aranjmanlar</h3>
                 <p class="text-sm text-gray-500 mt-3 font-light px-4">Taze, şoklanmış veya premium yapay çiçekli özel balonlar.</p>
             </a>
-            
             <a href="#pelus" class="bg-white rounded-3xl shadow-sm border border-brand-border p-10 text-center flex-1 hover:shadow-md transition duration-300">
                 <i class="fa-solid fa-gift text-4xl text-brand-text mb-4"></i>
                 <h3 class="text-2xl font-bold font-serif text-brand-dark">Hediyelik & Peluşlu</h3>
@@ -70,38 +49,29 @@
     </section>
 
     <main class="max-w-6xl mx-auto px-6 pb-20">
-        
-        <!-- ÇİÇEKLİ ARANJMANLAR VİTRİNİ -->
         <div id="cicekli" class="mb-24 pt-10">
             <div class="border-b border-brand-border pb-3 mb-10 flex items-center gap-3">
                 <i class="fa-solid fa-seedling text-brand-text text-2xl"></i>
                 <h2 class="text-2xl font-bold font-serif text-brand-text">Çiçekli Premium Aranjmanlar</h2>
             </div>
-            <div id="cicekli-vitrin" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Dinamik Ürünler -->
-            </div>
+            <div id="cicekli-vitrin" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
 
-        <!-- HEDİYELİK & PELUŞ VİTRİNİ -->
         <div id="pelus" class="mb-10 pt-10">
             <div class="border-b border-brand-border pb-3 mb-10 flex items-center gap-3">
                 <i class="fa-solid fa-gift text-brand-text text-2xl"></i>
                 <h2 class="text-2xl font-bold font-serif text-brand-text">Hediyelik & Peluş Serisi</h2>
             </div>
-            <div id="pelus-vitrin" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Dinamik Ürünler -->
-            </div>
+            <div id="pelus-vitrin" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
-
     </main>
 
-    <!-- FOOTER / İLETİŞİM -->
     <footer class="border-t border-brand-border pt-16 pb-12 mt-10">
         <div class="flex justify-center gap-6 mb-6">
             <a href="#" class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-btnBg transition text-xl">
                 <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://wa.me/TELEFON_NUMARANIZI_YAZIN" class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-btnBg transition text-xl">
+            <a href="https://wa.me/905373568453" target="_blank" class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-btnBg transition text-xl">
                 <i class="fa-brands fa-whatsapp"></i>
             </a>
         </div>
@@ -115,11 +85,9 @@
         </div>
     </footer>
 
-    <!-- SİHİRLİ KOD: Ürünleri Çekme ve Tasarım -->
     <script>
-        const whatsappNumarasi = "+905373568453";
+        const whatsappNumarasi = "905373568453"; // Numaranız kodlandı
 
-        // Yakında Kartı Şablonu
         const comingSoonCard = (text, desc) => `
             <div class="bg-brand-bg rounded-2xl border-2 border-dashed border-brand-border p-8 flex flex-col items-center justify-center text-center h-full min-h-[400px]">
                 <div class="bg-white w-full h-48 rounded-xl border border-brand-border flex items-center justify-center mb-6">
@@ -130,7 +98,7 @@
                 </div>
                 <h3 class="text-xl font-bold font-serif text-brand-dark mb-2">${text}</h3>
                 <p class="text-gray-400 text-xs font-light mb-8 px-4 leading-relaxed">${desc}</p>
-                <a href="https://wa.me/${whatsappNumarasi}" class="w-full bg-brand-btnBg border border-brand-btnBorder text-brand-text font-semibold py-3 px-4 rounded-xl text-sm transition hover:bg-red-50 mt-auto">
+                <a href="https://wa.me/${whatsappNumarasi}" target="_blank" class="w-full bg-brand-btnBg border border-brand-btnBorder text-brand-text font-semibold py-3 px-4 rounded-xl text-sm transition hover:bg-red-50 mt-auto">
                     <i class="fa-brands fa-whatsapp mr-1"></i> Özel Sipariş İçin Yazın
                 </a>
             </div>
@@ -142,16 +110,21 @@
                 const cicekliVitrin = document.getElementById('cicekli-vitrin');
                 const pelusVitrin = document.getElementById('pelus-vitrin');
                 
-                cicekliVitrin.innerHTML = ''; 
-                pelusVitrin.innerHTML = ''; 
-
                 if(data.products && data.products.length > 0) {
                     data.products.forEach(urun => {
                         const imageUrl = urun.image1 ? urun.image1.replace('/images/', 'images/') : '';
                         const mesaj = encodeURIComponent(`Merhaba, Hisli Balon'dan "${urun.title}" ürünü için fiyat/bilgi almak istiyorum.`);
                         const wpLink = `https://wa.me/${whatsappNumarasi}?text=${mesaj}`;
 
-                        // Tasarımdaki küçük kare ikonlar (Görsel detayı için eklendi)
+                        // Eğer panele shopier linki girilmişse bu buton oluşur
+                        const shopierLink = urun.shopier ? (urun.shopier.startsWith('http') ? urun.shopier : 'https://' + urun.shopier) : '';
+                        const shopierBtn = shopierLink ? `
+                            <a href="${shopierLink}" target="_blank" class="w-full bg-white border border-brand-btnBorder text-brand-text font-semibold py-2.5 px-4 rounded-xl flex justify-center items-center gap-2 text-sm transition hover:bg-gray-50 shadow-sm mt-3">
+                                <i class="fa-regular fa-credit-card text-lg"></i> Kredi Kartı İle Al
+                            </a>` : '';
+
+                        const fiyatAlani = urun.price ? `<p class="text-brand-dark font-bold mt-2 text-lg">${urun.price}</p>` : '';
+
                         const thumbnails = `
                             <div class="flex gap-2 px-6 pt-4">
                                 <div class="w-8 h-8 border border-gray-200 rounded flex items-center justify-center text-gray-300 text-xs"><i class="fa-regular fa-image"></i></div>
@@ -159,8 +132,6 @@
                                 <div class="w-8 h-8 border border-gray-200 rounded flex items-center justify-center text-gray-300 text-xs"><i class="fa-regular fa-image"></i></div>
                             </div>
                         `;
-
-                        const fiyatAlani = urun.price ? `<p class="text-brand-dark font-bold mt-2 text-lg">${urun.price}</p>` : '';
 
                         const card = `
                             <div class="bg-white rounded-2xl shadow-sm border border-brand-border overflow-hidden flex flex-col h-full hover:shadow-lg transition duration-300">
@@ -171,15 +142,11 @@
                                     <p class="text-gray-500 text-xs font-light leading-relaxed flex-grow">${urun.description}</p>
                                     ${fiyatAlani}
                                     
-                                    <div class="space-y-3 mt-6">
+                                    <div class="mt-6">
                                         <a href="${wpLink}" target="_blank" class="w-full bg-brand-btnBg border border-brand-btnBorder text-brand-text font-semibold py-2.5 px-4 rounded-xl flex justify-center items-center gap-2 text-sm transition hover:bg-red-50 shadow-sm">
                                             <i class="fa-brands fa-whatsapp text-lg"></i> Özel Fiyat Alın
                                         </a>
-                                        
-                                        ${urun.shopier ? `
-                                        <a href="${urun.shopier}" target="_blank" class="w-full bg-white border border-brand-btnBorder text-brand-text font-semibold py-2.5 px-4 rounded-xl flex justify-center items-center gap-2 text-sm transition hover:bg-gray-50 shadow-sm">
-                                            <i class="fa-regular fa-credit-card text-lg"></i> Kredi Kartı İle Al
-                                        </a>` : ''}
+                                        ${shopierBtn}
                                     </div>
                                 </div>
                             </div>
@@ -193,7 +160,6 @@
                     });
                 }
 
-                // Boşlukları "Yakında" kartlarıyla doldurma (Tasarımınızdaki gibi)
                 cicekliVitrin.innerHTML += comingSoonCard("Yeni Tasarımlar Yolda", "Farklı konseptlerdeki yeni çiçekli aranjmanlarımız çok yakında listelenecektir.");
                 pelusVitrin.innerHTML += comingSoonCard("Yeni Sürprizler Yolda", "Farklı peluş karakterler ve anı fotoğraflı özel sürpriz kutu tasarımlarımız çok yakında listelenecektir.");
             })
