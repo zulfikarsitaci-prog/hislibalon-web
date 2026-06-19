@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
   branch: main
+  site_domain: "hislibalon.netlify.app"
 
 media_folder: "images"
 public_folder: "images"
@@ -13,17 +14,17 @@ collections:
         name: "urunler"
         file: "urunler.json"
         fields:
-          - label: "Ürün Listeniz"
+          - label: "Ürün Listeniz (Düzenlemek veya silmek için üzerine tıklayın)"
             name: "products"
             widget: "list"
-            summary: '🎁 {{fields.title}} — {{fields.price}} ({{fields.category}})'
+            summary: '🎁 {{fields.title}} — {{fields.price}}'
             collapsed: true
             minimize_collapsed: true
             fields:
               - {label: "Ürün Adı", name: "title", widget: "string"}
               - {label: "Kategori", name: "category", widget: "select", options: ["Çiçekli Aranjmanlar", "Hediyelik & Peluş"]}
               - {label: "Fiyat (Örn: 450 TL)", name: "price", widget: "string", required: false}
-              - {label: "Shopier Linki (İsteğe Bağlı)", name: "shopier", widget: "string", required: false}
+              - {label: "Shopier Linki", name: "shopier", widget: "string", required: false}
               - {label: "Açıklama", name: "description", widget: "text"}
               - {label: "Stokta Var Mı?", name: "inStock", widget: "boolean", default: true}
               - {label: "Ana Fotoğraf", name: "image1", widget: "image"}
