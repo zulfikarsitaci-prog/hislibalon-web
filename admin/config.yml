@@ -1,7 +1,6 @@
 backend:
   name: git-gateway
   branch: main
-  site_domain: "hislibalon.netlify.app"
 
 media_folder: "images"
 public_folder: "images"
@@ -14,7 +13,7 @@ collections:
         name: "urunler"
         file: "urunler.json"
         fields:
-          - label: "Ürün Listeniz (Düzenlemek veya silmek için üzerine tıklayın)"
+          - label: "Ürün Listeniz (Düzenlemek için tıklayın)"
             name: "products"
             widget: "list"
             summary: '🎁 {{fields.title}} — {{fields.price}}'
