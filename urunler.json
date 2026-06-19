@@ -15,6 +15,15 @@
       "shopier": "https://www.shopier.com/HisliBalon/47983623",
       "category": "Hediyelik & Peluş",
       "price": "99,00 TL"
+    },
+    {
+      "inStock": true,
+      "title": "Şans Getiren Kokina Balon Buketi | Kırmızı Bir Neşe",
+      "category": "Çiçekli Aranjmanlar",
+      "price": "1500,00 TL",
+      "shopier": "https://www.shopier.com/HisliBalon/47982078",
+      "description": "Hayatınıza uğur getirecek kırmızı bir neşe\nSöke ve Kuşadası içi siparişlerinizde bu şık aranjman, formunu ve şıklığını asla kaybetmeden aynı gün içinde hızlı ve güvenli elden teslimat ile sevdiklerinizin kapısına kadar ulaştırılır.\n\nHisli Balon Atölyesi — Sevdiklerinize unutulmaz bir an..",
+      "image1": "images/kokina.png"
     }
   ]
 }
