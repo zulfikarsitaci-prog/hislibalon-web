@@ -5,199 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hisli Balon | Söke</title>
     
-    <!-- Lüks Yazı Tipleri (Playfair Display ve Montserrat) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
-    <!-- Google Sheets Veri Okuyucu -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
     <style>
-        /* Pastel ve Göz Yormayan Renk Paleti */
         :root {
-            --bg-color: #FAF6F5; /* Çok uçuk pudra/krem */
+            --bg-color: #FAF6F5;
             --card-bg: #FFFFFF;
-            --text-main: #4A4A4A; /* Yumuşak antrasit */
+            --text-main: #4A4A4A;
             --text-light: #7A7A7A;
-            --accent-color: #D4A3A3; /* Pastel Gül Kurusu */
+            --accent-color: #D4A3A3;
             --btn-shopier: #cfa8a8;
-            --btn-whatsapp: #A3D4B6; /* Pastel Yeşil */
+            --btn-whatsapp: #A3D4B6;
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
-
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin: 0;
-            letter-spacing: 2px;
-            color: #333;
-        }
-
-        header p {
-            font-size: 0.9rem;
-            color: var(--accent-color);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
-
-        .product-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            background-color: #f9f9f9;
-        }
-
-        .product-info {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-category {
-            font-size: 0.75rem;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .product-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            margin: 0 0 10px 0;
-            color: #333;
-        }
-
-        .product-price {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        .product-desc {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        /* Özelleştirme Alanları */
-        .customization-area {
-            margin-bottom: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-        }
-
-        .customization-area label {
-            display: block;
-            font-size: 0.85rem;
-            margin-bottom: 5px;
-            color: #555;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-        }
-
-        .custom-select, .custom-input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            background-color: #fafafa;
-        }
-
-        .custom-input:focus, .custom-select:focus {
-            outline: none;
-            border-color: var(--accent-color);
-        }
-
-        /* Butonlar */
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            text-align: center;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: opacity 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn:hover {
-            opacity: 0.85;
-        }
-
-        .btn-shopier {
-            background-color: var(--btn-shopier);
-            color: white;
-        }
-
-        .btn-whatsapp {
-            background-color: var(--btn-whatsapp);
-            color: #2c543b;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 50px;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: var(--accent-color);
-            grid-column: 1 / -1;
-        }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; }
+        header { text-align: center; padding: 50px 20px; background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+        header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 0; letter-spacing: 2px; color: #333; }
+        header p { font-size: 0.9rem; color: var(--accent-color); letter-spacing: 1px; text-transform: uppercase; margin-top: 10px; }
+        
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        .product-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.3s ease; display: flex; flex-direction: column; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+        .product-img { width: 100%; height: 300px; object-fit: cover; background-color: #f9f9f9; }
+        .product-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-category { font-size: 0.75rem; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .product-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin: 0 0 10px 0; color: #333; }
+        .product-price { font-size: 1.2rem; font-weight: 500; margin-bottom: 15px; color: var(--accent-color); }
+        .product-desc { font-size: 0.9rem; color: var(--text-light); margin-bottom: 20px; flex-grow: 1; }
+        
+        .customization-area { margin-bottom: 20px; padding-top: 15px; border-top: 1px solid #eee; }
+        .customization-area label { display: block; font-size: 0.85rem; margin-bottom: 5px; color: #555; font-family: 'Playfair Display', serif; font-style: italic; }
+        .custom-select, .custom-input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; margin-bottom: 15px; background-color: #fafafa; box-sizing: border-box; }
+        .custom-input:focus, .custom-select:focus { outline: none; border-color: var(--accent-color); }
+        
+        .btn-group { display: flex; flex-direction: column; gap: 10px; }
+        .btn { display: block; width: 100%; padding: 12px; text-align: center; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: opacity 0.3s; cursor: pointer; border: none; box-sizing: border-box; }
+        .btn:hover { opacity: 0.85; }
+        .btn-shopier { background-color: var(--btn-shopier); color: white; }
+        .btn-whatsapp { background-color: var(--btn-whatsapp); color: #2c543b; }
+        .loading { text-align: center; padding: 50px; font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-color); grid-column: 1 / -1; }
     </style>
 </head>
 <body>
@@ -212,10 +62,9 @@
     </div>
 
     <script>
-        // WhatsApp Numaranız (Başında 90 olacak şekilde boşluksuz yazın)
-        const WHATSAPP_NUMBER = "905373568453"; // BURAYI KENDİ NUMARANIZLA DEĞİŞTİRİN
+        // LÜTFEN BURAYA KENDİ WHATSAPP NUMARANIZI YAZIN
+        const WHATSAPP_NUMBER = "905373568453"; 
 
-        // Google Sheets CSV Linkiniz
         const sheetCSV = "https://docs.google.com/spreadsheets/d/1ii4RrMqvNBm9HMlfVJI4x2riVtWP14J-9MfCAn2b9-0/export?format=csv";
 
         Papa.parse(sheetCSV, {
@@ -224,20 +73,17 @@
             complete: function(results) {
                 const products = results.data;
                 const container = document.getElementById('product-container');
-                container.innerHTML = ''; // Yükleniyor yazısını temizle
+                container.innerHTML = ''; 
 
                 products.forEach((product, index) => {
-                    // Boş satırları atla
-                    if(!product.UrunAdi) return;
+                    // UrunAdi sütunu boşsa veya yanlış yazılmışsa o satırı atla
+                    if(!product.UrunAdi || product.UrunAdi.trim() === '') return;
 
-                    // Ürün Kartı Oluştur
                     const card = document.createElement('div');
                     card.className = 'product-card';
 
-                    // Fotoğraf Kontrolü
                     const imgUrl = product.ResimURL ? product.ResimURL : 'https://via.placeholder.com/300x300?text=Hisli+Balon';
 
-                    // Varyasyonlar (Seçenekler) HTML'i
                     let optionsHTML = '';
                     if (product.Varyasyonlar && product.Varyasyonlar.trim() !== "") {
                         const options = product.Varyasyonlar.split(',');
@@ -250,28 +96,31 @@
                         `;
                     }
 
-                    // Özel Not HTML'i
+                    // Sizin Harika Fikriniz: Not Başlığını Özelleştirme
                     let noteHTML = '';
-                    if (product.OzelNot && product.OzelNot.toLowerCase() === "evet") {
+                    if (product.OzelNot && product.OzelNot.trim() !== "") {
+                        let notBasligi = (product.OzelNot.toLowerCase() === "evet") ? "Sipariş Notunuz" : product.OzelNot;
                         noteHTML = `
-                            <label>Sipariş Notunuz (Kutu Üzeri Yazı vb.)</label>
+                            <label>${notBasligi}</label>
                             <input type="text" class="custom-input" id="note-${index}" placeholder="Buraya yazabilirsiniz...">
                         `;
                     }
 
-                    // Shopier Butonu (Varsa)
                     let shopierBtn = '';
                     if (product.ShopierLink) {
-                        shopierBtn = `<a href="${product.ShopierLink}" target="_blank" class="btn btn-shopier">Kredi Kartı ile Al (Shopier)</a>`;
+                        // Eğer link http ile başlamıyorsa otomatik ekle
+                        let link = product.ShopierLink.startsWith('http') ? product.ShopierLink : 'https://' + product.ShopierLink;
+                        shopierBtn = `<a href="${link}" target="_blank" class="btn btn-shopier">Kredi Kartı ile Al</a>`;
                     }
 
-                    // Kart İçeriğini Birleştir
+                    let fiyatText = product.Fiyat ? product.Fiyat + ' TL' : '';
+
                     card.innerHTML = `
                         <img src="${imgUrl}" alt="${product.UrunAdi}" class="product-img">
                         <div class="product-info">
                             <div class="product-category">${product.Kategori || 'Koleksiyon'}</div>
                             <h2 class="product-title">${product.UrunAdi}</h2>
-                            <div class="product-price">${product.Fiyat || ''}</div>
+                            <div class="product-price">${fiyatText}</div>
                             <div class="product-desc">${product.Aciklama || ''}</div>
                             
                             <div class="customization-area">
@@ -290,23 +139,19 @@
             }
         });
 
-        // WhatsApp Sipariş Fonksiyonu (Seçenekleri ve Notu Okuyup Mesaj Yapar)
         function sendWhatsApp(index, urunAdi) {
             let message = `Merhaba, *${urunAdi}* siparişi vermek istiyorum.%0A`;
             
-            // Seçenek varsa mesaja ekle
             const selectEl = document.getElementById(`select-${index}`);
             if (selectEl) {
                 message += `%0A*Seçimim:* ${selectEl.value}`;
             }
 
-            // Not varsa mesaja ekle
             const noteEl = document.getElementById(`note-${index}`);
             if (noteEl && noteEl.value.trim() !== "") {
                 message += `%0A*Özel Notum:* ${noteEl.value}`;
             }
 
-            // WhatsApp'a yönlendir
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
         }
     </script>
