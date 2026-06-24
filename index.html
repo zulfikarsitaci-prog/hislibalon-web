@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hisli Balon | Söke</title>
     
+    <!-- Lüks Yazı Tipleri -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
+    <!-- Google Sheets Veri Okuyucu -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
     <style>
@@ -30,11 +32,24 @@
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
         .product-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.3s ease; display: flex; flex-direction: column; }
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
-        .product-img { width: 100%; height: 300px; object-fit: cover; background-color: #f9f9f9; }
+        
+        /* Fotoğraf Alanı Güncellemesi: Tamamı görünür ve tıklanabilir */
+        .product-img { 
+            width: 100%; 
+            height: 250px; 
+            object-fit: contain; /* Fotoğrafı kırpmaz, tamamını sığdırır */
+            background-color: #fcfcfc; 
+            padding: 10px;
+            box-sizing: border-box;
+            cursor: zoom-in; /* Tıklanabilir hissi verir */
+            transition: opacity 0.3s;
+        }
+        .product-img:hover { opacity: 0.85; }
+
         .product-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
         .product-category { font-size: 0.75rem; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
         .product-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin: 0 0 10px 0; color: #333; }
-        .product-price { font-size: 1.2rem; font-weight: 500; margin-bottom: 15px; color: var(--accent-color); }
+        .product-price { font-size: 1.2rem; font-weight: 500; margin-bottom: 15px; color: var(--text-main); }
         .product-desc { font-size: 0.9rem; color: var(--text-light); margin-bottom: 20px; flex-grow: 1; }
         
         .customization-area { margin-bottom: 20px; padding-top: 15px; border-top: 1px solid #eee; }
@@ -48,6 +63,42 @@
         .btn-shopier { background-color: var(--btn-shopier); color: white; }
         .btn-whatsapp { background-color: var(--btn-whatsapp); color: #2c543b; }
         .loading { text-align: center; padding: 50px; font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-color); grid-column: 1 / -1; }
+
+        /* Tam Ekran Fotoğraf (Modal) Stilleri */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.85); 
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .close:hover { color: var(--accent-color); }
     </style>
 </head>
 <body>
@@ -61,8 +112,14 @@
         <div class="loading">Koleksiyonumuz yükleniyor...</div>
     </div>
 
+    <!-- Tam Ekran Fotoğraf Penceresi -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImage">
+    </div>
+
     <script>
-        // LÜTFEN BURAYA KENDİ WHATSAPP NUMARANIZI YAZIN
+        // İSTEDİĞİNİZ WHATSAPP NUMARASI SABİTLENDİ
         const WHATSAPP_NUMBER = "905373568453"; 
 
         const sheetCSV = "https://docs.google.com/spreadsheets/d/1ii4RrMqvNBm9HMlfVJI4x2riVtWP14J-9MfCAn2b9-0/export?format=csv";
@@ -70,20 +127,21 @@
         Papa.parse(sheetCSV, {
             download: true,
             header: true,
+            skipEmptyLines: true,
             complete: function(results) {
                 const products = results.data;
                 const container = document.getElementById('product-container');
                 container.innerHTML = ''; 
 
                 products.forEach((product, index) => {
-                    // UrunAdi sütunu boşsa veya yanlış yazılmışsa o satırı atla
                     if(!product.UrunAdi || product.UrunAdi.trim() === '') return;
 
                     const card = document.createElement('div');
                     card.className = 'product-card';
 
-                    const imgUrl = product.ResimURL ? product.ResimURL : 'https://via.placeholder.com/300x300?text=Hisli+Balon';
+                    const imgUrl = product.ResimURL ? product.ResimURL.trim() : 'https://via.placeholder.com/300x300?text=Hisli+Balon';
 
+                    // Seçenekler (Varyasyonlar)
                     let optionsHTML = '';
                     if (product.Varyasyonlar && product.Varyasyonlar.trim() !== "") {
                         const options = product.Varyasyonlar.split(',');
@@ -96,7 +154,7 @@
                         `;
                     }
 
-                    // Sizin Harika Fikriniz: Not Başlığını Özelleştirme
+                    // Özel Not
                     let noteHTML = '';
                     if (product.OzelNot && product.OzelNot.trim() !== "") {
                         let notBasligi = (product.OzelNot.toLowerCase() === "evet") ? "Sipariş Notunuz" : product.OzelNot;
@@ -106,17 +164,19 @@
                         `;
                     }
 
+                    // Shopier Butonu (Boşlukları temizleyerek linki güvenli hale getirdik)
                     let shopierBtn = '';
-                    if (product.ShopierLink) {
-                        // Eğer link http ile başlamıyorsa otomatik ekle
-                        let link = product.ShopierLink.startsWith('http') ? product.ShopierLink : 'https://' + product.ShopierLink;
-                        shopierBtn = `<a href="${link}" target="_blank" class="btn btn-shopier">Kredi Kartı ile Al</a>`;
+                    if (product.ShopierLink && product.ShopierLink.trim() !== "") {
+                        let rawLink = product.ShopierLink.trim();
+                        let safeLink = rawLink.startsWith('http') ? rawLink : 'https://' + rawLink;
+                        shopierBtn = `<a href="${safeLink}" target="_blank" rel="noopener noreferrer" class="btn btn-shopier">Kredi Kartı ile Al (Shopier)</a>`;
                     }
 
                     let fiyatText = product.Fiyat ? product.Fiyat + ' TL' : '';
+                    let safeTitle = product.UrunAdi.replace(/'/g, "\\'").replace(/"/g, "&quot;");
 
                     card.innerHTML = `
-                        <img src="${imgUrl}" alt="${product.UrunAdi}" class="product-img">
+                        <img src="${imgUrl}" alt="${product.UrunAdi}" class="product-img" onclick="openModal('${imgUrl}')" title="Büyütmek için tıklayın">
                         <div class="product-info">
                             <div class="product-category">${product.Kategori || 'Koleksiyon'}</div>
                             <h2 class="product-title">${product.UrunAdi}</h2>
@@ -130,7 +190,7 @@
 
                             <div class="btn-group">
                                 ${shopierBtn}
-                                <button onclick="sendWhatsApp(${index}, '${product.UrunAdi.replace(/'/g, "\\'")}')" class="btn btn-whatsapp">WhatsApp'tan Sipariş Ver</button>
+                                <button type="button" onclick="sendWhatsApp(${index}, '${safeTitle}')" class="btn btn-whatsapp">WhatsApp'tan Sipariş Ver</button>
                             </div>
                         </div>
                     `;
@@ -139,6 +199,7 @@
             }
         });
 
+        // WhatsApp Gönderme Fonksiyonu
         function sendWhatsApp(index, urunAdi) {
             let message = `Merhaba, *${urunAdi}* siparişi vermek istiyorum.%0A`;
             
@@ -152,7 +213,18 @@
                 message += `%0A*Özel Notum:* ${noteEl.value}`;
             }
 
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+            let finalUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+            window.open(finalUrl, '_blank');
+        }
+
+        // Tam Ekran Fotoğraf (Modal) Fonksiyonları
+        function openModal(imgSrc) {
+            document.getElementById('imageModal').style.display = "block";
+            document.getElementById('fullImage').src = imgSrc;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
         }
     </script>
 </body>
