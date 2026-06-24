@@ -61,7 +61,7 @@
         .hero p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; color: var(--accent-dark); margin-top: 15px; }
         .hero-divider { width: 60px; height: 1px; background-color: var(--accent-color); margin: 30px auto 0 auto; }
 
-        /* KATEGORİ NAVİGASYONU - YATAY KAYDIRMA EKLENDİ */
+        /* KATEGORİ NAVİGASYONU (MOBİLDE KAYDIRILABİLİR) */
         .category-nav { 
             max-width: 1100px; 
             margin: 0 auto 50px auto; 
@@ -69,35 +69,31 @@
             justify-content: center; 
             gap: 12px; 
             padding: 0 20px; 
-            overflow-x: auto; /* Telefonta yana kaydırmayı açar */
-            flex-wrap: nowrap; /* Alt alta düşmesini kesinlikle engeller */
-            -webkit-overflow-scrolling: touch; /* Telefonlarda pürüzsüz kaydırma hissi verir */
-            scrollbar-width: none; /* Firefox için kaydırma çubuğunu gizler */
+            overflow-x: auto; 
+            flex-wrap: nowrap; 
+            -webkit-overflow-scrolling: touch; 
+            scrollbar-width: none; 
         }
-        .category-nav::-webkit-scrollbar {
-            display: none; /* Chrome ve Safari için çirkin kaydırma çubuğunu gizler */
-        }
+        .category-nav::-webkit-scrollbar { display: none; }
         .cat-btn { 
-            background-color: #FFF; 
-            border: 1px solid #E0D5D2; 
-            padding: 10px 22px; 
-            border-radius: 30px; 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 0.85rem; 
-            font-weight: 500; 
-            color: var(--text-main); 
-            cursor: pointer; 
-            transition: all 0.3s ease; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02); 
-            flex-shrink: 0; /* Butonların küçülüp ezilmesini engeller */
-            white-space: nowrap; /* Buton içindeki yazının alt satıra inmesini engeller */
+            background-color: #FFF; border: 1px solid #E0D5D2; padding: 10px 22px; border-radius: 30px; 
+            font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--text-main); 
+            cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.02); 
+            flex-shrink: 0; white-space: nowrap; 
         }
         .cat-btn:hover, .cat-btn.active { background-color: var(--accent-dark); color: #FFF; border-color: var(--accent-dark); transform: translateY(-2px); }
 
-        /* VİTRİN ALANI */
+        /* VİTRİN ALANI VE TAM 3'LÜ IZGARA (GRID) SİSTEMİ */
         .main-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 80px 20px; }
         .category-section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: #222; margin: 40px 0 25px 0; border-left: 3px solid var(--accent-color); padding-left: 15px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 35px; margin-bottom: 60px; }
+        
+        .products-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); /* BİLGİSAYARLARDA KESİN 3 SÜTUN */
+            gap: 35px; 
+            margin-bottom: 60px; 
+        }
+        
         .product-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(140,94,94,0.04); transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); display: flex; flex-direction: column; border: 1px solid #F0ECEB; }
         .product-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(140,94,94,0.09); }
         .product-img-wrapper { width: 100%; height: 280px; overflow: hidden; background-color: #FAF7F6; position: relative; }
@@ -139,12 +135,16 @@
         .close-modal:hover { color: var(--accent-color); }
         .loading { text-align: center; padding: 100px 20px; font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-dark); font-size: 1.2rem; }
         
+        /* DUYARLI TASARIM (TABLET VE MOBİL UYUMU) */
+        @media (max-width: 1024px) {
+            .products-grid { grid-template-columns: repeat(2, 1fr); /* Tabletlerde 2 sütun */ gap: 25px; }
+        }
         @media (max-width: 768px) {
             .navbar { flex-direction: column; gap: 15px; padding: 20px; }
             .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
             .hero h1 { font-size: 2.2rem; }
-            /* Mobilde kaydırmanın kusursuz çalışması için hizalamayı sola aldık */
             .category-nav { justify-content: flex-start; padding-bottom: 5px; } 
+            .products-grid { grid-template-columns: 1fr; /* Telefonlarda tam genişlikte alt alta */ gap: 20px; }
         }
     </style>
 </head>
