@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hisli Balon Atölyesi | Söke & Kuşadası</title>
     
+    <!-- Lüks ve Seçkin Yazı Tipleri -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
+    <!-- İkonlar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Google Sheets Veri Okuyucu -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
     <style>
@@ -58,9 +61,37 @@
         .hero p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; color: var(--accent-dark); margin-top: 15px; }
         .hero-divider { width: 60px; height: 1px; background-color: var(--accent-color); margin: 30px auto 0 auto; }
 
-        /* KATEGORİ NAVİGASYONU */
-        .category-nav { max-width: 1100px; margin: 0 auto 50px auto; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; padding: 0 20px; }
-        .cat-btn { background-color: #FFF; border: 1px solid #E0D5D2; padding: 12px 25px; border-radius: 30px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--text-main); cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        /* KATEGORİ NAVİGASYONU - YATAY KAYDIRMA EKLENDİ */
+        .category-nav { 
+            max-width: 1100px; 
+            margin: 0 auto 50px auto; 
+            display: flex; 
+            justify-content: center; 
+            gap: 12px; 
+            padding: 0 20px; 
+            overflow-x: auto; /* Telefonta yana kaydırmayı açar */
+            flex-wrap: nowrap; /* Alt alta düşmesini kesinlikle engeller */
+            -webkit-overflow-scrolling: touch; /* Telefonlarda pürüzsüz kaydırma hissi verir */
+            scrollbar-width: none; /* Firefox için kaydırma çubuğunu gizler */
+        }
+        .category-nav::-webkit-scrollbar {
+            display: none; /* Chrome ve Safari için çirkin kaydırma çubuğunu gizler */
+        }
+        .cat-btn { 
+            background-color: #FFF; 
+            border: 1px solid #E0D5D2; 
+            padding: 10px 22px; 
+            border-radius: 30px; 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 0.85rem; 
+            font-weight: 500; 
+            color: var(--text-main); 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02); 
+            flex-shrink: 0; /* Butonların küçülüp ezilmesini engeller */
+            white-space: nowrap; /* Buton içindeki yazının alt satıra inmesini engeller */
+        }
         .cat-btn:hover, .cat-btn.active { background-color: var(--accent-dark); color: #FFF; border-color: var(--accent-dark); transform: translateY(-2px); }
 
         /* VİTRİN ALANI */
@@ -112,6 +143,8 @@
             .navbar { flex-direction: column; gap: 15px; padding: 20px; }
             .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
             .hero h1 { font-size: 2.2rem; }
+            /* Mobilde kaydırmanın kusursuz çalışması için hizalamayı sola aldık */
+            .category-nav { justify-content: flex-start; padding-bottom: 5px; } 
         }
     </style>
 </head>
@@ -152,7 +185,7 @@
     <section class="info-section" id="hakkimizda">
         <div class="section-inner">
             <h2 class="section-title">Hikayemiz</h2>
-            <div class="section-subtitle">Zarafet, Tasarım và El Emeği</div>
+            <div class="section-subtitle">Zarafet, Tasarım ve El Emeği</div>
             <p style="text-align: center; font-size: 1rem; color: var(--text-light); max-width: 700px; margin: 0 auto;">
                 Hisli Balon Atölyesi olarak, en özel günlerinizin ve hatıralarınızın taşıyıcısı olmaktan gurur duyuyoruz. Premium yapay ve taze çiçek tasarımlarını, antialerjik peluş karakterleri ve birinci sınıf çikolata aranjmanlarını estetik balon konseptleriyle birleştiriyoruz. Söke ve Kuşadası bölgesinde sevdiklerinize unutulmaz, kalıcı ve lüks bir sürpriz ulaştırmak istediğiniz her an, özenle yanınızdayız.
             </p>
@@ -258,7 +291,6 @@
 
                     const imgUrl = product.ResimURL ? product.ResimURL.trim() : 'https://via.placeholder.com/400x400?text=Hisli+Balon+Atölyesi';
 
-                    // 1. VARYASYON ALANI (DİNAMİK)
                     let var1HTML = '';
                     if (product.Varyasyonlar1 && product.Varyasyonlar1.trim() !== "") {
                         const options = product.Varyasyonlar1.split(',');
@@ -271,7 +303,6 @@
                         `;
                     }
 
-                    // 2. VARYASYON ALANI (DİNAMİK)
                     let var2HTML = '';
                     if (product.Varyasyonlar2 && product.Varyasyonlar2.trim() !== "") {
                         const options = product.Varyasyonlar2.split(',');
@@ -284,7 +315,6 @@
                         `;
                     }
 
-                    // 3. VARYASYON / ÖZEL NOT ALANI (METİN GİRİŞİ)
                     let noteHTML = '';
                     if (product.OzelNot && product.OzelNot.trim() !== "") {
                         let notBasligi = (product.OzelNot.toLowerCase() === "evet") ? "Üzerine Yazılacak Özel Not" : product.OzelNot;
@@ -344,27 +374,17 @@
             renderStorefront(categoryName);
         }
 
-        // ÇOKLU VARYASYONLARI TOPLAYAN YENİ WHATSAPP SİSTEMİ
         function sendWhatsApp(index, urunAdi, vBaslik1, vBaslik2) {
             let message = `Merhaba, Hisli Balon Atölyesi'nden *${urunAdi}* siparişi vermek istiyorum.%0A`;
             
-            // 1. Seçeneği kontrol et ve ekle
             const select1El = document.getElementById(`select1-${index}`);
-            if (select1El) {
-                message += `%0A*${vBaslik1}:* ${select1El.value}`;
-            }
+            if (select1El) { message += `%0A*${vBaslik1}:* ${select1El.value}`; }
 
-            // 2. Seçeneği kontrol et ve ekle
             const select2El = document.getElementById(`select2-${index}`);
-            if (select2El) {
-                message += `%0A*${vBaslik2}:* ${select2El.value}`;
-            }
+            if (select2El) { message += `%0A*${vBaslik2}:* ${select2El.value}`; }
 
-            // 3. Yazı / Not alanını kontrol et ve ekle
             const noteEl = document.getElementById(`note-${index}`);
-            if (noteEl && noteEl.value.trim() !== "") {
-                message += `%0A*Müşteri İstek Notu:* ${noteEl.value}`;
-            }
+            if (noteEl && noteEl.value.trim() !== "") { message += `%0A*Müşteri İstek Notu:* ${noteEl.value}`; }
 
             let finalUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${message}`;
             window.open(finalUrl, '_blank');
