@@ -63,16 +63,8 @@
 
         /* KATEGORİ NAVİGASYONU (MOBİLDE KAYDIRILABİLİR) */
         .category-nav { 
-            max-width: 1100px; 
-            margin: 0 auto 50px auto; 
-            display: flex; 
-            justify-content: center; 
-            gap: 12px; 
-            padding: 0 20px; 
-            overflow-x: auto; 
-            flex-wrap: nowrap; 
-            -webkit-overflow-scrolling: touch; 
-            scrollbar-width: none; 
+            max-width: 1100px; margin: 0 auto 50px auto; display: flex; justify-content: center; gap: 12px; padding: 0 20px; 
+            overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; 
         }
         .category-nav::-webkit-scrollbar { display: none; }
         .cat-btn { 
@@ -83,13 +75,13 @@
         }
         .cat-btn:hover, .cat-btn.active { background-color: var(--accent-dark); color: #FFF; border-color: var(--accent-dark); transform: translateY(-2px); }
 
-        /* VİTRİN ALANI VE TAM 3'LÜ IZGARA (GRID) SİSTEMİ */
+        /* VİTRİN ALANI VE TAM 3'LÜ SÜTUN */
         .main-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 80px 20px; }
         .category-section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: #222; margin: 40px 0 25px 0; border-left: 3px solid var(--accent-color); padding-left: 15px; }
         
         .products-grid { 
             display: grid; 
-            grid-template-columns: repeat(3, 1fr); /* BİLGİSAYARLARDA KESİN 3 SÜTUN */
+            grid-template-columns: repeat(3, 1fr); /* BİLGİSAYARLARDA 3 SÜTUN */
             gap: 35px; 
             margin-bottom: 60px; 
         }
@@ -139,12 +131,33 @@
         @media (max-width: 1024px) {
             .products-grid { grid-template-columns: repeat(2, 1fr); /* Tabletlerde 2 sütun */ gap: 25px; }
         }
+        
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 15px; padding: 20px; }
-            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
-            .hero h1 { font-size: 2.2rem; }
+            /* Navbar ve Üst Kısımlar */
+            .navbar { flex-direction: column; gap: 15px; padding: 15px; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; font-size: 0.75rem; }
+            .hero h1 { font-size: 2rem; }
             .category-nav { justify-content: flex-start; padding-bottom: 5px; } 
-            .products-grid { grid-template-columns: 1fr; /* Telefonlarda tam genişlikte alt alta */ gap: 20px; }
+            
+            /* TELEFONDA 2'Lİ SÜTUN YAPAN VİTRİN KODU */
+            .products-grid { 
+                grid-template-columns: repeat(2, 1fr); /* Telefonda 2 sütun yapar */
+                gap: 12px; /* Kartlar arası boşluğu daraltır */
+            }
+            .product-img-wrapper { height: 170px; } /* Fotoğraf alanını daraltır */
+            .product-info { padding: 12px; } /* İç boşluğu kısar */
+            
+            /* Yazı Boyutlarını Telefona Göre Küçültme */
+            .product-title { font-size: 1rem; margin-bottom: 5px; }
+            .product-price { font-size: 0.95rem; margin-bottom: 10px; }
+            .product-desc { font-size: 0.75rem; margin-bottom: 12px; min-height: 0; line-height: 1.4; }
+            
+            /* Özelleştirme ve Buton Boyutlarını Küçültme */
+            .customization-area { padding-top: 10px; margin-bottom: 10px; }
+            .customization-area label { font-size: 0.65rem; margin-bottom: 4px; }
+            .custom-select, .custom-input { padding: 6px; font-size: 0.7rem; margin-bottom: 8px; }
+            .btn { padding: 8px 5px; font-size: 0.7rem; gap: 4px; }
+            .btn i { font-size: 0.8rem; }
         }
     </style>
 </head>
