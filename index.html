@@ -14,7 +14,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
     <style>
-        /* Premium ve Göz Yormayan Pastel Renk Paleti */
         :root {
             --bg-color: #FAF6F5;      
             --card-bg: #FFFFFF;
@@ -30,7 +29,7 @@
         * { box-sizing: border-box; scroll-behavior: smooth; }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; }
         
-        /* 1. ÜST MENÜ (NAVBAR) */
+        /* NAVBAR */
         .navbar {
             position: sticky;
             top: 0;
@@ -44,138 +43,34 @@
             justify-content: space-between;
             align-items: center;
         }
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--text-main);
-            text-decoration: none;
-            text-transform: uppercase;
-        }
+        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 2px; color: var(--text-main); text-decoration: none; text-transform: uppercase; }
         .nav-links { display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
         .nav-links a:hover { color: var(--accent-dark); }
         
-        /* 2. DUYURU BANNERI (HIZLI TESLİMAT) */
-        .delivery-banner {
-            background-color: #F3EAE8;
-            color: var(--accent-dark);
-            text-align: center;
-            padding: 10px 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            border-bottom: 1px solid #E5D9D6;
-        }
+        /* DUYURU BANNERI */
+        .delivery-banner { background-color: #F3EAE8; color: var(--accent-dark); text-align: center; padding: 10px 20px; font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid #E5D9D6; }
         .delivery-banner i { margin-right: 8px; font-size: 1rem; }
 
-        /* 3. HERO (ANA BAŞLIK ALANI) */
-        .hero {
-            text-align: center;
-            padding: 90px 20px;
-            background: linear-gradient(to bottom, #ffffff, var(--bg-color));
-        }
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            margin: 0;
-            letter-spacing: 3px;
-            color: #222;
-            font-weight: 500;
-        }
-        .hero p {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--accent-dark);
-            margin-top: 15px;
-        }
-        .hero-divider {
-            width: 60px;
-            height: 1px;
-            background-color: var(--accent-color);
-            margin: 30px auto 0 auto;
-        }
+        /* HERO ALANI */
+        .hero { text-align: center; padding: 90px 20px; background: linear-gradient(to bottom, #ffffff, var(--bg-color)); }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin: 0; letter-spacing: 3px; color: #222; font-weight: 500; }
+        .hero p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; color: var(--accent-dark); margin-top: 15px; }
+        .hero-divider { width: 60px; height: 1px; background-color: var(--accent-color); margin: 30px auto 0 auto; }
 
-        /* 4. KATEGORİ SEÇİM ALANI (HIZLI FİLTRE) - Genişliği artırıldı */
-        .category-nav {
-            max-width: 1100px; /* Butonların yan yana sığması için alan genişletildi */
-            margin: 0 auto 50px auto;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap; /* Mobilde alt alta geçmesi için korundu */
-            padding: 0 20px;
-        }
-        .cat-btn {
-            background-color: #FFF;
-            border: 1px solid #E0D5D2;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-main);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-        .cat-btn:hover, .cat-btn.active {
-            background-color: var(--accent-dark);
-            color: #FFF;
-            border-color: var(--accent-dark);
-            transform: translateY(-2px);
-        }
+        /* KATEGORİ NAVİGASYONU */
+        .category-nav { max-width: 1100px; margin: 0 auto 50px auto; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; padding: 0 20px; }
+        .cat-btn { background-color: #FFF; border: 1px solid #E0D5D2; padding: 12px 25px; border-radius: 30px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--text-main); cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .cat-btn:hover, .cat-btn.active { background-color: var(--accent-dark); color: #FFF; border-color: var(--accent-dark); transform: translateY(-2px); }
 
-        /* 5. VİTRİN VE ÜRÜN KARTLARI */
+        /* VİTRİN ALANI */
         .main-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 80px 20px; }
-        .category-section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: #222;
-            margin: 40px 0 25px 0;
-            border-left: 3px solid var(--accent-color);
-            padding-left: 15px;
-        }
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-            gap: 35px;
-            margin-bottom: 60px;
-        }
-        .product-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(140,94,94,0.04);
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            display: flex;
-            flex-direction: column;
-            border: 1px solid #F0ECEB;
-        }
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(140,94,94,0.09);
-        }
+        .category-section-title { font-family: 'Playfair Display', serif; font-size: 2rem; color: #222; margin: 40px 0 25px 0; border-left: 3px solid var(--accent-color); padding-left: 15px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 35px; margin-bottom: 60px; }
+        .product-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(140,94,94,0.04); transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); display: flex; flex-direction: column; border: 1px solid #F0ECEB; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(140,94,94,0.09); }
         .product-img-wrapper { width: 100%; height: 280px; overflow: hidden; background-color: #FAF7F6; position: relative; }
-        .product-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 15px;
-            cursor: zoom-in;
-            transition: transform 0.5s ease;
-        }
+        .product-img { width: 100%; height: 100%; object-fit: contain; padding: 15px; cursor: zoom-in; transition: transform 0.5s ease; }
         .product-card:hover .product-img { transform: scale(1.03); }
         
         .product-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
@@ -197,24 +92,20 @@
         .btn-whatsapp { background-color: var(--btn-whatsapp); color: #23422F; }
         .btn-email { background-color: var(--btn-email); color: white; }
         
-        /* 6. KURUMSAL BÖLÜMLER (HAKKIMIZDA & İLETİŞİM & ÖNERİ) */
+        /* KURUMSAL BÖLÜMLER */
         .info-section { background-color: #FFF; padding: 80px 20px; border-top: 1px solid #EAE3E1; }
         .section-inner { max-width: 900px; margin: 0 auto; }
         .section-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; text-align: center; margin-bottom: 15px; color: #222; }
         .section-subtitle { text-align: center; color: var(--accent-dark); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; }
-        
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 30px; text-align: center; }
-        .contact-box i { font-size: 2rem; color: var(--accent-dark); mb-3: 15px; display: block; margin-bottom: 15px; }
-        
-        /* ÖNERİ FORMU */
+        .contact-box i { font-size: 2rem; color: var(--accent-dark); margin-bottom: 15px; display: block; }
         .feedback-form { background-color: var(--bg-color); padding: 40px; border-radius: 16px; border: 1px solid #EAE3E1; margin-top: 30px; }
         
-        /* TAM EKRAN FOTOĞRAF MODAL */
+        /* MODAL (FOTOĞRAF BÜYÜTME) */
         .modal { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(15,10,10,0.92); backdrop-filter: blur(7px); }
         .modal-content { margin: auto; display: block; max-width: 92%; max-height: 88vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 8px; }
         .close-modal { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 45px; cursor: pointer; transition: 0.3s; }
         .close-modal:hover { color: var(--accent-color); }
-
         .loading { text-align: center; padding: 100px 20px; font-family: 'Playfair Display', serif; font-style: italic; color: var(--accent-dark); font-size: 1.2rem; }
         
         @media (max-width: 768px) {
@@ -261,8 +152,8 @@
     <section class="info-section" id="hakkimizda">
         <div class="section-inner">
             <h2 class="section-title">Hikayemiz</h2>
-            <div class="section-subtitle">Zarafet, Tasarım ve El Emeği</div>
-            <p style="text-align: center; font-size: 1rem; color: var(--text-light); max-width: 700px; margin: 0 auto; leading-relaxed">
+            <div class="section-subtitle">Zarafet, Tasarım và El Emeği</div>
+            <p style="text-align: center; font-size: 1rem; color: var(--text-light); max-width: 700px; margin: 0 auto;">
                 Hisli Balon Atölyesi olarak, en özel günlerinizin ve hatıralarınızın taşıyıcısı olmaktan gurur duyuyoruz. Premium yapay ve taze çiçek tasarımlarını, antialerjik peluş karakterleri ve birinci sınıf çikolata aranjmanlarını estetik balon konseptleriyle birleştiriyoruz. Söke ve Kuşadası bölgesinde sevdiklerinize unutulmaz, kalıcı ve lüks bir sürpriz ulaştırmak istediğiniz her an, özenle yanınızdayız.
             </p>
         </div>
@@ -340,7 +231,6 @@
                 if(!product.UrunAdi || product.UrunAdi.trim() === '') return;
                 
                 let kat = product.Kategori ? product.Kategori.trim() : 'Diğer Sürprizler';
-                
                 if(filterCategoryName !== 'Tümü' && kat !== filterCategoryName) return;
 
                 if(!categorized[kat]) categorized[kat] = [];
@@ -368,24 +258,39 @@
 
                     const imgUrl = product.ResimURL ? product.ResimURL.trim() : 'https://via.placeholder.com/400x400?text=Hisli+Balon+Atölyesi';
 
-                    let optionsHTML = '';
-                    if (product.Varyasyonlar && product.Varyasyonlar.trim() !== "") {
-                        const options = product.Varyasyonlar.split(',');
+                    // 1. VARYASYON ALANI (DİNAMİK)
+                    let var1HTML = '';
+                    if (product.Varyasyonlar1 && product.Varyasyonlar1.trim() !== "") {
+                        const options = product.Varyasyonlar1.split(',');
                         let selectItems = options.map(opt => `<option value="${opt.trim()}">${opt.trim()}</option>`).join('');
-                        optionsHTML = `
-                            <label><i class="fa-solid fa-wand-magic-sparkles"></i> ${product.VaryasyonBasligi || 'Özelleştirme Seçeneği'}</label>
-                            <select class="custom-select" id="select-${index}">
+                        var1HTML = `
+                            <label><i class="fa-solid fa-palette"></i> ${product.VaryasyonBasligi1 || 'Seçenek 1'}</label>
+                            <select class="custom-select" id="select1-${index}">
                                 ${selectItems}
                             </select>
                         `;
                     }
 
+                    // 2. VARYASYON ALANI (DİNAMİK)
+                    let var2HTML = '';
+                    if (product.Varyasyonlar2 && product.Varyasyonlar2.trim() !== "") {
+                        const options = product.Varyasyonlar2.split(',');
+                        let selectItems = options.map(opt => `<option value="${opt.trim()}">${opt.trim()}</option>`).join('');
+                        var2HTML = `
+                            <label><i class="fa-solid fa-wand-magic-sparkles"></i> ${product.VaryasyonBasligi2 || 'Seçenek 2'}</label>
+                            <select class="custom-select" id="select2-${index}">
+                                ${selectItems}
+                            </select>
+                        `;
+                    }
+
+                    // 3. VARYASYON / ÖZEL NOT ALANI (METİN GİRİŞİ)
                     let noteHTML = '';
                     if (product.OzelNot && product.OzelNot.trim() !== "") {
                         let notBasligi = (product.OzelNot.toLowerCase() === "evet") ? "Üzerine Yazılacak Özel Not" : product.OzelNot;
                         noteHTML = `
                             <label><i class="fa-regular fa-pen-to-square"></i> ${notBasligi}</label>
-                            <input type="text" class="custom-input" id="note-${index}" placeholder="Notunuzu buraya ekleyebilirsiniz...">
+                            <input type="text" class="custom-input" id="note-${index}" placeholder="Buraya yazabilirsiniz...">
                         `;
                     }
 
@@ -398,6 +303,9 @@
 
                     let fiyatText = product.Fiyat ? product.Fiyat + ' TL' : '';
                     let safeTitle = product.UrunAdi.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                    
+                    let safeVBaslik1 = (product.VaryasyonBasligi1 || 'Seçenek 1').replace(/'/g, "\\'");
+                    let safeVBaslik2 = (product.VaryasyonBasligi2 || 'Seçenek 2').replace(/'/g, "\\'");
 
                     card.innerHTML = `
                         <div class="product-img-wrapper">
@@ -409,19 +317,19 @@
                             <p class="product-desc">${product.Aciklama || ''}</p>
                             
                             <div class="customization-area">
-                                ${optionsHTML}
+                                ${var1HTML}
+                                ${var2HTML}
                                 ${noteHTML}
                             </div>
 
                             <div class="btn-group">
                                 ${shopierBtn}
-                                <button type="button" onclick="sendWhatsApp(${index}, '${safeTitle}')" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Sipariş</button>
+                                <button type="button" onclick="sendWhatsApp(${index}, '${safeTitle}', '${safeVBaslik1}', '${safeVBaslik2}')" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Sipariş</button>
                             </div>
                         </div>
                     `;
                     grid.appendChild(card);
                 });
-                
                 container.appendChild(grid);
             }
 
@@ -430,58 +338,49 @@
             }
         }
 
-        // KATEGORİ BUTON FİLTRELEME FONKSİYONU
         function filterCategory(categoryName, btnElement) {
             document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
             btnElement.classList.add('active');
             renderStorefront(categoryName);
         }
 
-        // WHATSAPP SİPARİŞİ GÖNDERME (ÜRÜNLER İÇİN)
-        function sendWhatsApp(index, urunAdi) {
-            let message = `Merhaba, Hisli Balon Atölyesi\\'nden *${urunAdi}* siparişi vermek istiyorum.%0A`;
+        // ÇOKLU VARYASYONLARI TOPLAYAN YENİ WHATSAPP SİSTEMİ
+        function sendWhatsApp(index, urunAdi, vBaslik1, vBaslik2) {
+            let message = `Merhaba, Hisli Balon Atölyesi'nden *${urunAdi}* siparişi vermek istiyorum.%0A`;
             
-            const selectEl = document.getElementById(`select-${index}`);
-            if (selectEl) {
-                message += `%0A*Seçeneğim:* ${selectEl.value}`;
+            // 1. Seçeneği kontrol et ve ekle
+            const select1El = document.getElementById(`select1-${index}`);
+            if (select1El) {
+                message += `%0A*${vBaslik1}:* ${select1El.value}`;
             }
 
+            // 2. Seçeneği kontrol et ve ekle
+            const select2El = document.getElementById(`select2-${index}`);
+            if (select2El) {
+                message += `%0A*${vBaslik2}:* ${select2El.value}`;
+            }
+
+            // 3. Yazı / Not alanını kontrol et ve ekle
             const noteEl = document.getElementById(`note-${index}`);
             if (noteEl && noteEl.value.trim() !== "") {
-                message += `%0A*Özel İstek Notum:* ${noteEl.value}`;
+                message += `%0A*Müşteri İstek Notu:* ${noteEl.value}`;
             }
 
             let finalUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${message}`;
             window.open(finalUrl, '_blank');
         }
 
-        // MÜŞTERİ ÖNERİ VE TAVSİYE FORMU (E-POSTA İÇİN)
         function sendFeedbackEmail() {
             const name = document.getElementById('feedback-name').value.trim();
             const text = document.getElementById('feedback-text').value.trim();
-            
-            if(!text) {
-                alert('Lütfen öneri alanını boş bırakmayınız.');
-                return;
-            }
-            
+            if(!text) { alert('Lütfen öneri alanını boş bırakmayınız.'); return; }
             const subject = encodeURIComponent('Hisli Balon Sitesinden Yeni Öneri / Tavsiye');
-            let body = `Gönderen: ${name || 'Ziyaretçi'}\n\n`;
-            body += `Mesaj:\n${text}`;
-            const encodedBody = encodeURIComponent(body);
-            
-            window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${encodedBody}`;
+            let body = `Gönderen: ${name || 'Ziyaretçi'}\n\nMesaj:\n${text}`;
+            window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${encodeURIComponent(body)}`;
         }
 
-        // MODAL FOTOĞRAF BÜYÜTME FONKSİYONLARI
-        function openModal(imgSrc) {
-            document.getElementById('imageModal').style.display = "block";
-            document.getElementById('fullImage').src = imgSrc;
-        }
-
-        function closeModal() {
-            document.getElementById('imageModal').style.display = "none";
-        }
+        function openModal(imgSrc) { document.getElementById('imageModal').style.display = "block"; document.getElementById('fullImage').src = imgSrc; }
+        function closeModal() { document.getElementById('imageModal').style.display = "none"; }
     </script>
 </body>
 </html>
