@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hisli Balon Atölyesi | Söke & Kuşadası</title>
     
+    <!-- Lüks ve Seçkin Yazı Tipleri -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
+    <!-- İkonlar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Google Sheets Veri Okuyucu -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
     <style>
         /* Premium ve Göz Yormayan Pastel Renk Paleti */
         :root {
-            --bg-color: #FAF6F5;      /* Ultra soft lüks pudra/krem */
+            --bg-color: #FAF6F5;      
             --card-bg: #FFFFFF;
-            --text-main: #3A3A3A;     /* Yumuşak kurumsal antrasit */
+            --text-main: #3A3A3A;     
             --text-light: #707070;
-            --accent-color: #CFA8A8;  /* Kadifemsi Gül Kurusu */
-            --accent-dark: #8C5E5E;   /* Derin Gül Kurusu */
+            --accent-color: #CFA8A8;  
+            --accent-dark: #8C5E5E;   
             --btn-shopier: #CFA8A8;
-            --btn-whatsapp: #A3D4B6;  /* Pastel Nane Yeşili */
+            --btn-whatsapp: #A3D4B6;  
+            --btn-email: #8C5E5E; /* E-posta butonu için lüks koyu gül kurusu */
         }
 
         * { box-sizing: border-box; scroll-behavior: smooth; }
@@ -36,7 +40,7 @@
             z-index: 999;
             background-color: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(10px);
-            border-b: 1px solid #EAE3E1;
+            border-bottom: 1px solid #EAE3E1;
             box-shadow: 0 2px 15px rgba(0,0,0,0.02);
             padding: 15px 40px;
             display: flex;
@@ -194,6 +198,7 @@
         .btn:hover { opacity: 0.9; transform: translateY(-1px); }
         .btn-shopier { background-color: var(--btn-shopier); color: white; }
         .btn-whatsapp { background-color: var(--btn-whatsapp); color: #23422F; }
+        .btn-email { background-color: var(--btn-email); color: white; }
         
         /* 6. KURUMSAL BÖLÜMLER (HAKKIMIZDA & İLETİŞİM & ÖNERİ) */
         .info-section { background-color: #FFF; padding: 80px 20px; border-top: 1px solid #EAE3E1; }
@@ -224,6 +229,7 @@
 </head>
 <body>
 
+    <!-- 1. ÜST MENÜ GRUBU -->
     <nav class="navbar">
         <a href="#" class="nav-logo">Hisli Balon</a>
         <ul class="nav-links">
@@ -235,16 +241,19 @@
         </ul>
     </nav>
 
+    <!-- 2. HIZLI TESLİMAT DUYURUSU -->
     <div class="delivery-banner">
         <i class="fa-solid fa-truck-ramp-box"></i> Söke ve Kuşadası'na aynı gün hızlı teslimat yapılır
     </div>
 
+    <!-- 3. HERO ALANI -->
     <header class="hero">
         <h1>Hisli Balon Atölyesi</h1>
         <p>Sevdiklerinize unutulmaz bir an.</p>
         <div class="hero-divider"></div>
     </header>
 
+    <!-- 4. KATEGORİ NAVİGASYONU (HIZLI FİLTRELEME) -->
     <div class="category-nav" id="urunlerimiz">
         <button class="cat-btn active" onclick="filterCategory('Tümü', this)">Tüm Koleksiyon</button>
         <button class="cat-btn" onclick="filterCategory('Çiçekli Aranjmanlar', this)">Çiçekli Aranjmanlar</button>
@@ -252,10 +261,12 @@
         <button class="cat-btn" onclick="filterCategory('Çikolatalı Aranjmanlar', this)">Çikolatalı Aranjmanlar</button>
     </div>
 
+    <!-- 5. ANA VİTRİN ALANI -->
     <main class="main-container" id="store-front">
         <div class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Sanat Atölyemiz Yükleniyor...</div>
     </main>
 
+    <!-- HAKKIMIZDA BÖLÜMÜ -->
     <section class="info-section" id="hakkimizda">
         <div class="section-inner">
             <h2 class="section-title">Hikayemiz</h2>
@@ -266,6 +277,7 @@
         </div>
     </section>
 
+    <!-- ÖNERİ VE TAVSİYELER BÖLÜMÜ -->
     <section class="info-section" id="oneri" style="background-color: var(--bg-color);">
         <div class="section-inner">
             <h2 class="section-title">Öneri & Tavsiyeleriniz</h2>
@@ -277,11 +289,12 @@
                 <label style="display:block; font-family:'Playfair Display'; font-style:italic; margin-bottom:10px; margin-top:15px;">Fikir, Öneri veya İstekleriniz</label>
                 <textarea id="feedback-text" class="custom-input" style="height:120px; resize:none;" placeholder="Atölyemizle paylaşmak istediğiniz her şeyi buraya yazabilirsiniz..."></textarea>
                 
-                <button type="button" onclick="sendFeedback()" class="btn btn-whatsapp" style="margin-top:10px; font-weight:600;"><i class="fa-brands fa-whatsapp"></i> Öneriyi Atölyeye İlet</button>
+                <button type="button" onclick="sendFeedbackEmail()" class="btn btn-email" style="margin-top:10px; font-weight:600;"><i class="fa-solid fa-envelope"></i> Öneriyi Atölyeye İlet</button>
             </div>
         </div>
     </section>
 
+    <!-- İLETİŞİM BÖLÜMÜ -->
     <section class="info-section" id="iletisim">
         <div class="section-inner">
             <h2 class="section-title">İletişim</h2>
@@ -298,24 +311,27 @@
                     <p style="margin:0; font-weight:500;">0537 356 84 53</p>
                 </div>
                 <div class="contact-box">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <h3 style="font-family:'Playfair Display'; margin-bottom:5px;">Hizmet Bölgesi</h3>
-                    <p style="margin:0; font-size:0.9rem; color:var(--text-light)">Söke, Kuşadası ve Çevresi / Aydın</p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <h3 style="font-family:'Playfair Display'; margin-bottom:5px;">E-Posta</h3>
+                    <p style="margin:0; font-size:0.9rem; color:var(--text-light)">hislibalon@gmail.com</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- SINIRSIZ FOTOĞRAF BÜYÜTME PENCERESİ -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
         <img class="modal-content" id="fullImage">
     </div>
 
+    <!-- SİHİRLİ E-TİCARET ALTYAPISI (JAVASCRIPT) -->
     <script>
-        const WHATSAPP_NUMBER = "905373568453"; // Numaranız kodlandı
+        const WHATSAPP_NUMBER = "905373568453"; // Siparişler için WhatsApp Hattı
+        const EMAIL_ADDRESS = "hislibalon@gmail.com"; // Öneriler için E-posta Adresi
         const sheetCSV = "https://docs.google.com/spreadsheets/d/1ii4RrMqvNBm9HMlfVJI4x2riVtWP14J-9MfCAn2b9-0/export?format=csv";
         
-        let allProductsGlobal = []; // Filtreleme için ana depo
+        let allProductsGlobal = [];
 
         Papa.parse(sheetCSV, {
             download: true,
@@ -323,7 +339,7 @@
             skipEmptyLines: true,
             complete: function(results) {
                 allProductsGlobal = results.data;
-                renderStorefront('Tümü'); // İlk açılışta tüm ürünleri yükle
+                renderStorefront('Tümü'); 
             }
         });
 
@@ -331,7 +347,6 @@
             const container = document.getElementById('store-front');
             container.innerHTML = ''; 
 
-            // Ürünleri kategorilerine göre gruplayalım
             let categorized = {};
             
             allProductsGlobal.forEach((product, index) => {
@@ -339,25 +354,21 @@
                 
                 let kat = product.Kategori ? product.Kategori.trim() : 'Diğer Sürprizler';
                 
-                // Filtreleme kontrolü
                 if(filterCategoryName !== 'Tümü' && kat !== filterCategoryName) return;
 
                 if(!categorized[kat]) categorized[kat] = [];
                 categorized[kat].push({item: product, originalIndex: index});
             });
 
-            // Kategorileri ekrana dökme
             let hasContent = false;
             for(let categoryTitle in categorized) {
                 hasContent = true;
                 
-                // Bölüm Başlığı
                 const sectTitle = document.createElement('h2');
                 sectTitle.className = 'category-section-title';
                 sectTitle.innerText = categoryTitle;
                 container.appendChild(sectTitle);
 
-                // Ürünler Grid Yapısı
                 const grid = document.createElement('div');
                 grid.className = 'products-grid';
 
@@ -370,7 +381,6 @@
 
                     const imgUrl = product.ResimURL ? product.ResimURL.trim() : 'https://via.placeholder.com/400x400?text=Hisli+Balon+Atölyesi';
 
-                    // Varyasyon/Seçenek Kutusu
                     let optionsHTML = '';
                     if (product.Varyasyonlar && product.Varyasyonlar.trim() !== "") {
                         const options = product.Varyasyonlar.split(',');
@@ -383,7 +393,6 @@
                         `;
                     }
 
-                    // Özel Not Girişi
                     let noteHTML = '';
                     if (product.OzelNot && product.OzelNot.trim() !== "") {
                         let notBasligi = (product.OzelNot.toLowerCase() === "evet") ? "Üzerine Yazılacak Özel Not" : product.OzelNot;
@@ -393,7 +402,6 @@
                         `;
                     }
 
-                    // Shopier Satın Alma Butonu
                     let shopierBtn = '';
                     if (product.ShopierLink && product.ShopierLink.trim() !== "") {
                         let rawLink = product.ShopierLink.trim();
@@ -437,15 +445,12 @@
 
         // KATEGORİ BUTON FİLTRELEME FONKSİYONU
         function filterCategory(categoryName, btnElement) {
-            // Aktif buton sınıfını güncelle
             document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
             btnElement.classList.add('active');
-            
-            // Mağazayı seçilen kategoriye göre yeniden dök
             renderStorefront(categoryName);
         }
 
-        // WHATSAPP SİPARİŞİ GÖNDERME
+        // WHATSAPP SİPARİŞİ GÖNDERME (ÜRÜNLER İÇİN)
         function sendWhatsApp(index, urunAdi) {
             let message = `Merhaba, Hisli Balon Atölyesi\\'nden *${urunAdi}* siparişi vermek istiyorum.%0A`;
             
@@ -463,8 +468,8 @@
             window.open(finalUrl, '_blank');
         }
 
-        // MÜŞTERİ ÖNERİ VE TAVSİYE FORMU FONKSİYONU
-        function sendFeedback() {
+        // MÜŞTERİ ÖNERİ VE TAVSİYE FORMU (E-POSTA İÇİN)
+        function sendFeedbackEmail() {
             const name = document.getElementById('feedback-name').value.trim();
             const text = document.getElementById('feedback-text').value.trim();
             
@@ -473,12 +478,12 @@
                 return;
             }
             
-            let message = `*Hisli Balon Sitesinden Yeni Öneri / Tavsiye*%0A%0A`;
-            message += `*Gönderen:* ${name || 'Ziyaretçi'}%0A`;
-            message += `*Mesaj:* ${text}`;
+            const subject = encodeURIComponent('Hisli Balon Sitesinden Yeni Öneri / Tavsiye');
+            let body = `Gönderen: ${name || 'Ziyaretçi'}\n\n`;
+            body += `Mesaj:\n${text}`;
+            const encodedBody = encodeURIComponent(body);
             
-            let finalUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${message}`;
-            window.open(finalUrl, '_blank');
+            window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${encodedBody}`;
         }
 
         // MODAL FOTOĞRAF BÜYÜTME FONKSİYONLARI
