@@ -5,165 +5,310 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hisli Balon | Söke</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            bg: '#fffbfb', text: '#94666f', dark: '#6e4950', border: '#f2e1e3', btnBg: '#faeaea', btnBorder: '#f0d8dc'
-                        }
-                    },
-                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['"Nunito"', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
-    <style>body { background-color: #fffbfb; scroll-behavior: smooth; }</style>
-</head>
-<body class="font-sans text-gray-700 antialiased">
+    <!-- Lüks Yazı Tipleri (Playfair Display ve Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Google Sheets Veri Okuyucu -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
-    <header class="text-center pt-20 pb-10">
-        <div class="flex justify-center mb-4 text-brand-text text-3xl"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-        <h1 class="text-5xl md:text-6xl font-serif font-bold text-brand-text tracking-widest uppercase">HİSLİ BALON</h1>
-        <p class="text-xs tracking-[0.4em] text-brand-dark mt-3 uppercase font-semibold">Söke</p>
-        <h2 class="text-3xl font-serif text-brand-dark mt-16">Ne Göndermek İstersiniz?</h2>
+    <style>
+        /* Pastel ve Göz Yormayan Renk Paleti */
+        :root {
+            --bg-color: #FAF6F5; /* Çok uçuk pudra/krem */
+            --card-bg: #FFFFFF;
+            --text-main: #4A4A4A; /* Yumuşak antrasit */
+            --text-light: #7A7A7A;
+            --accent-color: #D4A3A3; /* Pastel Gül Kurusu */
+            --btn-shopier: #cfa8a8;
+            --btn-whatsapp: #A3D4B6; /* Pastel Yeşil */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 2px;
+            color: #333;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: #f9f9f9;
+        }
+
+        .product-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* Özelleştirme Alanları */
+        .customization-area {
+            margin-bottom: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .customization-area label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+            color: #555;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .custom-select, .custom-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            background-color: #fafafa;
+        }
+
+        .custom-input:focus, .custom-select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        /* Butonlar */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            text-align: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        .btn-shopier {
+            background-color: var(--btn-shopier);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--btn-whatsapp);
+            color: #2c543b;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--accent-color);
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hisli Balon</h1>
+        <p>Unutulmaz Anılar İçin Zarafet</p>
     </header>
 
-    <section class="max-w-4xl mx-auto px-6 mb-24">
-        <div class="flex flex-col md:flex-row justify-center gap-6">
-            <a href="#cicekli" class="bg-white rounded-3xl shadow-sm border border-brand-border p-10 text-center flex-1 hover:shadow-md transition duration-300">
-                <i class="fa-solid fa-seedling text-4xl text-brand-text mb-4"></i>
-                <h3 class="text-2xl font-bold font-serif text-brand-dark">Çiçekli Aranjmanlar</h3>
-                <p class="text-sm text-gray-500 mt-3 font-light px-4">Taze, şoklanmış veya premium yapay çiçekli özel balonlar.</p>
-            </a>
-            <a href="#pelus" class="bg-white rounded-3xl shadow-sm border border-brand-border p-10 text-center flex-1 hover:shadow-md transition duration-300">
-                <i class="fa-solid fa-gift text-4xl text-brand-text mb-4"></i>
-                <h3 class="text-2xl font-bold font-serif text-brand-dark">Hediyelik & Peluşlu</h3>
-                <p class="text-sm text-gray-500 mt-3 font-light px-4">Sevimli peluş ayıcıklar, amigurumi figürleri ve hediyelikler.</p>
-            </a>
-        </div>
-    </section>
-
-    <main class="max-w-6xl mx-auto px-6 pb-20">
-        <div id="cicekli" class="mb-24 pt-10">
-            <div class="border-b border-brand-border pb-3 mb-10 flex items-center gap-3">
-                <i class="fa-solid fa-seedling text-brand-text text-2xl"></i>
-                <h2 class="text-2xl font-bold font-serif text-brand-text">Çiçekli Premium Aranjmanlar</h2>
-            </div>
-            <div id="cicekli-vitrin" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-        </div>
-
-        <div id="pelus" class="mb-10 pt-10">
-            <div class="border-b border-brand-border pb-3 mb-10 flex items-center gap-3">
-                <i class="fa-solid fa-gift text-brand-text text-2xl"></i>
-                <h2 class="text-2xl font-bold font-serif text-brand-text">Hediyelik & Peluş Serisi</h2>
-            </div>
-            <div id="pelus-vitrin" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-        </div>
-    </main>
-
-    <footer class="border-t border-brand-border pt-16 pb-12 mt-10">
-        <div class="flex justify-center gap-6 mb-6">
-            <a href="#" class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-btnBg transition text-xl">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/905373568453" target="_blank" class="w-12 h-12 rounded-full border border-brand-border flex items-center justify-center text-brand-text hover:bg-brand-btnBg transition text-xl">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-        </div>
-        <p class="text-center text-brand-text font-serif text-lg mb-10">@hislibalon</p>
-        
-        <div class="max-w-2xl mx-auto bg-white border border-brand-border rounded-xl p-6 text-center shadow-sm mx-6">
-            <p class="text-brand-dark text-sm mb-2 font-semibold">
-                <i class="fa-solid fa-truck-fast text-brand-text mr-2"></i> Söke içi belirlenen noktalara elden teslimatımız mevcuttur.
-            </p>
-            <p class="text-gray-500 text-xs font-light">Şehir dışı gönderimler ve özel tasarımlar için lütfen iletişime geçiniz.</p>
-        </div>
-    </footer>
+    <div class="container" id="product-container">
+        <div class="loading">Koleksiyonumuz yükleniyor...</div>
+    </div>
 
     <script>
-        const whatsappNumarasi = "905373568453"; // Numaranız kodlandı
+        // WhatsApp Numaranız (Başında 90 olacak şekilde boşluksuz yazın)
+        const WHATSAPP_NUMBER = "905000000000"; // BURAYI KENDİ NUMARANIZLA DEĞİŞTİRİN
 
-        const comingSoonCard = (text, desc) => `
-            <div class="bg-brand-bg rounded-2xl border-2 border-dashed border-brand-border p-8 flex flex-col items-center justify-center text-center h-full min-h-[400px]">
-                <div class="bg-white w-full h-48 rounded-xl border border-brand-border flex items-center justify-center mb-6">
-                    <div class="text-center text-brand-btnBorder">
-                        <i class="fa-solid fa-gift text-3xl mb-2"></i>
-                        <p class="font-serif text-sm font-bold tracking-widest uppercase">ÇOK YAKINDA</p>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold font-serif text-brand-dark mb-2">${text}</h3>
-                <p class="text-gray-400 text-xs font-light mb-8 px-4 leading-relaxed">${desc}</p>
-                <a href="https://wa.me/${whatsappNumarasi}" target="_blank" class="w-full bg-brand-btnBg border border-brand-btnBorder text-brand-text font-semibold py-3 px-4 rounded-xl text-sm transition hover:bg-red-50 mt-auto">
-                    <i class="fa-brands fa-whatsapp mr-1"></i> Özel Sipariş İçin Yazın
-                </a>
-            </div>
-        `;
+        // Google Sheets CSV Linkiniz
+        const sheetCSV = "https://docs.google.com/spreadsheets/d/1ii4RrMqvNBm9HMlfVJI4x2riVtWP14J-9MfCAn2b9-0/export?format=csv";
 
-        fetch('urunler.json')
-            .then(response => response.json())
-            .then(data => {
-                const cicekliVitrin = document.getElementById('cicekli-vitrin');
-                const pelusVitrin = document.getElementById('pelus-vitrin');
-                
-                if(data.products && data.products.length > 0) {
-                    data.products.forEach(urun => {
-                        const imageUrl = urun.image1 ? urun.image1.replace('/images/', 'images/') : '';
-                        const mesaj = encodeURIComponent(`Merhaba, Hisli Balon'dan "${urun.title}" ürünü için fiyat/bilgi almak istiyorum.`);
-                        const wpLink = `https://wa.me/${whatsappNumarasi}?text=${mesaj}`;
+        Papa.parse(sheetCSV, {
+            download: true,
+            header: true,
+            complete: function(results) {
+                const products = results.data;
+                const container = document.getElementById('product-container');
+                container.innerHTML = ''; // Yükleniyor yazısını temizle
 
-                        // Eğer panele shopier linki girilmişse bu buton oluşur
-                        const shopierLink = urun.shopier ? (urun.shopier.startsWith('http') ? urun.shopier : 'https://' + urun.shopier) : '';
-                        const shopierBtn = shopierLink ? `
-                            <a href="${shopierLink}" target="_blank" class="w-full bg-white border border-brand-btnBorder text-brand-text font-semibold py-2.5 px-4 rounded-xl flex justify-center items-center gap-2 text-sm transition hover:bg-gray-50 shadow-sm mt-3">
-                                <i class="fa-regular fa-credit-card text-lg"></i> Kredi Kartı İle Al
-                            </a>` : '';
+                products.forEach((product, index) => {
+                    // Boş satırları atla
+                    if(!product.UrunAdi) return;
 
-                        const fiyatAlani = urun.price ? `<p class="text-brand-dark font-bold mt-2 text-lg">${urun.price}</p>` : '';
+                    // Ürün Kartı Oluştur
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
 
-                        const thumbnails = `
-                            <div class="flex gap-2 px-6 pt-4">
-                                <div class="w-8 h-8 border border-gray-200 rounded flex items-center justify-center text-gray-300 text-xs"><i class="fa-regular fa-image"></i></div>
-                                <div class="w-8 h-8 border border-gray-200 rounded flex items-center justify-center text-gray-300 text-xs"><i class="fa-regular fa-image"></i></div>
-                                <div class="w-8 h-8 border border-gray-200 rounded flex items-center justify-center text-gray-300 text-xs"><i class="fa-regular fa-image"></i></div>
-                            </div>
+                    // Fotoğraf Kontrolü
+                    const imgUrl = product.ResimURL ? product.ResimURL : 'https://via.placeholder.com/300x300?text=Hisli+Balon';
+
+                    // Varyasyonlar (Seçenekler) HTML'i
+                    let optionsHTML = '';
+                    if (product.Varyasyonlar && product.Varyasyonlar.trim() !== "") {
+                        const options = product.Varyasyonlar.split(',');
+                        let selectItems = options.map(opt => `<option value="${opt.trim()}">${opt.trim()}</option>`).join('');
+                        optionsHTML = `
+                            <label>${product.VaryasyonBasligi || 'Seçenekler'}</label>
+                            <select class="custom-select" id="select-${index}">
+                                ${selectItems}
+                            </select>
                         `;
+                    }
 
-                        const card = `
-                            <div class="bg-white rounded-2xl shadow-sm border border-brand-border overflow-hidden flex flex-col h-full hover:shadow-lg transition duration-300">
-                                <img src="${imageUrl}" alt="${urun.title}" class="w-full h-80 object-cover rounded-t-2xl">
-                                ${thumbnails}
-                                <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold font-serif text-brand-dark mb-2">${urun.title}</h3>
-                                    <p class="text-gray-500 text-xs font-light leading-relaxed flex-grow">${urun.description}</p>
-                                    ${fiyatAlani}
-                                    
-                                    <div class="mt-6">
-                                        <a href="${wpLink}" target="_blank" class="w-full bg-brand-btnBg border border-brand-btnBorder text-brand-text font-semibold py-2.5 px-4 rounded-xl flex justify-center items-center gap-2 text-sm transition hover:bg-red-50 shadow-sm">
-                                            <i class="fa-brands fa-whatsapp text-lg"></i> Özel Fiyat Alın
-                                        </a>
-                                        ${shopierBtn}
-                                    </div>
-                                </div>
-                            </div>
+                    // Özel Not HTML'i
+                    let noteHTML = '';
+                    if (product.OzelNot && product.OzelNot.toLowerCase() === "evet") {
+                        noteHTML = `
+                            <label>Sipariş Notunuz (Kutu Üzeri Yazı vb.)</label>
+                            <input type="text" class="custom-input" id="note-${index}" placeholder="Buraya yazabilirsiniz...">
                         `;
+                    }
 
-                        if(urun.category === "Çiçekli Aranjmanlar") {
-                            cicekliVitrin.innerHTML += card;
-                        } else if(urun.category === "Hediyelik & Peluş") {
-                            pelusVitrin.innerHTML += card;
-                        }
-                    });
-                }
+                    // Shopier Butonu (Varsa)
+                    let shopierBtn = '';
+                    if (product.ShopierLink) {
+                        shopierBtn = `<a href="${product.ShopierLink}" target="_blank" class="btn btn-shopier">Kredi Kartı ile Al (Shopier)</a>`;
+                    }
 
-                cicekliVitrin.innerHTML += comingSoonCard("Yeni Tasarımlar Yolda", "Farklı konseptlerdeki yeni çiçekli aranjmanlarımız çok yakında listelenecektir.");
-                pelusVitrin.innerHTML += comingSoonCard("Yeni Sürprizler Yolda", "Farklı peluş karakterler ve anı fotoğraflı özel sürpriz kutu tasarımlarımız çok yakında listelenecektir.");
-            })
-            .catch(error => console.error("Hata:", error));
+                    // Kart İçeriğini Birleştir
+                    card.innerHTML = `
+                        <img src="${imgUrl}" alt="${product.UrunAdi}" class="product-img">
+                        <div class="product-info">
+                            <div class="product-category">${product.Kategori || 'Koleksiyon'}</div>
+                            <h2 class="product-title">${product.UrunAdi}</h2>
+                            <div class="product-price">${product.Fiyat || ''}</div>
+                            <div class="product-desc">${product.Aciklama || ''}</div>
+                            
+                            <div class="customization-area">
+                                ${optionsHTML}
+                                ${noteHTML}
+                            </div>
+
+                            <div class="btn-group">
+                                ${shopierBtn}
+                                <button onclick="sendWhatsApp(${index}, '${product.UrunAdi.replace(/'/g, "\\'")}')" class="btn btn-whatsapp">WhatsApp'tan Sipariş Ver</button>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+        });
+
+        // WhatsApp Sipariş Fonksiyonu (Seçenekleri ve Notu Okuyup Mesaj Yapar)
+        function sendWhatsApp(index, urunAdi) {
+            let message = `Merhaba, *${urunAdi}* siparişi vermek istiyorum.%0A`;
+            
+            // Seçenek varsa mesaja ekle
+            const selectEl = document.getElementById(`select-${index}`);
+            if (selectEl) {
+                message += `%0A*Seçimim:* ${selectEl.value}`;
+            }
+
+            // Not varsa mesaja ekle
+            const noteEl = document.getElementById(`note-${index}`);
+            if (noteEl && noteEl.value.trim() !== "") {
+                message += `%0A*Özel Notum:* ${noteEl.value}`;
+            }
+
+            // WhatsApp'a yönlendir
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+        }
     </script>
 </body>
 </html>
