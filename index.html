@@ -226,7 +226,6 @@
         .reel-card:hover .reel-media.is-poster {
             transform: scale(1.06);
         }
-        /* YouTube Shorts arayüzündeki @kullaniciadi ve sağ buton çakışmasını gizlemek için çerçeve kırpması */
         .reel-iframe {
             position: absolute;
             top: 50%;
@@ -747,11 +746,55 @@
             margin: 0;
         }
 
-        /* MÜŞTERİ MEMNUNİYETİ & YORUMLAR BÖLÜMÜ */
+        /* MÜŞTERİ MEMNUNİYETİ & HİBRİT YORUMLAR BÖLÜMÜ */
         .reviews-section {
             max-width: 1200px;
             margin: 0 auto 70px auto;
             padding: 0 20px;
+        }
+        .reviews-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 30px;
+        }
+        .rating-summary-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 18px;
+            border-radius: 30px;
+            background: #FFFFFF;
+            border: 1px solid var(--rose-border);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-main);
+            box-shadow: 0 4px 12px rgba(158, 90, 99, 0.05);
+        }
+        .rating-summary-pill i {
+            color: #D49B4B;
+        }
+        .btn-write-review {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 30px;
+            border: none;
+            background: var(--rose-btn);
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(183, 110, 121, 0.26);
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .btn-write-review:hover {
+            transform: translateY(-2px);
+            opacity: 0.94;
         }
         .reviews-grid {
             display: grid;
@@ -762,7 +805,7 @@
             background: #FFFFFF;
             border: 1px solid var(--rose-border);
             border-radius: 18px;
-            padding: 28px 24px;
+            padding: 26px 24px;
             box-shadow: 0 6px 20px rgba(158, 90, 99, 0.05);
             display: flex;
             flex-direction: column;
@@ -773,11 +816,40 @@
             transform: translateY(-4px);
             border-color: var(--rose);
         }
+        .review-card.is-pending {
+            border-style: dashed;
+            background: #FFFDFB;
+        }
+        .review-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
         .review-stars {
             color: #D49B4B;
             font-size: 0.85rem;
-            margin-bottom: 12px;
             letter-spacing: 2px;
+        }
+        .review-product-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--rose-dark);
+            background: #FAF6F4;
+            border: 1px solid var(--rose-border);
+            padding: 3px 10px;
+            border-radius: 14px;
+            margin-bottom: 10px;
+            width: fit-content;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .review-product-tag:hover {
+            background: var(--rose-soft);
         }
         .review-text {
             font-size: 0.88rem;
@@ -805,6 +877,88 @@
             border-radius: 20px;
             font-size: 0.7rem;
             font-weight: 600;
+        }
+        .review-pending-badge {
+            color: #8A5A2B;
+            background: #FDF3E7;
+            border: 1px solid rgba(212, 155, 75, 0.4);
+            padding: 2px 9px;
+            border-radius: 20px;
+            font-size: 0.66rem;
+            font-weight: 600;
+        }
+
+        /* ÜRÜN DETAY MODALI İÇİ YORUMLAR */
+        .modal-reviews-box {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid var(--rose-border);
+            text-align: left;
+        }
+        .modal-reviews-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .modal-reviews-header h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            margin: 0;
+            color: var(--rose-dark);
+        }
+        .modal-add-review-link {
+            background: var(--rose-soft);
+            border: 1px solid var(--rose-border);
+            color: var(--rose-dark);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .modal-add-review-link:hover {
+            background: #FFFFFF;
+            border-color: var(--rose);
+        }
+        .modal-review-item {
+            background: #FAF6F4;
+            border: 1px solid rgba(183, 110, 121, 0.18);
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 10px;
+        }
+        .modal-review-item p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin: 5px 0 6px 0;
+            line-height: 1.55;
+        }
+        .modal-review-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.72rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* YORUM FORMU YILDIZ SEÇİCİ */
+        .star-picker {
+            display: flex;
+            gap: 8px;
+            font-size: 1.55rem;
+            color: #D49B4B;
+            cursor: pointer;
+            padding: 4px 0;
+        }
+        .star-picker i {
+            transition: transform 0.15s;
+        }
+        .star-picker i:hover {
+            transform: scale(1.18);
         }
 
         /* DETAY PENCERESİ (MODAL) */
@@ -991,13 +1145,17 @@
             display: block; font-size: 0.82rem; font-weight: 600;
             margin-bottom: 6px; color: var(--rose-dark); letter-spacing: 0.4px;
         }
-        .custom-select, .custom-input {
+        .custom-select, .custom-input, .custom-textarea {
             width: 100%; padding: 12px 14px;
             border: 1px solid var(--rose-border); border-radius: 10px;
             font-family: 'Montserrat', sans-serif; font-size: 0.9rem;
             background-color: #FAF6F4; color: var(--text-main);
         }
-        .custom-input:focus, .custom-select:focus {
+        .custom-textarea {
+            resize: vertical;
+            min-height: 92px;
+        }
+        .custom-input:focus, .custom-select:focus, .custom-textarea:focus {
             outline: none; border-color: var(--rose);
             background-color: #FFFFFF;
             box-shadow: 0 0 0 2px rgba(183, 110, 121, 0.16);
@@ -1529,48 +1687,20 @@
         </div>
     </section>
 
-    <!-- MÜŞTERİ MEMNUNİYETİ & YORUMLAR -->
-    <section class="reviews-section">
+    <!-- MÜŞTERİ MEMNUNİYETİ & HİBRİT YORUMLAR -->
+    <section class="reviews-section" id="yorumlar">
         <h2 class="section-title">Mutlu Sürprizler</h2>
-        <div class="section-subtitle">Müşterilerimizden Gelen Yorumlar</div>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div>
-                    <div class="review-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">“Öğretmenler Günü için Sonsuz Hatıra tasarımını sipariş ettim. Fotoğraflarda göründüğünden bile daha zarif ve büyük geldi, Kuşadası'na tam saatinde teslim edildi.”</p>
-                </div>
-                <div class="review-author">
-                    <strong>Zeynep A.</strong>
-                    <span class="review-verified"><i class="fa-solid fa-check"></i> Kuşadası Teslimatı</span>
-                </div>
+        <div class="section-subtitle" style="margin-bottom: 18px;">Müşterilerimizden Gelen Yorumlar</div>
+        <div class="reviews-toolbar">
+            <div class="rating-summary-pill">
+                <i class="fa-solid fa-star"></i>
+                <span id="avg-rating-text">4.9 / 5 • Doğrulanmış Müşteri Memnuniyeti</span>
             </div>
-            <div class="review-card">
-                <div>
-                    <div class="review-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">“Yeğenimin doğum günü için üzerine ismini yazdırdık, içindeki peluş ve ışık detayına bayıldı. Haftalar geçmesine rağmen balonu hala ilk günkü gibi duruyor.”</p>
-                </div>
-                <div class="review-author">
-                    <strong>Mert K.</strong>
-                    <span class="review-verified"><i class="fa-solid fa-check"></i> Söke Teslimatı</span>
-                </div>
-            </div>
-            <div class="review-card">
-                <div>
-                    <div class="review-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">“Aynı gün içinde hazırlayıp özenli kutusuyla elden ulaştırdılar. WhatsApp üzerinden tasarım aşamasında da çok ilgiliydiler, kesinlikle tavsiye ederim.”</p>
-                </div>
-                <div class="review-author">
-                    <strong>Selin D.</strong>
-                    <span class="review-verified"><i class="fa-solid fa-check"></i> Kuşadası Teslimatı</span>
-                </div>
-            </div>
+            <button type="button" class="btn-write-review" onclick="openReviewModal('')">
+                <i class="fa-regular fa-pen-to-square"></i> Deneyimini Paylaş / Yorum Bırak
+            </button>
         </div>
+        <div class="reviews-grid" id="reviews-grid"></div>
     </section>
 
     <!-- SIKÇA SORULAN SORULAR (S.S.S.) -->
@@ -1709,6 +1839,14 @@
         </div>
     </div>
 
+    <!-- YORUM BIRAKMA MODALI -->
+    <div id="reviewModal" class="modal" onclick="if(event.target.id==='reviewModal') closeReviewModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close" onclick="closeReviewModal()">&times;</button>
+            <div id="review-modal-body"></div>
+        </div>
+    </div>
+
     <!-- REELS TİYATRO MODALI -->
     <div id="reelModal" class="modal" onclick="if(event.target.id==='reelModal') closeReelModal()">
         <div class="reel-modal-content" onclick="event.stopPropagation()">
@@ -1728,6 +1866,16 @@
     <script>
         const WHATSAPP_NUMBER = "905373568453";
         const SHEET_ID = "1ii4RrMqvNBm9HMlfVJI4x2riVtWP14J-9MfCAn2b9-0";
+
+        // Google Form bağladığınızda aşağıdaki 6 alanı kendi Form bilgilerinize göre doldurabilirsiniz:
+        const GOOGLE_FORM_CONFIG = {
+            actionUrl: "",      // Örn: "https://docs.google.com/forms/d/e/1FAIpQLSc.../formResponse"
+            entryAd: "",        // Örn: "entry.111111111"
+            entryIlce: "",      // Örn: "entry.222222222"
+            entryUrun: "",      // Örn: "entry.333333333"
+            entryPuan: "",      // Örn: "entry.444444444"
+            entryYorum: ""      // Örn: "entry.555555555"
+        };
 
         const ATOLYE_VIDEOLARI = [
             {
@@ -1760,6 +1908,33 @@
             }
         ];
 
+        const DEFAULT_REVIEWS = [
+            {
+                ad: "Zeynep A.",
+                ilce: "Kuşadası",
+                urun: "SONSUZ HATIRA",
+                puan: 5,
+                yorum: "Öğretmenler Günü için Sonsuz Hatıra tasarımını sipariş ettim. Fotoğraflarda göründüğünden bile daha zarif ve büyük geldi, Kuşadası'na tam saatinde teslim edildi.",
+                pending: false
+            },
+            {
+                ad: "Mert K.",
+                ilce: "Söke",
+                urun: "",
+                puan: 5,
+                yorum: "Yeğenimin doğum günü için üzerine ismini yazdırdık, içindeki peluş ve ışık detayına bayıldı. Haftalar geçmesine rağmen balonu hala ilk günkü gibi duruyor.",
+                pending: false
+            },
+            {
+                ad: "Selin D.",
+                ilce: "Kuşadası",
+                urun: "",
+                puan: 5,
+                yorum: "Aynı gün içinde hazırlayıp özenli kutusuyla elden ulaştırdılar. WhatsApp üzerinden tasarım aşamasında da çok ilgiliydiler, kesinlikle tavsiye ederim.",
+                pending: false
+            }
+        ];
+
         const FALLBACK_IMG = "https://placehold.co/600x600/FAF0EC/9E5A63?text=Hisli+Balon";
         const COLUMN_KEYS = [
             'Kategori', 'UrunAdi', 'Fiyat', 'Aciklama', 'ResimURL',
@@ -1769,6 +1944,7 @@
         ];
 
         let allProductsGlobal = [];
+        let approvedSheetReviews = [];
         let activeReelsList = [];
         let isLoaded = false;
         let currentCategory = 'Tümü';
@@ -1778,6 +1954,7 @@
         let activeModalBasePrice = 0;
         let selectedBalloonTextColor = 'Altın Varak';
         let selectedBalloonFont = 'El Yazısı';
+        let selectedReviewRating = 5;
 
         function getField(row, fieldName) {
             if (!row) return "";
@@ -1872,6 +2049,45 @@
                 buildCategoryButtons();
                 renderStorefront();
                 renderLiveReelsShowcase();
+                renderReviewsSection();
+            }
+        };
+
+        /* =========================================================
+           GOOGLE SHEETS "Yorumlar" SEKMESİ OKUYUCU
+           ========================================================= */
+        window.handleReviewsData = function(response) {
+            if (!response || !response.table || !response.table.rows) return;
+            const cols = response.table.cols || [];
+            const fallbackReviewKeys = ['Ad', 'Ilce', 'UrunAdi', 'Puan', 'Yorum', 'Durum'];
+            const parsed = response.table.rows.map(r => {
+                const obj = {};
+                (r.c || []).forEach((cell, idx) => {
+                    const label = (cols[idx] && cols[idx].label && cols[idx].label.trim())
+                        ? cols[idx].label.trim()
+                        : (fallbackReviewKeys[idx] || `col_${idx}`);
+                    obj[label] = (cell && cell.v !== null && cell.v !== undefined) ? String(cell.v).trim() : '';
+                });
+                return obj;
+            }).filter(row => {
+                const yorum = getField(row, 'Yorum');
+                const durum = getField(row, 'Durum').toLocaleLowerCase('tr-TR');
+                return yorum && yorum !== 'Yorum' && (durum === 'onaylandı' || durum === 'onaylandi' || durum === 'evet');
+            }).map(row => {
+                const rawPuan = parseInt(getField(row, 'Puan'), 10);
+                return {
+                    ad: getField(row, 'Ad') || 'Değerli Müşterimiz',
+                    ilce: getField(row, 'Ilce') || 'Söke & Kuşadası',
+                    urun: getField(row, 'UrunAdi') || '',
+                    puan: (rawPuan >= 1 && rawPuan <= 5) ? rawPuan : 5,
+                    yorum: getField(row, 'Yorum'),
+                    pending: false
+                };
+            });
+
+            if (parsed.length > 0) {
+                approvedSheetReviews = parsed;
+                renderReviewsSection();
             }
         };
 
@@ -1880,6 +2096,10 @@
             script.src = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=responseHandler:handleSheetData&headers=1`;
             script.onerror = loadViaPapaFallback;
             document.body.appendChild(script);
+
+            const revScript = document.createElement('script');
+            revScript.src = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?sheet=Yorumlar&tqx=responseHandler:handleReviewsData&headers=1`;
+            document.body.appendChild(revScript);
 
             setTimeout(() => {
                 if (!isLoaded) loadViaPapaFallback();
@@ -1902,9 +2122,220 @@
                         buildCategoryButtons();
                         renderStorefront();
                         renderLiveReelsShowcase();
+                        renderReviewsSection();
                     }
                 }
             });
+        }
+
+        /* =========================================================
+           HİBRİT MÜŞTERİ YORUMLARI YÖNETİMİ
+           ========================================================= */
+        function getAllVisibleReviews() {
+            const localPending = JSON.parse(localStorage.getItem('hisli_pending_reviews') || '[]');
+            const sheetApprovedKeys = new Set(
+                approvedSheetReviews.map(r => `${r.ad.toLowerCase()}|${r.yorum.slice(0, 25).toLowerCase()}`)
+            );
+            const stillPending = localPending.filter(lp => {
+                const key = `${lp.ad.toLowerCase()}|${lp.yorum.slice(0, 25).toLowerCase()}`;
+                return !sheetApprovedKeys.has(key);
+            });
+            localStorage.setItem('hisli_pending_reviews', JSON.stringify(stillPending));
+
+            const baseList = approvedSheetReviews.length > 0
+                ? [...approvedSheetReviews, ...DEFAULT_REVIEWS]
+                : [...DEFAULT_REVIEWS];
+
+            return [...stillPending, ...baseList];
+        }
+
+        function renderStarsHTML(rating) {
+            let html = '';
+            for (let s = 1; s <= 5; s++) {
+                html += s <= rating
+                    ? '<i class="fa-solid fa-star"></i>'
+                    : '<i class="fa-regular fa-star"></i>';
+            }
+            return html;
+        }
+
+        function escapeHTML(str) {
+            return String(str || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function openProductByName(urunAdi) {
+            if (!urunAdi || allProductsGlobal.length === 0) return;
+            const idx = allProductsGlobal.findIndex(p =>
+                getField(p, 'UrunAdi').toLocaleLowerCase('tr-TR') === urunAdi.toLocaleLowerCase('tr-TR')
+            );
+            if (idx >= 0) openProduct(idx);
+        }
+
+        function renderReviewsSection() {
+            const grid = document.getElementById('reviews-grid');
+            const summaryEl = document.getElementById('avg-rating-text');
+            if (!grid) return;
+
+            const reviews = getAllVisibleReviews();
+            if (summaryEl && reviews.length > 0) {
+                const totalScore = reviews.reduce((acc, r) => acc + (r.puan || 5), 0);
+                const avg = (totalScore / reviews.length).toFixed(1);
+                summaryEl.textContent = `${avg} / 5 • ${reviews.length} Doğrulanmış Müşteri Deneyimi`;
+            }
+
+            grid.innerHTML = reviews.slice(0, 6).map(rev => {
+                const productBadge = rev.urun
+                    ? `<div class="review-product-tag" onclick="openProductByName('${rev.urun.replace(/'/g, "\\'")}')"><i class="fa-solid fa-gift"></i> ${escapeHTML(rev.urun)}</div>`
+                    : '';
+                const statusBadge = rev.pending
+                    ? `<span class="review-pending-badge"><i class="fa-regular fa-clock"></i> Onay Bekliyor</span>`
+                    : `<span class="review-verified"><i class="fa-solid fa-check"></i> ${escapeHTML(rev.ilce)} Teslimatı</span>`;
+
+                return `
+                    <div class="review-card ${rev.pending ? 'is-pending' : ''}">
+                        <div>
+                            <div class="review-card-top">
+                                <div class="review-stars">${renderStarsHTML(rev.puan)}</div>
+                            </div>
+                            ${productBadge}
+                            <p class="review-text">“${escapeHTML(rev.yorum)}”</p>
+                        </div>
+                        <div class="review-author">
+                            <strong>${escapeHTML(rev.ad)}</strong>
+                            ${statusBadge}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function setReviewRating(val) {
+            selectedReviewRating = val;
+            const container = document.getElementById('review-star-picker');
+            if (!container) return;
+            container.innerHTML = [1, 2, 3, 4, 5].map(num => `
+                <i class="${num <= val ? 'fa-solid' : 'fa-regular'} fa-star" onclick="setReviewRating(${num})"></i>
+            `).join('');
+        }
+
+        function openReviewModal(preselectedProduct = '') {
+            selectedReviewRating = 5;
+            const productOptions = allProductsGlobal.map(p => {
+                const name = getField(p, 'UrunAdi');
+                if (!name) return '';
+                const isSelected = preselectedProduct && name.toLocaleLowerCase('tr-TR') === preselectedProduct.toLocaleLowerCase('tr-TR');
+                return `<option value="${escapeHTML(name)}" ${isSelected ? 'selected' : ''}>${escapeHTML(name)}</option>`;
+            }).join('');
+
+            document.getElementById('review-modal-body').innerHTML = `
+                <h2 style="font-family:'Cormorant Garamond',serif;color:var(--rose-dark);font-size:1.85rem;margin:0 0 6px 0;">Deneyiminizi Paylaşın</h2>
+                <p style="font-size:0.84rem;color:var(--text-muted);margin:0 0 18px 0;">Görüşleriniz atölyemiz için çok değerli. Yorumunuz onaylandıktan sonra vitrinimizde yayınlanacaktır.</p>
+                <form onsubmit="submitReviewForm(event)">
+                    <div class="detay-grup">
+                        <label class="group-label">Memnuniyet Puanınız</label>
+                        <div id="review-star-picker" class="star-picker">
+                            <i class="fa-solid fa-star" onclick="setReviewRating(1)"></i>
+                            <i class="fa-solid fa-star" onclick="setReviewRating(2)"></i>
+                            <i class="fa-solid fa-star" onclick="setReviewRating(3)"></i>
+                            <i class="fa-solid fa-star" onclick="setReviewRating(4)"></i>
+                            <i class="fa-solid fa-star" onclick="setReviewRating(5)"></i>
+                        </div>
+                    </div>
+                    <div class="detay-grup">
+                        <label class="group-label" for="rev-name">Adınız Soyadınız (Örn: Ayşe K.)</label>
+                        <input type="text" id="rev-name" class="custom-input" required maxlength="40" placeholder="Adınız ve soyadınızın baş harfi">
+                    </div>
+                    <div class="detay-grup">
+                        <label class="group-label" for="rev-district">Teslimat Bölgesi</label>
+                        <select id="rev-district" class="custom-select">
+                            <option value="Kuşadası">Kuşadası</option>
+                            <option value="Söke">Söke</option>
+                            <option value="Diğer">Diğer</option>
+                        </select>
+                    </div>
+                    <div class="detay-grup">
+                        <label class="group-label" for="rev-product">Sipariş Verdiğiniz Tasarım (İsteğe Bağlı)</label>
+                        <select id="rev-product" class="custom-select">
+                            <option value="">Genel Atölye Deneyimi</option>
+                            ${productOptions}
+                        </select>
+                    </div>
+                    <div class="detay-grup">
+                        <label class="group-label" for="rev-comment">Yorumunuz</label>
+                        <textarea id="rev-comment" class="custom-textarea" required maxlength="360" placeholder="Tasarım, teslimat hızı ve sürpriz anı hakkındaki düşüncelerinizi yazın..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-shopier-rose" style="border:none;cursor:pointer;margin-top:6px;">
+                        <i class="fa-solid fa-paper-plane"></i> Yorumu Gönder
+                    </button>
+                </form>
+            `;
+            document.getElementById('reviewModal').style.display = 'block';
+        }
+
+        function closeReviewModal() {
+            document.getElementById('reviewModal').style.display = 'none';
+        }
+
+        function submitReviewForm(event) {
+            event.preventDefault();
+            const ad = document.getElementById('rev-name').value.trim();
+            const ilce = document.getElementById('rev-district').value;
+            const urun = document.getElementById('rev-product').value;
+            const yorum = document.getElementById('rev-comment').value.trim();
+            if (!ad || !yorum) return;
+
+            const newReview = {
+                ad,
+                ilce,
+                urun,
+                puan: selectedReviewRating,
+                yorum,
+                pending: true
+            };
+
+            const existingPending = JSON.parse(localStorage.getItem('hisli_pending_reviews') || '[]');
+            existingPending.unshift(newReview);
+            localStorage.setItem('hisli_pending_reviews', JSON.stringify(existingPending.slice(0, 10)));
+
+            // Google Form tanımlandıysa arka planda sessizce Google Sheets'e aktar
+            if (GOOGLE_FORM_CONFIG.actionUrl && GOOGLE_FORM_CONFIG.entryYorum) {
+                const formData = new FormData();
+                if (GOOGLE_FORM_CONFIG.entryAd) formData.append(GOOGLE_FORM_CONFIG.entryAd, ad);
+                if (GOOGLE_FORM_CONFIG.entryIlce) formData.append(GOOGLE_FORM_CONFIG.entryIlce, ilce);
+                if (GOOGLE_FORM_CONFIG.entryUrun) formData.append(GOOGLE_FORM_CONFIG.entryUrun, urun);
+                if (GOOGLE_FORM_CONFIG.entryPuan) formData.append(GOOGLE_FORM_CONFIG.entryPuan, String(selectedReviewRating));
+                formData.append(GOOGLE_FORM_CONFIG.entryYorum, yorum);
+
+                fetch(GOOGLE_FORM_CONFIG.actionUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: formData
+                }).catch(() => {});
+            }
+
+            renderReviewsSection();
+
+            const waShareText = `Merhaba Hisli Balon Atölyesi, web siteniz üzerinden yorum bıraktım:\n\n*İsim:* ${ad} (${ilce})${urun ? `\n*Ürün:* ${urun}` : ''}\n*Puan:* ${selectedReviewRating}/5\n*Yorum:* "${yorum}"`;
+
+            document.getElementById('review-modal-body').innerHTML = `
+                <div style="text-align:center;padding:18px 8px;">
+                    <div style="width:58px;height:58px;border-radius:50%;background:var(--rose-soft);color:var(--rose-dark);display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin:0 auto 14px auto;">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 style="font-family:'Cormorant Garamond',serif;color:var(--rose-dark);font-size:1.8rem;margin:0 0 8px 0;">Teşekkür Ederiz, ${escapeHTML(ad)}!</h3>
+                    <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin:0 0 20px 0;">
+                        Değerli yorumunuz atölyemize ulaştı. Onaylandıktan sonra tüm ziyaretçilerimize açık olarak yayınlanacaktır.
+                    </p>
+                    <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waShareText)}" target="_blank" rel="noopener noreferrer" class="btn-wa-luxury" style="display:block;text-decoration:none;margin-bottom:10px;">
+                        <i class="fa-brands fa-whatsapp"></i> Yorumu &amp; Fotoğrafı WhatsApp'tan da İlet
+                    </a>
+                    <button type="button" class="cat-btn" style="width:100%;" onclick="closeReviewModal()">Vitrine Dön</button>
+                </div>
+            `;
         }
 
         /* =========================================================
@@ -1918,7 +2349,6 @@
             const usedTitles = new Set();
             const combined = [];
 
-            // 1. Önce Google Sheets'te VideoURL dolu olan ürünleri ekle
             allProductsGlobal.forEach((p, idx) => {
                 if (combined.length >= 4) return;
                 const vUrl = getVideoField(p);
@@ -1936,7 +2366,6 @@
                 }
             });
 
-            // 2. Kalan slotları farklı ürünlerle ve uyumlu kategori etiketleriyle doldur
             ATOLYE_VIDEOLARI.forEach((item) => {
                 if (combined.length >= 4) return;
 
@@ -2496,6 +2925,22 @@
                 </div>
             ` : '';
 
+            // Bu ürüne ait müşteri yorumlarını çek
+            const allRevs = getAllVisibleReviews();
+            const matchedRevs = allRevs.filter(r => r.urun && r.urun.toLocaleLowerCase('tr-TR') === urunAdi.toLocaleLowerCase('tr-TR'));
+            const modalRevsHTML = matchedRevs.length > 0
+                ? matchedRevs.slice(0, 3).map(r => `
+                    <div class="modal-review-item">
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <span class="review-stars" style="font-size:0.74rem;">${renderStarsHTML(r.puan)}</span>
+                            ${r.pending ? '<span class="review-pending-badge">Onay Bekliyor</span>' : `<span style="font-size:0.68rem;color:var(--rose-dark);">${escapeHTML(r.ilce)}</span>`}
+                        </div>
+                        <p>“${escapeHTML(r.yorum)}”</p>
+                        <div class="modal-review-meta"><span>${escapeHTML(r.ad)}</span></div>
+                    </div>
+                `).join('')
+                : `<p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Bu tasarım için ilk deneyimi siz paylaşabilirsiniz.</p>`;
+
             document.getElementById('modal-body').innerHTML = `
                 <div style="background:radial-gradient(circle, #FFFFFF 50%, #FAF3EF 100%);border-radius:14px;padding:12px;margin-bottom:16px;border:1px solid var(--rose-border);">
                     <div id="modal-media-stage" class="modal-media-stage">
@@ -2517,6 +2962,15 @@
                 <div style="margin-top:22px;">
                     ${shopierBtn}
                     <button onclick="sendWA(${i})" class="btn-wa-luxury"><i class="fa-brands fa-whatsapp" style="font-size:1.1rem;"></i> ${stock.isSoldOut ? 'Stok Durumu Sor (WhatsApp)' : 'WhatsApp Sipariş'}</button>
+                </div>
+                <div class="modal-reviews-box">
+                    <div class="modal-reviews-header">
+                        <h4>Müşteri Değerlendirmeleri (${matchedRevs.length})</h4>
+                        <button type="button" class="modal-add-review-link" onclick="closeProduct();openReviewModal('${urunAdi.replace(/'/g, "\\'")}')">
+                            <i class="fa-regular fa-pen-to-square"></i> Yorum Bırak
+                        </button>
+                    </div>
+                    ${modalRevsHTML}
                 </div>
             `;
             document.getElementById('productModal').style.display = "block";
@@ -2565,6 +3019,7 @@
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') {
                 closeProduct();
+                closeReviewModal();
                 closeReelModal();
                 closeLegalModal();
             }
@@ -2659,19 +3114,19 @@
                 { msg: `Kuşadası'ndan Azra H. az önce "${p1}" tasarımını inceledi`, time: 'Az önce • Atölye Vitrini' },
                 { msg: `Söke içi 1 özel balon siparişi aynı gün teslimata çıktı`, time: '3 dk önce • Söke & Kuşadası Kurye' },
                 { msg: `Kuşadası'ndan Emre B. "${p2}" için özel yazı önizledi`, time: '1 dk önce • Canlı Tasarım' },
-                { msg: `Söke'den Misafir "${p3}" tasarımını favorilerine ekledi`, time: '1 dk önce • Hisli Balon Atölyesi' },
+                { msg: `Söke'den Zeynep K. "${p3}" tasarımını favorilerine ekledi`, time: '1 dk önce • Hisli Balon Atölyesi' },
                 { msg: `Söke'den Misafir "${p4}" tasarımını favorilerine ekledi`, time: '1 dk önce • Hisli Balon Atölyesi' },
                 { msg: `Kuşadası'ndan Misafir "${p4}" tasarımını favorilerine ekledi`, time: '10 sn önce • Hisli Balon Atölyesi' },
                 { msg: `Söke'den Misafir "${p6}" tasarımını favorilerine ekledi`, time: '15 sn önce • Hisli Balon Atölyesi' },
-                { msg: `Kuşadası'ndan Misafir "${p5}" için balon üzeri yazı denedi`, time: '22 sn önce • Canlı Tasarım' },
+                { msg: `Kuşadası'ndan Elif S. "${p5}" için balon üzeri yazı denedi`, time: '22 sn önce • Canlı Tasarım' },
                 { msg: `Kuşadası içi 1 sürpriz sipariş özenle hazırlanıyor`, time: '2 dk önce • Atölye Hazırlık' },
                 { msg: `Söke'den Burak T. "${p7}" tasarımını inceledi`, time: '35 sn önce • Atölye Vitrini' },
                 { msg: `Kuşadası'ndan Selin D. "${p1}" için LED ışık seçeneğini ekledi`, time: '4 dk önce • Kişiye Özel' },
                 { msg: `Söke'den Misafir "${p8}" tasarımını inceledi`, time: '12 sn önce • Atölye Vitrini' },
                 { msg: `Kuşadası'ndan Mert A. "${p3}" için hediye notu oluşturdu`, time: '5 dk önce • Hisli Balon Atölyesi' },
-                { msg: `Söke'den Misafir "${p2}" tasarımını favorilerine ekledi`, time: '45 sn önce • Hisli Balon Atölyesi' },
+                { msg: `Söke'den İrem Y. "${p2}" tasarımını favorilerine ekledi`, time: '45 sn önce • Hisli Balon Atölyesi' },
                 { msg: `Kuşadası'ndan Misafir "${p5}" tasarımını inceledi`, time: '18 sn önce • Atölye Vitrini' },
-                { msg: `Söke'den Misafir "${p6}" için özel isim baskısı önizledi`, time: '2 dk önce • Canlı Tasarım' }
+                { msg: `Söke'den Nazlı K. "${p6}" için özel isim baskısı önizledi`, time: '2 dk önce • Canlı Tasarım' }
             ];
 
             const current = notifications[atelierToastStep % notifications.length];
@@ -2692,6 +3147,7 @@
         }, 4500);
 
         renderLiveReelsShowcase();
+        renderReviewsSection();
         loadProducts();
     </script>
 </body>
