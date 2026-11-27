@@ -25,7 +25,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <style>
@@ -68,12 +68,12 @@
             background-color: rgba(253, 249, 246, 0.94);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--rose-border);
-            padding: 15px 40px;
+            padding: 12px 40px;
             display: flex; justify-content: space-between; align-items: center;
         }
         .nav-logo {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.55rem; font-weight: 700; letter-spacing: 3px;
+            font-size: 1.5rem; font-weight: 700; letter-spacing: 3px;
             background: var(--rose-gradient);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             text-decoration: none; text-transform: uppercase;
@@ -81,7 +81,7 @@
         .nav-links { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; }
         .nav-links a {
             text-decoration: none; color: var(--text-muted);
-            font-size: 0.8rem; font-weight: 500; text-transform: uppercase;
+            font-size: 0.78rem; font-weight: 500; text-transform: uppercase;
             letter-spacing: 1.3px; transition: color 0.3s;
         }
         .nav-links a:hover { color: var(--rose-dark); }
@@ -90,56 +90,56 @@
         .delivery-banner {
             background: linear-gradient(90deg, #F5E3DF 0%, #FBECE8 50%, #F5E3DF 100%);
             color: var(--rose-dark);
-            text-align: center; padding: 10px 20px;
-            font-size: 0.78rem; font-weight: 600; letter-spacing: 1.8px;
+            text-align: center; padding: 8px 20px;
+            font-size: 0.76rem; font-weight: 600; letter-spacing: 1.8px;
             text-transform: uppercase; border-bottom: 1px solid var(--rose-border);
         }
         .delivery-banner i { margin-right: 8px; color: var(--rose); }
 
-        /* HERO KARŞILAMA ALANI */
+        /* HERO KARŞILAMA ALANI (Ekran hizası için optimize edilmiş yükseklik) */
         .hero {
             text-align: center;
-            padding: 44px 20px 26px;
+            padding: 26px 20px 18px;
             position: relative;
         }
         .hero-badge {
             display: inline-flex; align-items: center; gap: 8px;
-            padding: 6px 18px; border-radius: 30px;
+            padding: 5px 16px; border-radius: 30px;
             border: 1px solid var(--rose-border);
             background: var(--rose-soft);
             color: var(--rose-dark);
-            font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase;
-            margin-bottom: 14px;
+            font-size: 0.68rem; letter-spacing: 2.3px; text-transform: uppercase;
+            margin-bottom: 10px;
         }
         .hero h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3.3rem; margin: 0; letter-spacing: 4px; font-weight: 700;
+            font-size: 2.85rem; margin: 0; letter-spacing: 3.5px; font-weight: 700;
             text-transform: uppercase;
             background: var(--rose-gradient);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
         .hero p {
             font-family: 'Cormorant Garamond', serif;
-            font-style: italic; font-size: 1.4rem;
-            color: var(--text-muted); margin: 10px auto 0; max-width: 650px;
+            font-style: italic; font-size: 1.24rem;
+            color: var(--text-muted); margin: 6px auto 0; max-width: 650px;
         }
         .hero-ornament {
             display: flex; align-items: center; justify-content: center; gap: 12px;
-            margin: 18px auto 0; max-width: 240px;
+            margin: 12px auto 0; max-width: 220px;
         }
         .hero-ornament span {
             flex: 1; height: 1px;
             background: linear-gradient(90deg, transparent, var(--rose), transparent);
         }
-        .hero-ornament i { color: var(--rose); font-size: 0.85rem; }
+        .hero-ornament i { color: var(--rose); font-size: 0.8rem; }
 
         /* =========================================================
            ATÖLYEDEN CANLI VİDEOLU VİTRİN (EN ÜST VİTRİN)
            ========================================================= */
         .live-showcase-section {
             max-width: 1200px;
-            margin: 0 auto 48px auto;
-            padding: 36px 24px 40px 24px;
+            margin: 0 auto 38px auto;
+            padding: 24px 22px 26px 22px;
             background: linear-gradient(180deg, rgba(250, 240, 236, 0.88) 0%, rgba(253, 249, 246, 0.96) 100%);
             border: 1px solid var(--rose-border);
             border-radius: 24px;
@@ -147,22 +147,22 @@
         }
         .live-header {
             text-align: center;
-            margin-bottom: 28px;
+            margin-bottom: 18px;
         }
         .live-pill {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 5px 15px;
+            padding: 4px 14px;
             border-radius: 30px;
             background: #FFFFFF;
             border: 1px solid var(--rose-border);
             color: var(--rose-dark);
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             font-weight: 600;
             letter-spacing: 1.8px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .live-dot {
             width: 8px;
@@ -179,16 +179,16 @@
         }
         .live-header h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.25rem;
+            font-size: 1.95rem;
             font-weight: 700;
-            margin: 0 0 6px 0;
+            margin: 0 0 4px 0;
             background: var(--rose-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .live-header p {
             color: var(--text-muted);
-            font-size: 0.88rem;
+            font-size: 0.84rem;
             max-width: 580px;
             margin: 0 auto;
         }
@@ -196,11 +196,13 @@
         .reels-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
+            gap: 18px;
         }
         .reel-card {
             position: relative;
-            aspect-ratio: 9 / 16;
+            aspect-ratio: 9 / 14.2;
+            max-height: 415px;
+            width: 100%;
             border-radius: 18px;
             overflow: hidden;
             background: #1B1316;
@@ -210,7 +212,7 @@
             transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
         .reel-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             box-shadow: 0 16px 34px rgba(158, 90, 99, 0.24);
             border-color: var(--rose);
         }
@@ -224,7 +226,7 @@
         .reel-card:hover .reel-media.is-poster {
             transform: scale(1.06);
         }
-        /* YouTube Shorts arayüzündeki @kullaniciadi ve sağ buton çakışmasını gizlemek için hafif çerçeve kırpması */
+        /* YouTube Shorts arayüzündeki @kullaniciadi ve sağ buton çakışmasını gizlemek için çerçeve kırpması */
         .reel-iframe {
             position: absolute;
             top: 50%;
@@ -238,9 +240,9 @@
         }
         .reel-top-bar {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            right: 12px;
+            top: 11px;
+            left: 11px;
+            right: 11px;
             z-index: 4;
             display: flex;
             justify-content: space-between;
@@ -249,12 +251,16 @@
         .reel-tag {
             background: rgba(253, 249, 246, 0.92);
             color: var(--rose-dark);
-            font-size: 0.66rem;
+            font-size: 0.65rem;
             font-weight: 700;
             padding: 4px 10px;
             border-radius: 20px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             backdrop-filter: blur(4px);
+            max-width: 85%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .reel-mute-btn {
             width: 32px;
@@ -277,19 +283,19 @@
         }
         .reel-center-play {
             position: absolute;
-            top: 44%;
+            top: 42%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 3;
-            width: 48px;
-            height: 48px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
             background: rgba(253, 249, 246, 0.88);
             color: var(--rose-dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 0.95rem;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
             transition: transform 0.25s ease, background 0.25s ease;
         }
@@ -303,19 +309,23 @@
             right: 0;
             bottom: 0;
             z-index: 4;
-            padding: 44px 14px 14px 14px;
-            background: linear-gradient(180deg, transparent 0%, rgba(34, 24, 28, 0.90) 65%, rgba(26, 18, 21, 0.98) 100%);
+            padding: 38px 13px 13px 13px;
+            background: linear-gradient(180deg, transparent 0%, rgba(34, 24, 28, 0.90) 62%, rgba(26, 18, 21, 0.98) 100%);
             color: #FFFFFF;
             text-align: left;
         }
         .reel-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.22rem;
+            font-size: 1.18rem;
             font-weight: 700;
-            line-height: 1.25;
-            margin: 0 0 10px 0;
+            line-height: 1.22;
+            margin: 0 0 9px 0;
             color: #FFFDFB;
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         .reel-cta-btn {
             width: 100%;
@@ -325,7 +335,7 @@
             background: rgba(183, 110, 121, 0.92);
             color: #FFFFFF;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.74rem;
+            font-size: 0.73rem;
             font-weight: 600;
             letter-spacing: 0.5px;
             cursor: pointer;
@@ -372,7 +382,7 @@
         /* ARAMA VE FİYAT SIRALAMA KONTROL ÇUBUĞU */
         .toolbar-container {
             max-width: 780px;
-            margin: 0 auto 24px auto;
+            margin: 0 auto 20px auto;
             padding: 0 20px;
             display: flex;
             gap: 12px;
@@ -441,9 +451,55 @@
             border-color: var(--rose);
         }
 
+        /* "KİME HEDİYE ALIYORSUN?" HIZLI KONSEPT FİLTRESİ */
+        .occasion-bar {
+            max-width: 1040px;
+            margin: 0 auto 16px auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+        .occasion-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: var(--rose-dark);
+            margin-right: 4px;
+        }
+        .occasion-pill {
+            background: var(--rose-soft);
+            border: 1px solid var(--rose-border);
+            color: var(--rose-dark);
+            padding: 7px 15px;
+            border-radius: 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.76rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.25s ease;
+        }
+        .occasion-pill:hover {
+            background: #FFFFFF;
+            border-color: var(--rose);
+            transform: translateY(-1px);
+        }
+        .occasion-pill.active {
+            background: var(--rose-dark);
+            color: #FFFFFF;
+            border-color: var(--rose-dark);
+            box-shadow: 0 4px 12px rgba(148, 78, 89, 0.25);
+        }
+
         /* KATEGORİ FİLTRELERİ */
         .category-nav {
-            max-width: 1120px; margin: 0 auto 42px auto;
+            max-width: 1120px; margin: 0 auto 38px auto;
             display: flex; justify-content: center; gap: 12px; padding: 0 20px;
             overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none;
         }
@@ -475,7 +531,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.1rem; font-weight: 700;
             color: var(--rose-dark);
-            margin: 36px 0 25px 0;
+            margin: 30px 0 25px 0;
             border-left: 3px solid var(--rose);
             padding-left: 15px; letter-spacing: 1px;
         }
@@ -775,7 +831,7 @@
         }
         .close:hover { background: var(--rose); color: #FFFFFF; }
 
-        /* MODAL MEDYA ALANI VE GALERİ KÜÇÜK RESİMLERİ */
+        /* MODAL MEDYA ALANI VE CANLI BALON YAZI ÖNİZLEMESİ */
         .modal-media-stage {
             width: 100%;
             min-height: 260px;
@@ -783,6 +839,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
         .modal-media-stage video,
         .modal-media-stage iframe {
@@ -792,6 +849,104 @@
             border: none;
             background: #000;
         }
+        .balloon-live-overlay {
+            position: absolute;
+            top: 37%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-3deg);
+            max-width: 64%;
+            padding: 6px 12px;
+            text-align: center;
+            pointer-events: none;
+            z-index: 6;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 1.2;
+            color: #B8873B;
+            text-shadow: 0 1px 10px rgba(255, 255, 255, 0.92), 0 0 2px rgba(255, 255, 255, 0.95);
+            opacity: 0;
+            transition: opacity 0.25s ease, color 0.2s ease, font-family 0.2s ease;
+            word-break: break-word;
+        }
+        .balloon-live-overlay.is-visible {
+            opacity: 1;
+        }
+        .balloon-live-badge {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-size: 0.56rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--rose-dark);
+            background: rgba(255, 253, 251, 0.86);
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin: 0 auto 3px auto;
+            width: fit-content;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .balloon-style-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: #FAF6F4;
+            border: 1px solid var(--rose-border);
+            border-radius: 10px;
+        }
+        .color-swatches {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .color-swatches span {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-right: 2px;
+        }
+        .swatch-btn {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 0 0 1px rgba(58, 46, 50, 0.25);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .swatch-btn:hover, .swatch-btn.active {
+            transform: scale(1.18);
+            box-shadow: 0 0 0 2px var(--rose-dark);
+        }
+        .font-toggle-group {
+            display: flex;
+            gap: 5px;
+        }
+        .font-toggle-btn {
+            padding: 4px 10px;
+            border-radius: 14px;
+            border: 1px solid var(--rose-border);
+            background: #FFFFFF;
+            color: var(--rose-dark);
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .font-toggle-btn.active {
+            background: var(--rose-dark);
+            color: #FFFFFF;
+            border-color: var(--rose-dark);
+        }
+
         .modal-thumbs {
             display: flex;
             justify-content: center;
@@ -1113,6 +1268,69 @@
         }
         .footer-legal-links button:hover { opacity: 1; }
 
+        /* ATÖLYEDEN CANLI SİPARİŞ BİLDİRİMİ (SOL ALT) */
+        .atelier-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 940;
+            background: rgba(255, 253, 251, 0.97);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--rose-border);
+            border-radius: 16px;
+            padding: 12px 32px 12px 14px;
+            max-width: 315px;
+            box-shadow: 0 10px 28px rgba(158, 90, 99, 0.16);
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: opacity 0.45s ease, transform 0.45s ease;
+        }
+        .atelier-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .atelier-toast-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--rose-soft);
+            color: var(--rose-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.92rem;
+            flex-shrink: 0;
+        }
+        .atelier-toast-text {
+            font-size: 0.76rem;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+        .atelier-toast-time {
+            display: block;
+            font-size: 0.66rem;
+            color: var(--rose);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+        .atelier-toast-close {
+            position: absolute;
+            top: 7px;
+            right: 9px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            cursor: pointer;
+            padding: 2px 4px;
+        }
+        .atelier-toast-close:hover { color: var(--rose-dark); }
+
         /* SABİT WHATSAPP BUTONU */
         .floating-wa {
             position: fixed;
@@ -1138,17 +1356,18 @@
         @media (max-width: 1024px) {
             .products-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
             .reels-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+            .reel-card { max-height: none; aspect-ratio: 9 / 15.5; }
             .reviews-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 12px; padding: 14px; }
-            .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; font-size: 0.75rem; }
-            .hero { padding: 34px 18px 22px; }
-            .hero h1 { font-size: 2.15rem; letter-spacing: 2px; }
-            .hero p { font-size: 1.12rem; }
+            .navbar { flex-direction: column; gap: 10px; padding: 12px; }
+            .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; font-size: 0.74rem; }
+            .hero { padding: 26px 18px 18px; }
+            .hero h1 { font-size: 2.05rem; letter-spacing: 2px; }
+            .hero p { font-size: 1.08rem; }
 
-            .live-showcase-section { margin: 0 14px 36px 14px; padding: 28px 14px; border-radius: 18px; }
-            .live-header h2 { font-size: 1.8rem; }
+            .live-showcase-section { margin: 0 14px 32px 14px; padding: 22px 14px; border-radius: 18px; }
+            .live-header h2 { font-size: 1.7rem; }
             .reels-grid {
                 display: flex;
                 overflow-x: auto;
@@ -1160,11 +1379,16 @@
             .reels-grid::-webkit-scrollbar { display: none; }
             .reel-card {
                 flex: 0 0 68%;
+                max-height: none;
+                aspect-ratio: 9 / 15.5;
                 scroll-snap-align: center;
             }
 
             .toolbar-container { flex-direction: column; }
             .sort-select { width: 100%; }
+            .occasion-bar { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
+            .occasion-bar::-webkit-scrollbar { display: none; }
+            .occasion-pill, .occasion-label { flex-shrink: 0; }
             .category-nav { justify-content: flex-start; padding-bottom: 5px; }
             .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
             .product-img-wrapper { height: 185px; }
@@ -1179,6 +1403,8 @@
             .editorial-card { padding: 28px 22px; }
             .custom-order-box { padding: 30px 20px; }
             .modal-content { padding: 20px; width: 95%; margin: 5% auto; }
+            .balloon-live-overlay { font-size: 1.05rem; }
+            .atelier-toast { bottom: 18px; left: 14px; right: 78px; max-width: none; padding: 10px 28px 10px 12px; }
             .floating-wa { bottom: 18px; right: 18px; width: 50px; height: 50px; font-size: 1.5rem; }
         }
     </style>
@@ -1234,6 +1460,16 @@
             <option value="price-asc">Fiyat: Düşükten Yükseğe</option>
             <option value="price-desc">Fiyat: Yüksekten Düşüğe</option>
         </select>
+    </div>
+
+    <!-- "KİME HEDİYE ALIYORSUN?" HIZLI KONSEPT FİLTRESİ -->
+    <div class="occasion-bar" id="occasion-bar">
+        <span class="occasion-label">Kime Hediye Alıyorsun?</span>
+        <button type="button" class="occasion-pill active" onclick="filterOccasion('Tümü', this)">Tümü</button>
+        <button type="button" class="occasion-pill" onclick="filterOccasion('Sevgiliye', this)"><i class="fa-solid fa-heart"></i> Sevgiliye</button>
+        <button type="button" class="occasion-pill" onclick="filterOccasion('Doğum Günü', this)"><i class="fa-solid fa-cake-candles"></i> Doğum Günü</button>
+        <button type="button" class="occasion-pill" onclick="filterOccasion('Bebek & Çocuk', this)"><i class="fa-solid fa-baby"></i> Bebek &amp; Çocuk</button>
+        <button type="button" class="occasion-pill" onclick="filterOccasion('Teşekkür & Kutlama', this)"><i class="fa-solid fa-champagne-glasses"></i> Teşekkür &amp; Kutlama</button>
     </div>
 
     <div class="category-nav" id="urunlerimiz">
@@ -1450,6 +1686,16 @@
         <div>Hisli Balon Atölyesi • Söke &amp; Kuşadası | Kişiye Özel Tasarım</div>
     </footer>
 
+    <!-- ATÖLYEDEN CANLI SİPARİŞ BİLDİRİMİ (SOL ALT) -->
+    <div id="atelier-toast" class="atelier-toast" role="status" aria-live="polite">
+        <button type="button" class="atelier-toast-close" onclick="dismissAtelierToast()" aria-label="Bildirimi kapat">&times;</button>
+        <div class="atelier-toast-icon"><i class="fa-solid fa-sparkles"></i></div>
+        <div class="atelier-toast-text">
+            <span id="atelier-toast-msg">Kuşadası'ndan Azra H. az önce Sonsuz Hatıra tasarımını inceledi</span>
+            <span id="atelier-toast-time" class="atelier-toast-time">Az önce • Söke &amp; Kuşadası Atölye</span>
+        </div>
+    </div>
+
     <!-- SABİT WHATSAPP HIZLI İLETİŞİM BUTONU -->
     <a href="https://wa.me/905373568453?text=Merhaba%2C%20Hisli%20Balon%20At%C3%B6lyesi%20tasar%C4%B1mlar%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="floating-wa" aria-label="WhatsApp ile İletişime Geç">
         <i class="fa-brands fa-whatsapp"></i>
@@ -1485,14 +1731,14 @@
 
         const ATOLYE_VIDEOLARI = [
             {
-                tag: "Atölye Hazırlık",
+                tag: "Özel Koleksiyon",
                 title: "Kişiye Özel Peluş & Çiçek Konsepti",
                 videoUrl: "",
                 posterUrl: "",
                 urunAdi: ""
             },
             {
-                tag: "360° Detay",
+                tag: "Çok Satan",
                 title: "Işıltılı Şeffaf Balon Aranjmanı",
                 videoUrl: "",
                 posterUrl: "",
@@ -1506,7 +1752,7 @@
                 urunAdi: ""
             },
             {
-                tag: "Teslimat Öncesi",
+                tag: "Aynı Gün Teslim",
                 title: "Söke & Kuşadası Aynı Gün Sürpriz",
                 videoUrl: "",
                 posterUrl: "",
@@ -1526,9 +1772,12 @@
         let activeReelsList = [];
         let isLoaded = false;
         let currentCategory = 'Tümü';
+        let currentOccasion = 'Tümü';
         let currentSearchQuery = '';
         let currentSortOrder = 'default';
         let activeModalBasePrice = 0;
+        let selectedBalloonTextColor = 'Altın Varak';
+        let selectedBalloonFont = 'El Yazısı';
 
         function getField(row, fieldName) {
             if (!row) return "";
@@ -1659,19 +1908,27 @@
         }
 
         /* =========================================================
-           ATÖLYEDEN CANLI VİDEOLU VİTRİN OLUŞTURUCU
+           ATÖLYEDEN CANLI VİDEOLU VİTRİN (Tekrarsız Ürün & Tutarlı Etiket)
            ========================================================= */
         function renderLiveReelsShowcase() {
             const container = document.getElementById('reels-container');
             if (!container) return;
 
-            const sheetVideoItems = [];
+            const usedProductIndices = new Set();
+            const usedTitles = new Set();
+            const combined = [];
+
+            // 1. Önce Google Sheets'te VideoURL dolu olan ürünleri ekle
             allProductsGlobal.forEach((p, idx) => {
+                if (combined.length >= 4) return;
                 const vUrl = getVideoField(p);
-                if (vUrl) {
-                    sheetVideoItems.push({
+                const title = getField(p, 'UrunAdi');
+                if (vUrl && title) {
+                    usedProductIndices.add(idx);
+                    usedTitles.add(title.toLocaleLowerCase('tr-TR'));
+                    combined.push({
                         tag: getField(p, 'Kategori') || "Canlı Vitrin",
-                        title: getField(p, 'UrunAdi'),
+                        title: title,
                         videoUrl: vUrl,
                         posterUrl: getField(p, 'ResimURL') || FALLBACK_IMG,
                         productIndex: idx
@@ -1679,39 +1936,50 @@
                 }
             });
 
-            const manualItems = ATOLYE_VIDEOLARI.map((item, idx) => {
+            // 2. Kalan slotları farklı ürünlerle ve uyumlu kategori etiketleriyle doldur
+            ATOLYE_VIDEOLARI.forEach((item) => {
+                if (combined.length >= 4) return;
+
                 let matchedIdx = -1;
                 if (item.urunAdi) {
-                    matchedIdx = allProductsGlobal.findIndex(p =>
-                        getField(p, 'UrunAdi').toLowerCase() === item.urunAdi.toLowerCase()
+                    matchedIdx = allProductsGlobal.findIndex((p, idx) =>
+                        !usedProductIndices.has(idx) &&
+                        getField(p, 'UrunAdi').toLocaleLowerCase('tr-TR') === item.urunAdi.toLocaleLowerCase('tr-TR')
                     );
                 }
-                const fallbackProduct = allProductsGlobal[idx % Math.max(allProductsGlobal.length, 1)];
-                const autoPoster = item.posterUrl
-                    || (matchedIdx >= 0 ? getField(allProductsGlobal[matchedIdx], 'ResimURL') : '')
-                    || (fallbackProduct ? getField(fallbackProduct, 'ResimURL') : FALLBACK_IMG);
 
-                const autoTitle = (item.videoUrl || matchedIdx >= 0 || !fallbackProduct)
-                    ? item.title
-                    : getField(fallbackProduct, 'UrunAdi');
+                if (matchedIdx < 0 && !item.videoUrl && allProductsGlobal.length > 0) {
+                    matchedIdx = allProductsGlobal.findIndex((p, idx) => {
+                        const t = getField(p, 'UrunAdi').toLocaleLowerCase('tr-TR');
+                        return t && !usedProductIndices.has(idx) && !usedTitles.has(t);
+                    });
+                }
 
-                const resolvedIdx = matchedIdx >= 0 ? matchedIdx : ((!item.videoUrl && fallbackProduct) ? (idx % allProductsGlobal.length) : -1);
-
-                return {
-                    tag: item.tag,
-                    title: autoTitle,
-                    videoUrl: item.videoUrl,
-                    posterUrl: autoPoster || FALLBACK_IMG,
-                    productIndex: resolvedIdx
-                };
+                if (matchedIdx >= 0) {
+                    const prod = allProductsGlobal[matchedIdx];
+                    const pTitle = getField(prod, 'UrunAdi');
+                    const pCat = getField(prod, 'Kategori');
+                    usedProductIndices.add(matchedIdx);
+                    usedTitles.add(pTitle.toLocaleLowerCase('tr-TR'));
+                    combined.push({
+                        tag: pCat || item.tag,
+                        title: pTitle,
+                        videoUrl: item.videoUrl || getVideoField(prod),
+                        posterUrl: item.posterUrl || getField(prod, 'ResimURL') || FALLBACK_IMG,
+                        productIndex: matchedIdx
+                    });
+                } else {
+                    combined.push({
+                        tag: item.tag,
+                        title: item.title,
+                        videoUrl: item.videoUrl,
+                        posterUrl: item.posterUrl || FALLBACK_IMG,
+                        productIndex: -1
+                    });
+                }
             });
 
-            const combined = [...sheetVideoItems];
-            manualItems.forEach(m => {
-                if (combined.length < 4) combined.push(m);
-            });
             activeReelsList = combined.slice(0, 4);
-
             const isLocalFile = window.location.protocol === 'file:';
 
             container.innerHTML = activeReelsList.map((reel, idx) => {
@@ -1843,6 +2111,39 @@
             nav.innerHTML = html;
         }
 
+        function matchesOccasion(product, occasion) {
+            if (!occasion || occasion === 'Tümü') return true;
+            const haystack = `${getField(product, 'Kategori')} ${getField(product, 'UrunAdi')} ${getField(product, 'Aciklama')}`.toLocaleLowerCase('tr-TR');
+            const occasionKeywords = {
+                'Sevgiliye': ['sevgili', 'aşk', 'ask', 'kalp', 'gül', 'gul', 'kırmızı', 'kirmizi', 'yıldönümü', 'yildonumu', 'romantik', 'sonsuz', 'çiçek', 'cicek'],
+                'Doğum Günü': ['doğum', 'dogum', 'yaş', 'yas', 'iyi ki', 'kutlama', 'parti', 'pasta', 'balon', 'çikolata', 'cikolata'],
+                'Bebek & Çocuk': ['bebek', 'çocuk', 'cocuk', 'ayıcık', 'ayicik', 'tavşan', 'tavsan', 'peluş', 'pelus', 'hoş geldin', 'hos geldin', 'erkek', 'kız', 'kiz', 'sevimli'],
+                'Teşekkür & Kutlama': ['öğretmen', 'ogretmen', 'teşekkür', 'tesekkur', 'tebrik', 'mezuniyet', 'anneler', 'çiçek', 'cicek', 'aranjman', 'hatıra', 'hatira', 'kurumsal']
+            };
+            const keywords = occasionKeywords[occasion] || [];
+            return keywords.some(kw => haystack.includes(kw));
+        }
+
+        function filterOccasion(occasionName, btnElement) {
+            currentOccasion = occasionName;
+            document.querySelectorAll('.occasion-pill').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+            renderStorefront();
+        }
+
+        function resetAllFilters() {
+            currentCategory = 'Tümü';
+            currentOccasion = 'Tümü';
+            currentSearchQuery = '';
+            const input = document.getElementById('search-input');
+            if (input) input.value = '';
+            const clearBtn = document.getElementById('search-clear');
+            if (clearBtn) clearBtn.style.display = 'none';
+            document.querySelectorAll('.occasion-pill').forEach((btn, i) => btn.classList.toggle('active', i === 0));
+            document.querySelectorAll('.cat-btn').forEach((btn, i) => btn.classList.toggle('active', i === 0));
+            renderStorefront();
+        }
+
         function handleSearch(val) {
             currentSearchQuery = val.toLocaleLowerCase('tr-TR').trim();
             document.getElementById('search-clear').style.display = currentSearchQuery ? 'block' : 'none';
@@ -1877,6 +2178,10 @@
                 if (currentCategory === 'Favorilerim') {
                     if (!currentFavorites.includes(urunAdi)) return;
                 } else if (currentCategory !== 'Tümü' && kat !== currentCategory) {
+                    return;
+                }
+
+                if (!matchesOccasion(product, currentOccasion)) {
                     return;
                 }
 
@@ -1945,13 +2250,18 @@
             }
 
             if (!hasContent) {
-                let emptyMsg = 'Bu koleksiyona ait ürün tasarımları şu an hazırlanıyor...';
+                let emptyMsg = 'Bu seçime uygun tasarım bulunamadı.';
                 if (currentSearchQuery) {
                     emptyMsg = `"${currentSearchQuery}" aramasına uygun tasarım bulunamadı.`;
                 } else if (currentCategory === 'Favorilerim') {
                     emptyMsg = 'Henüz favorilerinize eklediğiniz bir tasarım bulunmuyor.';
                 }
-                container.innerHTML = `<div style="text-align:center;padding:50px;font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--rose-dark);">${emptyMsg}</div>`;
+                container.innerHTML = `
+                    <div style="text-align:center;padding:50px 20px;">
+                        <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--rose-dark);margin:0 0 16px 0;">${emptyMsg}</p>
+                        <button type="button" class="cat-btn active" onclick="resetAllFilters()">Tüm Koleksiyonu Göster</button>
+                    </div>
+                `;
             }
         }
 
@@ -1981,6 +2291,62 @@
             if (currentCategory === 'Favorilerim') renderStorefront();
         }
 
+        /* =========================================================
+           CANLI BALON ÜZERİ YAZI ÖNİZLEMESİ KONTROLLERİ
+           ========================================================= */
+        function updateBalloonPreview() {
+            const noteInput = document.getElementById('note');
+            const overlay = document.getElementById('balloon-live-overlay');
+            const textSpan = document.getElementById('balloon-live-text');
+            if (!noteInput || !overlay || !textSpan) return;
+
+            const val = noteInput.value.trim();
+            if (val) {
+                textSpan.textContent = val;
+                overlay.classList.add('is-visible');
+            } else {
+                textSpan.textContent = '';
+                overlay.classList.remove('is-visible');
+            }
+        }
+
+        function setBalloonTextColor(colorName, hexColor, btnEl) {
+            selectedBalloonTextColor = colorName;
+            document.querySelectorAll('.swatch-btn').forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+
+            const overlay = document.getElementById('balloon-live-overlay');
+            if (overlay) {
+                overlay.style.color = hexColor;
+                if (colorName === 'İnci Beyaz') {
+                    overlay.style.textShadow = '0 1px 6px rgba(42, 30, 34, 0.85), 0 0 12px rgba(42, 30, 34, 0.55)';
+                } else {
+                    overlay.style.textShadow = '0 1px 10px rgba(255, 255, 255, 0.94), 0 0 3px rgba(255, 255, 255, 0.98)';
+                }
+            }
+        }
+
+        function setBalloonFontStyle(styleName, btnEl) {
+            selectedBalloonFont = styleName;
+            document.querySelectorAll('.font-toggle-btn').forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+
+            const overlay = document.getElementById('balloon-live-overlay');
+            if (overlay) {
+                if (styleName === 'Modern') {
+                    overlay.style.fontFamily = "'Montserrat', sans-serif";
+                    overlay.style.fontStyle = 'normal';
+                    overlay.style.fontSize = '0.96rem';
+                    overlay.style.letterSpacing = '1.2px';
+                } else {
+                    overlay.style.fontFamily = "'Cormorant Garamond', serif";
+                    overlay.style.fontStyle = 'italic';
+                    overlay.style.fontSize = '1.28rem';
+                    overlay.style.letterSpacing = '0px';
+                }
+            }
+        }
+
         function showModalMedia(type, url, thumbEl) {
             const stage = document.getElementById('modal-media-stage');
             if (!stage) return;
@@ -1995,7 +2361,14 @@
                     stage.innerHTML = `<video src="${url}" controls autoplay muted loop playsinline></video>`;
                 }
             } else {
-                stage.innerHTML = `<img src="${url}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}';" style="width:100%;max-height:310px;object-fit:contain;display:block;margin:0 auto;">`;
+                stage.innerHTML = `
+                    <img src="${url}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}';" style="width:100%;max-height:310px;object-fit:contain;display:block;margin:0 auto;">
+                    <div id="balloon-live-overlay" class="balloon-live-overlay">
+                        <span class="balloon-live-badge">Canlı Yazı Önizleme</span>
+                        <span id="balloon-live-text"></span>
+                    </div>
+                `;
+                updateBalloonPreview();
             }
         }
 
@@ -2027,6 +2400,9 @@
             const urunAdi = getField(p, 'UrunAdi');
             const fiyatRaw = getField(p, 'Fiyat');
             activeModalBasePrice = parsePriceNumber(fiyatRaw);
+            selectedBalloonTextColor = 'Altın Varak';
+            selectedBalloonFont = 'El Yazısı';
+
             const aciklama = getField(p, 'Aciklama');
             const imgUrl = getField(p, 'ResimURL') || FALLBACK_IMG;
             const imgUrl2 = getField(p, 'ResimURL2');
@@ -2043,7 +2419,29 @@
             const var2HTML = buildSelect('s2', 'fa-solid fa-wand-magic-sparkles', getField(p, 'VaryasyonBasligi2') || 'Seçenek 2', getField(p, 'Varyasyonlar2'));
 
             const ozelNot = getField(p, 'OzelNot');
-            const noteHTML = ozelNot ? `<div class="detay-grup"><label class="group-label"><i class="fa-regular fa-pen-to-square"></i> ${ozelNot.toLowerCase() === 'evet' ? 'Balon Üzeri Yazı / Özel Not' : ozelNot}</label><input type="text" class="custom-input" id="note" placeholder="Yazılmasını istediğiniz metni girin..."></div>` : '';
+            const noteLabelText = (ozelNot && ozelNot.toLowerCase() !== 'evet')
+                ? ozelNot
+                : 'Balon Üzeri Yazı (Canlı Önizleme)';
+
+            const noteHTML = `
+                <div class="detay-grup">
+                    <label class="group-label"><i class="fa-regular fa-pen-to-square"></i> ${noteLabelText}</label>
+                    <input type="text" class="custom-input" id="note" maxlength="42" oninput="updateBalloonPreview()" placeholder="Örn: İyi ki Doğdun Zeynep...">
+                    <div class="balloon-style-controls">
+                        <div class="color-swatches">
+                            <span>Yazı Rengi:</span>
+                            <button type="button" class="swatch-btn active" style="background:#C99A45;" title="Altın Varak" onclick="setBalloonTextColor('Altın Varak', '#B8873B', this)"></button>
+                            <button type="button" class="swatch-btn" style="background:#B76E79;" title="Gül Kurusu" onclick="setBalloonTextColor('Gül Kurusu', '#944E59', this)"></button>
+                            <button type="button" class="swatch-btn" style="background:#FFFFFF;" title="İnci Beyaz" onclick="setBalloonTextColor('İnci Beyaz', '#FFFFFF', this)"></button>
+                            <button type="button" class="swatch-btn" style="background:#2B2124;" title="Klasik Siyah" onclick="setBalloonTextColor('Klasik Siyah', '#2B2124', this)"></button>
+                        </div>
+                        <div class="font-toggle-group">
+                            <button type="button" class="font-toggle-btn active" onclick="setBalloonFontStyle('El Yazısı', this)">El Yazısı</button>
+                            <button type="button" class="font-toggle-btn" onclick="setBalloonFontStyle('Modern', this)">Modern</button>
+                        </div>
+                    </div>
+                </div>
+            `;
 
             const deliveryTimeHTML = `
                 <div class="detay-grup">
@@ -2102,6 +2500,10 @@
                 <div style="background:radial-gradient(circle, #FFFFFF 50%, #FAF3EF 100%);border-radius:14px;padding:12px;margin-bottom:16px;border:1px solid var(--rose-border);">
                     <div id="modal-media-stage" class="modal-media-stage">
                         <img src="${imgUrl}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}';" style="width:100%;max-height:310px;object-fit:contain;display:block;margin:0 auto;">
+                        <div id="balloon-live-overlay" class="balloon-live-overlay">
+                            <span class="balloon-live-badge">Canlı Yazı Önizleme</span>
+                            <span id="balloon-live-text"></span>
+                        </div>
                     </div>
                     ${thumbsHTML}
                 </div>
@@ -2110,7 +2512,7 @@
                 <p id="modal-dynamic-price" style="color:var(--rose-dark);font-weight:700;font-size:1.25rem;margin:0 0 14px 0;">${fiyatRaw ? fiyatRaw + ' TL' : ''}</p>
                 <p style="font-size:0.92rem;margin-bottom:22px;line-height:1.7;color:var(--text-muted);">${aciklama}</p>
                 <div style="border-top:1px solid var(--rose-border);padding-top:18px;">
-                    ${var1HTML}${var2HTML}${deliveryTimeHTML}${addonsHTML}${noteHTML}
+                    ${noteHTML}${var1HTML}${var2HTML}${deliveryTimeHTML}${addonsHTML}
                 </div>
                 <div style="margin-top:22px;">
                     ${shopierBtn}
@@ -2198,10 +2600,59 @@
             }
 
             const note = document.getElementById('note');
-            if (note && note.value.trim()) message += `\n*Müşteri İstek Notu:* ${note.value.trim()}`;
+            if (note && note.value.trim()) {
+                message += `\n*Balon Üzeri Yazı:* "${note.value.trim()}" (${selectedBalloonTextColor} • ${selectedBalloonFont})`;
+            }
 
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
         }
+
+        /* =========================================================
+           ATÖLYEDEN CANLI SİPARİŞ BİLDİRİMİ (TOAST)
+           ========================================================= */
+        let atelierToastDismissed = false;
+        let atelierToastStep = 0;
+
+        function dismissAtelierToast() {
+            atelierToastDismissed = true;
+            const toast = document.getElementById('atelier-toast');
+            if (toast) toast.classList.remove('show');
+        }
+
+        function triggerAtelierToast() {
+            if (atelierToastDismissed) return;
+            const toast = document.getElementById('atelier-toast');
+            const msgEl = document.getElementById('atelier-toast-msg');
+            const timeEl = document.getElementById('atelier-toast-time');
+            if (!toast || !msgEl || !timeEl) return;
+
+            const p1 = allProductsGlobal[0] ? getField(allProductsGlobal[0], 'UrunAdi') : 'Sonsuz Hatıra';
+            const p2 = allProductsGlobal[1] ? getField(allProductsGlobal[1], 'UrunAdi') : 'LED Işıklı Çiçek Aranjmanı';
+            const p3 = allProductsGlobal[2] ? getField(allProductsGlobal[2], 'UrunAdi') : 'Kişiye Özel Peluş Balon';
+
+            const notifications = [
+                { msg: `Kuşadası'ndan Azra H. az önce "${p1}" tasarımını inceledi`, time: 'Az önce • Atölye Vitrini' },
+                { msg: `Söke içi 2 özel balon siparişi aynı gün teslimata çıktı`, time: '3 dk önce • Söke & Kuşadası Kurye' },
+                { msg: `Kuşadası'ndan Emre B. "${p2}" için özel yazı önizledi`, time: '6 dk önce • Canlı Tasarım' },
+                { msg: `Söke'den Zeynep K. "${p3}" tasarımını favorilerine ekledi`, time: '9 dk önce • Hisli Balon Atölyesi' }
+            ];
+
+            const current = notifications[atelierToastStep % notifications.length];
+            atelierToastStep++;
+
+            msgEl.textContent = current.msg;
+            timeEl.textContent = current.time;
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 5500);
+        }
+
+        setTimeout(() => {
+            triggerAtelierToast();
+            setInterval(triggerAtelierToast, 16000);
+        }, 4500);
 
         renderLiveReelsShowcase();
         loadProducts();
