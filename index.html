@@ -1867,14 +1867,14 @@
         const WHATSAPP_NUMBER = "905373568453";
         const SHEET_ID = "1ii4RrMqvNBm9HMlfVJI4x2riVtWP14J-9MfCAn2b9-0";
 
-        // Google Form bağladığınızda aşağıdaki 6 alanı kendi Form bilgilerinize göre doldurabilirsiniz:
+        // Google Form Canlı Bağlantı Ayarları
         const GOOGLE_FORM_CONFIG = {
-            actionUrl: "",      // Örn: "https://docs.google.com/forms/d/e/1FAIpQLSc.../formResponse"
-            entryAd: "",        // Örn: "entry.111111111"
-            entryIlce: "",      // Örn: "entry.222222222"
-            entryUrun: "",      // Örn: "entry.333333333"
-            entryPuan: "",      // Örn: "entry.444444444"
-            entryYorum: ""      // Örn: "entry.555555555"
+            actionUrl: "https://docs.google.com/forms/d/e/1FAIpQLSd1AkCNQDCSNog5PB-dZ2VUjHgzoHIvYgwO4NsKgDX0hLCyeQ/formResponse",
+            entryAd: "entry.1761974695",
+            entryIlce: "entry.77712800",
+            entryUrun: "entry.1014363454",
+            entryPuan: "entry.1302170345",
+            entryYorum: "entry.1009292708"
         };
 
         const ATOLYE_VIDEOLARI = [
@@ -2055,11 +2055,16 @@
 
         /* =========================================================
            GOOGLE SHEETS "Yorumlar" SEKMESİ OKUYUCU
+           (Hem Zaman Damgalı Form sekmesini hem manuel sekmeyi destekler)
            ========================================================= */
         window.handleReviewsData = function(response) {
             if (!response || !response.table || !response.table.rows) return;
             const cols = response.table.cols || [];
-            const fallbackReviewKeys = ['Ad', 'Ilce', 'UrunAdi', 'Puan', 'Yorum', 'Durum'];
+            const hasTimestamp = cols.length >= 7 || (cols[0] && /zaman|timestamp/i.test(cols[0].label || ''));
+            const fallbackReviewKeys = hasTimestamp
+                ? ['ZamanDamgasi', 'Ad', 'Ilce', 'UrunAdi', 'Puan', 'Yorum', 'Durum']
+                : ['Ad', 'Ilce', 'UrunAdi', 'Puan', 'Yorum', 'Durum'];
+
             const parsed = response.table.rows.map(r => {
                 const obj = {};
                 (r.c || []).forEach((cell, idx) => {
@@ -2301,19 +2306,20 @@
             existingPending.unshift(newReview);
             localStorage.setItem('hisli_pending_reviews', JSON.stringify(existingPending.slice(0, 10)));
 
-            // Google Form tanımlandıysa arka planda sessizce Google Sheets'e aktar
+            // Google Form üzerinden Google Sheets "Yorumlar" sekmesine gönder
             if (GOOGLE_FORM_CONFIG.actionUrl && GOOGLE_FORM_CONFIG.entryYorum) {
-                const formData = new FormData();
-                if (GOOGLE_FORM_CONFIG.entryAd) formData.append(GOOGLE_FORM_CONFIG.entryAd, ad);
-                if (GOOGLE_FORM_CONFIG.entryIlce) formData.append(GOOGLE_FORM_CONFIG.entryIlce, ilce);
-                if (GOOGLE_FORM_CONFIG.entryUrun) formData.append(GOOGLE_FORM_CONFIG.entryUrun, urun);
-                if (GOOGLE_FORM_CONFIG.entryPuan) formData.append(GOOGLE_FORM_CONFIG.entryPuan, String(selectedReviewRating));
-                formData.append(GOOGLE_FORM_CONFIG.entryYorum, yorum);
+                const params = new URLSearchParams();
+                if (GOOGLE_FORM_CONFIG.entryAd) params.append(GOOGLE_FORM_CONFIG.entryAd, ad);
+                if (GOOGLE_FORM_CONFIG.entryIlce) params.append(GOOGLE_FORM_CONFIG.entryIlce, ilce);
+                if (GOOGLE_FORM_CONFIG.entryUrun) params.append(GOOGLE_FORM_CONFIG.entryUrun, urun || 'Genel Atölye Deneyimi');
+                if (GOOGLE_FORM_CONFIG.entryPuan) params.append(GOOGLE_FORM_CONFIG.entryPuan, String(selectedReviewRating));
+                params.append(GOOGLE_FORM_CONFIG.entryYorum, yorum);
 
                 fetch(GOOGLE_FORM_CONFIG.actionUrl, {
                     method: 'POST',
                     mode: 'no-cors',
-                    body: formData
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+                    body: params.toString()
                 }).catch(() => {});
             }
 
