@@ -1432,20 +1432,20 @@
             bottom: 24px;
             left: 24px;
             z-index: 940;
-            background: rgba(255, 253, 251, 0.97);
+            background: rgba(255, 253, 251, 0.96);
             backdrop-filter: blur(8px);
             border: 1px solid var(--rose-border);
             border-radius: 16px;
-            padding: 12px 32px 12px 14px;
-            max-width: 315px;
-            box-shadow: 0 10px 28px rgba(158, 90, 99, 0.16);
+            padding: 11px 30px 11px 13px;
+            max-width: 310px;
+            box-shadow: 0 8px 24px rgba(158, 90, 99, 0.14);
             display: flex;
             align-items: center;
-            gap: 11px;
+            gap: 10px;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(18px);
             pointer-events: none;
-            transition: opacity 0.45s ease, transform 0.45s ease;
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
         .atelier-toast.show {
             opacity: 1;
@@ -1453,33 +1453,33 @@
             pointer-events: auto;
         }
         .atelier-toast-icon {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background: var(--rose-soft);
             color: var(--rose-dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.92rem;
+            font-size: 0.85rem;
             flex-shrink: 0;
         }
         .atelier-toast-text {
-            font-size: 0.76rem;
+            font-size: 0.75rem;
             color: var(--text-main);
-            line-height: 1.4;
+            line-height: 1.35;
         }
         .atelier-toast-time {
             display: block;
-            font-size: 0.66rem;
+            font-size: 0.65rem;
             color: var(--rose);
             font-weight: 600;
             margin-top: 2px;
         }
         .atelier-toast-close {
             position: absolute;
-            top: 7px;
-            right: 9px;
+            top: 6px;
+            right: 8px;
             background: none;
             border: none;
             color: var(--text-muted);
@@ -1518,36 +1518,46 @@
             .reviews-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 10px; padding: 12px; }
-            .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; font-size: 0.74rem; }
-            .hero { padding: 26px 18px 18px; }
-            .hero h1 { font-size: 2.05rem; letter-spacing: 2px; }
-            .hero p { font-size: 1.08rem; }
+            .navbar { flex-direction: column; gap: 6px; padding: 8px 12px; }
+            .nav-logo { font-size: 1.25rem; letter-spacing: 2px; }
+            .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; font-size: 0.7rem; }
+            .delivery-banner { padding: 6px 12px; font-size: 0.66rem; letter-spacing: 1.1px; }
 
-            .live-showcase-section { margin: 0 14px 32px 14px; padding: 22px 14px; border-radius: 18px; }
-            .live-header h2 { font-size: 1.7rem; }
+            /* Kompakt mobil karşılama alanı: videolar ve ürünler hemen görünür */
+            .hero { padding: 14px 14px 10px; }
+            .hero-badge { font-size: 0.6rem; padding: 3px 12px; letter-spacing: 1.6px; margin-bottom: 6px; }
+            .hero h1 { font-size: 1.55rem; letter-spacing: 1.5px; line-height: 1.2; }
+            .hero p { font-size: 0.96rem; margin-top: 4px; }
+            .hero-ornament { margin-top: 8px; max-width: 150px; }
+
+            .live-showcase-section { margin: 0 12px 24px 12px; padding: 16px 12px; border-radius: 18px; }
+            .live-header { margin-bottom: 12px; }
+            .live-pill { font-size: 0.62rem; padding: 3px 10px; margin-bottom: 4px; }
+            .live-header h2 { font-size: 1.45rem; }
+            .live-header p { font-size: 0.78rem; }
             .reels-grid {
                 display: flex;
                 overflow-x: auto;
                 scroll-snap-type: x mandatory;
-                gap: 14px;
-                padding-bottom: 8px;
+                gap: 12px;
+                padding-bottom: 6px;
                 scrollbar-width: none;
             }
             .reels-grid::-webkit-scrollbar { display: none; }
             .reel-card {
-                flex: 0 0 68%;
-                max-height: none;
-                aspect-ratio: 9 / 15.5;
+                flex: 0 0 64%;
+                max-height: 330px;
+                aspect-ratio: 9 / 14.5;
                 scroll-snap-align: center;
             }
 
-            .toolbar-container { flex-direction: column; }
-            .sort-select { width: 100%; }
-            .occasion-bar { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
+            .toolbar-container { flex-direction: column; margin-bottom: 14px; }
+            .sort-select { width: 100%; padding: 11px 16px; font-size: 0.8rem; }
+            .search-input { padding: 11px 36px 11px 40px; font-size: 0.82rem; }
+            .occasion-bar { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; margin-bottom: 12px; }
             .occasion-bar::-webkit-scrollbar { display: none; }
             .occasion-pill, .occasion-label { flex-shrink: 0; }
-            .category-nav { justify-content: flex-start; padding-bottom: 5px; }
+            .category-nav { justify-content: flex-start; padding-bottom: 4px; margin-bottom: 24px; }
             .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
             .product-img-wrapper { height: 185px; }
             .product-title { font-size: 1.05rem; margin-top: 12px; }
@@ -1562,8 +1572,39 @@
             .custom-order-box { padding: 30px 20px; }
             .modal-content { padding: 20px; width: 95%; margin: 5% auto; }
             .balloon-live-overlay { font-size: 1.05rem; }
-            .atelier-toast { bottom: 18px; left: 14px; right: 78px; max-width: none; padding: 10px 28px 10px 12px; }
-            .floating-wa { bottom: 18px; right: 18px; width: 50px; height: 50px; font-size: 1.5rem; }
+
+            /* Mobilde tek satırlık, ince ve rahatsız etmeyen bildirim şeridi */
+            .atelier-toast {
+                bottom: 14px;
+                left: 12px;
+                right: 72px;
+                max-width: none;
+                padding: 7px 26px 7px 10px;
+                border-radius: 30px;
+                gap: 8px;
+                box-shadow: 0 6px 18px rgba(158, 90, 99, 0.14);
+            }
+            .atelier-toast-icon {
+                width: 24px;
+                height: 24px;
+                font-size: 0.72rem;
+            }
+            .atelier-toast-text {
+                font-size: 0.69rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .atelier-toast-time {
+                display: none;
+            }
+            .atelier-toast-close {
+                top: 50%;
+                right: 8px;
+                transform: translateY(-50%);
+                font-size: 0.85rem;
+            }
+            .floating-wa { bottom: 14px; right: 14px; width: 48px; height: 48px; font-size: 1.45rem; }
         }
     </style>
 </head>
@@ -2055,7 +2096,6 @@
 
         /* =========================================================
            GOOGLE SHEETS "Yorumlar" SEKMESİ OKUYUCU
-           (Hem Zaman Damgalı Form sekmesini hem manuel sekmeyi destekler)
            ========================================================= */
         window.handleReviewsData = function(response) {
             if (!response || !response.table || !response.table.rows) return;
@@ -2306,7 +2346,6 @@
             existingPending.unshift(newReview);
             localStorage.setItem('hisli_pending_reviews', JSON.stringify(existingPending.slice(0, 10)));
 
-            // Google Form üzerinden Google Sheets "Yorumlar" sekmesine gönder
             if (GOOGLE_FORM_CONFIG.actionUrl && GOOGLE_FORM_CONFIG.entryYorum) {
                 const params = new URLSearchParams();
                 if (GOOGLE_FORM_CONFIG.entryAd) params.append(GOOGLE_FORM_CONFIG.entryAd, ad);
@@ -2345,7 +2384,7 @@
         }
 
         /* =========================================================
-           ATÖLYEDEN CANLI VİDEOLU VİTRİN (Tekrarsız Ürün & Tutarlı Etiket)
+           ATÖLYEDEN CANLI VİDEOLU VİTRİN
            ========================================================= */
         function renderLiveReelsShowcase() {
             const container = document.getElementById('reels-container');
@@ -2931,7 +2970,6 @@
                 </div>
             ` : '';
 
-            // Bu ürüne ait müşteri yorumlarını çek
             const allRevs = getAllVisibleReviews();
             const matchedRevs = allRevs.filter(r => r.urun && r.urun.toLocaleLowerCase('tr-TR') === urunAdi.toLocaleLowerCase('tr-TR'));
             const modalRevsHTML = matchedRevs.length > 0
@@ -3073,12 +3111,23 @@
            ========================================================= */
         let atelierToastDismissed = false;
         let atelierToastStep = Math.floor(Math.random() * 16);
+        let atelierToastHideTimer = null;
 
         function dismissAtelierToast() {
             atelierToastDismissed = true;
             const toast = document.getElementById('atelier-toast');
             if (toast) toast.classList.remove('show');
         }
+
+        // Kullanıcı sayfayı aşağı kaydırıp ürünleri incelerken bildirimi gizle
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 180) {
+                const toast = document.getElementById('atelier-toast');
+                if (toast && toast.classList.contains('show')) {
+                    toast.classList.remove('show');
+                }
+            }
+        }, { passive: true });
 
         function triggerAtelierToast() {
             if (atelierToastDismissed) return;
@@ -3117,22 +3166,22 @@
             const p8 = getProd(7);
 
             const notifications = [
-                { msg: `Kuşadası'ndan Azra H. az önce "${p1}" tasarımını inceledi`, time: 'Az önce • Atölye Vitrini' },
-                { msg: `Söke içi 1 özel balon siparişi aynı gün teslimata çıktı`, time: '3 dk önce • Söke & Kuşadası Kurye' },
-                { msg: `Kuşadası'ndan Emre B. "${p2}" için özel yazı önizledi`, time: '1 dk önce • Canlı Tasarım' },
-                { msg: `Söke'den Zeynep K. "${p3}" tasarımını favorilerine ekledi`, time: '1 dk önce • Hisli Balon Atölyesi' },
-                { msg: `Söke'den Misafir "${p4}" tasarımını favorilerine ekledi`, time: '1 dk önce • Hisli Balon Atölyesi' },
-                { msg: `Kuşadası'ndan Misafir "${p4}" tasarımını favorilerine ekledi`, time: '10 sn önce • Hisli Balon Atölyesi' },
-                { msg: `Söke'den Misafir "${p6}" tasarımını favorilerine ekledi`, time: '15 sn önce • Hisli Balon Atölyesi' },
-                { msg: `Kuşadası'ndan Elif S. "${p5}" için balon üzeri yazı denedi`, time: '22 sn önce • Canlı Tasarım' },
-                { msg: `Kuşadası içi 1 sürpriz sipariş özenle hazırlanıyor`, time: '2 dk önce • Atölye Hazırlık' },
+                { msg: `Kuşadası'ndan Azra H. "${p1}" tasarımını inceledi`, time: 'Az önce • Atölye Vitrini' },
+                { msg: `Söke içi 1 sipariş aynı gün teslimata çıktı`, time: '3 dk önce • Söke & Kuşadası Kurye' },
+                { msg: `Kuşadası'ndan Emre B. "${p2}" için yazı önizledi`, time: '1 dk önce • Canlı Tasarım' },
+                { msg: `Söke'den Zeynep K. "${p3}" tasarımını favoriledi`, time: '1 dk önce • Hisli Balon Atölyesi' },
+                { msg: `Söke'den Misafir "${p4}" tasarımını favoriledi`, time: '1 dk önce • Hisli Balon Atölyesi' },
+                { msg: `Kuşadası'ndan Misafir "${p4}" tasarımını favoriledi`, time: '10 sn önce • Hisli Balon Atölyesi' },
+                { msg: `Söke'den Misafir "${p6}" tasarımını favoriledi`, time: '15 sn önce • Hisli Balon Atölyesi' },
+                { msg: `Kuşadası'ndan Elif S. "${p5}" için balon yazısı denedi`, time: '22 sn önce • Canlı Tasarım' },
+                { msg: `Kuşadası içi 1 sürpriz sipariş hazırlanıyor`, time: '2 dk önce • Atölye Hazırlık' },
                 { msg: `Söke'den Burak T. "${p7}" tasarımını inceledi`, time: '35 sn önce • Atölye Vitrini' },
-                { msg: `Kuşadası'ndan Selin D. "${p1}" için LED ışık seçeneğini ekledi`, time: '4 dk önce • Kişiye Özel' },
+                { msg: `Kuşadası'ndan Selin D. "${p1}" için LED ışık ekledi`, time: '4 dk önce • Kişiye Özel' },
                 { msg: `Söke'den Misafir "${p8}" tasarımını inceledi`, time: '12 sn önce • Atölye Vitrini' },
-                { msg: `Kuşadası'ndan Mert A. "${p3}" için hediye notu oluşturdu`, time: '5 dk önce • Hisli Balon Atölyesi' },
-                { msg: `Söke'den İrem Y. "${p2}" tasarımını favorilerine ekledi`, time: '45 sn önce • Hisli Balon Atölyesi' },
+                { msg: `Kuşadası'ndan Mert A. "${p3}" için hediye notu yazdı`, time: '5 dk önce • Hisli Balon Atölyesi' },
+                { msg: `Söke'den İrem Y. "${p2}" tasarımını favoriledi`, time: '45 sn önce • Hisli Balon Atölyesi' },
                 { msg: `Kuşadası'ndan Misafir "${p5}" tasarımını inceledi`, time: '18 sn önce • Atölye Vitrini' },
-                { msg: `Söke'den Nazlı K. "${p6}" için özel isim baskısı önizledi`, time: '2 dk önce • Canlı Tasarım' }
+                { msg: `Söke'den Nazlı K. "${p6}" için özel baskı önizledi`, time: '2 dk önce • Canlı Tasarım' }
             ];
 
             const current = notifications[atelierToastStep % notifications.length];
@@ -3142,15 +3191,16 @@
             timeEl.textContent = current.time;
             toast.classList.add('show');
 
-            setTimeout(() => {
+            if (atelierToastHideTimer) clearTimeout(atelierToastHideTimer);
+            atelierToastHideTimer = setTimeout(() => {
                 toast.classList.remove('show');
-            }, 5500);
+            }, 3200);
         }
 
         setTimeout(() => {
             triggerAtelierToast();
-            setInterval(triggerAtelierToast, 16000);
-        }, 4500);
+            setInterval(triggerAtelierToast, 35000);
+        }, 6000);
 
         renderLiveReelsShowcase();
         renderReviewsSection();
