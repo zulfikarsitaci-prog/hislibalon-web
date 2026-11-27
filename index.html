@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Hisli Balon Atölyesi | Kişiye Özel Tasarım</title>
+    <meta name="description" content="Kişiye özel tasarım balon aranjmanları, solmayan çiçekler ve peluş sürprizler. Söke ve Kuşadası'na aynı gün hızlı teslimat.">
+
+    <!-- WhatsApp & Sosyal Medya Paylaşım Önizlemesi (Open Graph) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Hisli Balon Atölyesi">
+    <meta property="og:title" content="Hisli Balon Atölyesi | Kişiye Özel Tasarım">
+    <meta property="og:description" content="Masalsı anları estetik detaylarla buluşturuyoruz. Söke ve Kuşadası'na aynı gün hızlı teslimat.">
+    <meta property="og:url" content="https://hislibalon-web.vercel.app/">
+    <meta property="og:image" content="https://placehold.co/1200x630/FAF0EC/9E5A63.png?text=Hisli+Balon+At%C3%B6lyesi">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hisli Balon Atölyesi | Kişiye Özel Tasarım">
+    <meta name="twitter:description" content="Masalsı anları estetik detaylarla buluşturuyoruz. Söke ve Kuşadası'na aynı gün hızlı teslimat.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/FAF0EC/9E5A63.png?text=Hisli+Balon+At%C3%B6lyesi">
+
+    <!-- Tarayıcı Sekme İkonu (Favicon) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23FAF0EC'/%3E%3Cpath d='M32 50C32 50 14 37.5 14 24.5C14 18.7 18.7 14 24.5 14C27.9 14 30.9 15.6 32 18.2C33.1 15.6 36.1 14 39.5 14C45.3 14 50 18.7 50 24.5C50 37.5 32 50 32 50Z' fill='%23B76E79'/%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -60,11 +78,11 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             text-decoration: none; text-transform: uppercase;
         }
-        .nav-links { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+        .nav-links { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; }
         .nav-links a {
             text-decoration: none; color: var(--text-muted);
             font-size: 0.8rem; font-weight: 500; text-transform: uppercase;
-            letter-spacing: 1.2px; transition: color 0.3s;
+            letter-spacing: 1.3px; transition: color 0.3s;
         }
         .nav-links a:hover { color: var(--rose-dark); }
 
@@ -81,7 +99,7 @@
         /* HERO KARŞILAMA ALANI */
         .hero {
             text-align: center;
-            padding: 46px 20px 28px;
+            padding: 44px 20px 26px;
             position: relative;
         }
         .hero-badge {
@@ -206,9 +224,14 @@
         .reel-card:hover .reel-media.is-poster {
             transform: scale(1.06);
         }
+        /* YouTube Shorts arayüzündeki @kullaniciadi ve sağ buton çakışmasını gizlemek için hafif çerçeve kırpması */
         .reel-iframe {
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 134%;
+            height: 134%;
+            transform: translate(-50%, -50%);
             border: none;
             pointer-events: none;
             background: #1B1316;
@@ -224,7 +247,7 @@
             align-items: center;
         }
         .reel-tag {
-            background: rgba(253, 249, 246, 0.9);
+            background: rgba(253, 249, 246, 0.92);
             color: var(--rose-dark);
             font-size: 0.66rem;
             font-weight: 700;
@@ -280,8 +303,8 @@
             right: 0;
             bottom: 0;
             z-index: 4;
-            padding: 42px 14px 14px 14px;
-            background: linear-gradient(180deg, transparent 0%, rgba(34, 24, 28, 0.88) 70%, rgba(26, 18, 21, 0.96) 100%);
+            padding: 44px 14px 14px 14px;
+            background: linear-gradient(180deg, transparent 0%, rgba(34, 24, 28, 0.90) 65%, rgba(26, 18, 21, 0.98) 100%);
             color: #FFFFFF;
             text-align: left;
         }
@@ -292,13 +315,14 @@
             line-height: 1.25;
             margin: 0 0 10px 0;
             color: #FFFDFB;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
         }
         .reel-cta-btn {
             width: 100%;
             padding: 8px 12px;
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.28);
-            background: rgba(183, 110, 121, 0.9);
+            background: rgba(183, 110, 121, 0.92);
             color: #FFFFFF;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.74rem;
@@ -446,7 +470,7 @@
         }
 
         /* VİTRİN VE ÜRÜN KARTLARI */
-        .main-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 45px 20px; }
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 0 20px 35px 20px; }
         .category-section-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.1rem; font-weight: 700;
@@ -499,10 +523,20 @@
             font-size: 1.35rem; margin: 16px 14px 6px 14px;
             color: var(--text-main); font-weight: 700; letter-spacing: 0.4px;
         }
+        .product-excerpt {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0 16px 12px 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
         .product-price {
             font-size: 1.12rem; font-weight: 700;
             color: var(--rose-dark);
-            font-family: 'Montserrat', sans-serif; margin: 0;
+            font-family: 'Montserrat', sans-serif; margin: auto 0 0 0;
         }
 
         /* STOK VE VİDEO ROZETLERİ */
@@ -548,7 +582,7 @@
         /* EDİTORYAL ATÖLYE DENEYİMİ BÖLÜMÜ */
         .editorial-section {
             max-width: 1200px;
-            margin: 10px auto 65px auto;
+            margin: 10px auto 55px auto;
             padding: 0 20px;
         }
         .editorial-grid {
@@ -618,7 +652,7 @@
         /* GÜVEN ROZETLERİ BANDI */
         .trust-strip {
             max-width: 1200px;
-            margin: 0 auto 70px auto;
+            margin: 0 auto 65px auto;
             padding: 0 20px;
         }
         .trust-grid {
@@ -655,6 +689,66 @@
             font-size: 0.82rem;
             color: var(--text-muted);
             margin: 0;
+        }
+
+        /* MÜŞTERİ MEMNUNİYETİ & YORUMLAR BÖLÜMÜ */
+        .reviews-section {
+            max-width: 1200px;
+            margin: 0 auto 70px auto;
+            padding: 0 20px;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .review-card {
+            background: #FFFFFF;
+            border: 1px solid var(--rose-border);
+            border-radius: 18px;
+            padding: 28px 24px;
+            box-shadow: 0 6px 20px rgba(158, 90, 99, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .review-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--rose);
+        }
+        .review-stars {
+            color: #D49B4B;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .review-text {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            font-style: italic;
+            margin: 0 0 18px 0;
+        }
+        .review-author {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(183, 110, 121, 0.15);
+            padding-top: 12px;
+            font-size: 0.8rem;
+        }
+        .review-author strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+        .review-verified {
+            color: var(--rose-dark);
+            background: var(--rose-soft);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
         }
 
         /* DETAY PENCERESİ (MODAL) */
@@ -796,11 +890,14 @@
             white-space: nowrap;
         }
         .addon-note {
-            font-size: 0.76rem;
-            color: var(--text-muted);
-            margin: 8px 0 0 0;
-            font-style: italic;
+            font-size: 0.78rem;
+            color: var(--rose-dark);
+            background: var(--rose-soft);
+            padding: 9px 12px;
+            border-radius: 8px;
+            margin: 10px 0 0 0;
             display: none;
+            line-height: 1.5;
         }
 
         .btn-shopier-rose {
@@ -830,7 +927,7 @@
         /* KURUMSAL BÖLÜMLER VE SSS AKORDEON */
         .info-section {
             background-color: var(--bg-blush);
-            padding: 75px 20px;
+            padding: 70px 20px;
             border-top: 1px solid var(--rose-border);
         }
         .section-inner { max-width: 900px; margin: 0 auto; }
@@ -897,6 +994,43 @@
             padding: 0 22px 18px 22px;
         }
 
+        /* ÖZEL TASARIM & KURUMSAL SİPARİŞ ÇAĞRI KUTUSU */
+        .custom-order-box {
+            background: linear-gradient(145deg, #FFFFFF 0%, var(--bg-blush) 100%);
+            border: 1px solid var(--rose-border);
+            border-radius: 22px;
+            padding: 42px 32px;
+            text-align: center;
+            box-shadow: 0 10px 28px rgba(158, 90, 99, 0.07);
+        }
+        .custom-order-box p {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            max-width: 640px;
+            margin: 0 auto 24px auto;
+            line-height: 1.8;
+        }
+        .btn-custom-wa {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.6px;
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .btn-custom-wa:hover {
+            transform: translateY(-2px);
+            opacity: 0.94;
+        }
+
         .contact-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 28px; margin-top: 30px; text-align: center;
@@ -912,26 +1046,50 @@
         .contact-box i { font-size: 2rem; color: var(--rose); margin-bottom: 14px; display: block; }
         .contact-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; margin: 0 0 6px 0; color: var(--text-main); }
 
-        .feedback-form {
-            background: #FFFFFF;
-            padding: 36px; border-radius: 18px;
-            border: 1px solid var(--rose-border); margin-top: 25px;
-            box-shadow: 0 8px 24px rgba(158, 90, 99, 0.06);
-        }
-        .btn-email {
-            background: var(--rose-btn); color: #FFFFFF;
-            display: block; width: 100%; padding: 14px;
-            text-align: center; border-radius: 10px;
-            font-weight: 600; border: none; cursor: pointer;
-            text-transform: uppercase; letter-spacing: 1px; font-size: 0.88rem;
-        }
-
-        /* FOOTER VE YASAL LİNKLER */
+        /* FOOTER, ÇALIŞMA SAATLERİ VE SOSYAL MEDYA */
         footer {
             background-color: var(--bg-blush-deep);
             border-top: 1px solid var(--rose-border);
-            text-align: center; padding: 36px 20px;
+            text-align: center; padding: 40px 20px;
             font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.6px;
+        }
+        .footer-hours {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid var(--rose-border);
+            color: var(--rose-dark);
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+        .footer-socials a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #FFFFFF;
+            border: 1px solid var(--rose-border);
+            color: var(--rose-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+        .footer-socials a:hover {
+            background: var(--rose);
+            color: #FFFFFF;
+            transform: translateY(-2px);
         }
         .footer-legal-links {
             display: flex;
@@ -980,10 +1138,11 @@
         @media (max-width: 1024px) {
             .products-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
             .reels-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+            .reviews-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
             .navbar { flex-direction: column; gap: 12px; padding: 14px; }
-            .nav-links { gap: 12px; flex-wrap: wrap; justify-content: center; font-size: 0.72rem; }
+            .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; font-size: 0.75rem; }
             .hero { padding: 34px 18px 22px; }
             .hero h1 { font-size: 2.15rem; letter-spacing: 2px; }
             .hero p { font-size: 1.12rem; }
@@ -1010,15 +1169,16 @@
             .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
             .product-img-wrapper { height: 185px; }
             .product-title { font-size: 1.05rem; margin-top: 12px; }
+            .product-excerpt { font-size: 0.72rem; margin: 0 10px 8px 10px; }
             .product-price { font-size: 0.95rem; }
             .stock-badge { top: 10px; left: 10px; font-size: 0.62rem; padding: 4px 8px; }
             .video-badge { bottom: 8px; left: 8px; font-size: 0.62rem; padding: 3px 8px; }
             .favorite-icon { top: 10px; right: 10px; width: 32px; height: 32px; font-size: 0.95rem; }
 
-            .editorial-grid, .trust-grid { grid-template-columns: 1fr; }
+            .editorial-grid, .trust-grid, .reviews-grid { grid-template-columns: 1fr; }
             .editorial-card { padding: 28px 22px; }
+            .custom-order-box { padding: 30px 20px; }
             .modal-content { padding: 20px; width: 95%; margin: 5% auto; }
-            .feedback-form { padding: 24px 18px; }
             .floating-wa { bottom: 18px; right: 18px; width: 50px; height: 50px; font-size: 1.5rem; }
         }
     </style>
@@ -1028,11 +1188,9 @@
     <nav class="navbar">
         <a href="#" class="nav-logo">Hisli Balon</a>
         <ul class="nav-links">
-            <li><a href="#">Ana Sayfa</a></li>
             <li><a href="#canli-vitrin">Atölyeden</a></li>
-            <li><a href="#urunlerimiz">Ürünlerimiz</a></li>
+            <li><a href="#urunlerimiz">Koleksiyon</a></li>
             <li><a href="#sss">S.S.S.</a></li>
-            <li><a href="#hakkimizda">Hakkımızda</a></li>
             <li><a href="#iletisim">İletişim</a></li>
         </ul>
     </nav>
@@ -1056,7 +1214,7 @@
     <section class="live-showcase-section" id="canli-vitrin">
         <div class="live-header">
             <div class="live-pill"><span class="live-dot"></span> Atölyeden Canlı</div>
-            <h2>Atölyeden Canlı Videolu Vitrin</h2>
+            <h2>Atölyeden Tasarım &amp; Detaylar</h2>
             <p>Tasarımlarımızın gerçek boyutunu, şeffaf parlaklığını ve el emeği hazırlık anlarını yakından izleyin.</p>
         </div>
         <div class="reels-grid" id="reels-container"></div>
@@ -1135,8 +1293,52 @@
         </div>
     </section>
 
+    <!-- MÜŞTERİ MEMNUNİYETİ & YORUMLAR -->
+    <section class="reviews-section">
+        <h2 class="section-title">Mutlu Sürprizler</h2>
+        <div class="section-subtitle">Müşterilerimizden Gelen Yorumlar</div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">“Öğretmenler Günü için Sonsuz Hatıra tasarımını sipariş ettim. Fotoğraflarda göründüğünden bile daha zarif ve büyük geldi, Kuşadası'na tam saatinde teslim edildi.”</p>
+                </div>
+                <div class="review-author">
+                    <strong>Zeynep A.</strong>
+                    <span class="review-verified"><i class="fa-solid fa-check"></i> Kuşadası Teslimatı</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">“Yeğenimin doğum günü için üzerine ismini yazdırdık, içindeki peluş ve ışık detayına bayıldı. Haftalar geçmesine rağmen balonu hala ilk günkü gibi duruyor.”</p>
+                </div>
+                <div class="review-author">
+                    <strong>Mert K.</strong>
+                    <span class="review-verified"><i class="fa-solid fa-check"></i> Söke Teslimatı</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">“Aynı gün içinde hazırlayıp özenli kutusuyla elden ulaştırdılar. WhatsApp üzerinden tasarım aşamasında da çok ilgiliydiler, kesinlikle tavsiye ederim.”</p>
+                </div>
+                <div class="review-author">
+                    <strong>Selin D.</strong>
+                    <span class="review-verified"><i class="fa-solid fa-check"></i> Kuşadası Teslimatı</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SIKÇA SORULAN SORULAR (S.S.S.) -->
-    <section class="info-section" id="sss" style="background-color: transparent; padding-top: 20px;">
+    <section class="info-section" id="sss" style="background-color: transparent; padding-top: 10px;">
         <div class="section-inner">
             <h2 class="section-title">Sıkça Sorulan Sorular</h2>
             <div class="section-subtitle">Merak Edilen Detaylar</div>
@@ -1191,16 +1393,18 @@
         </div>
     </section>
 
-    <section class="info-section" id="oneri" style="background-color: transparent;">
+    <!-- KİŞİYE ÖZEL TASARIM & KURUMSAL SİPARİŞ ALANI -->
+    <section class="info-section" style="background-color: transparent;">
         <div class="section-inner">
-            <h2 class="section-title">Öneri & Tavsiyeleriniz</h2>
-            <div class="section-subtitle">Sizi Dinlemek Bizim İçin Değerli</div>
-            <div class="feedback-form">
-                <label style="display:block; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.15rem; color:var(--rose-dark); margin-bottom:8px;">Adınız Soyadınız</label>
-                <input type="text" id="feedback-name" class="custom-input" placeholder="Lütfen adınızı yazın..." style="margin-bottom:20px;">
-                <label style="display:block; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.15rem; color:var(--rose-dark); margin-bottom:8px;">Fikir, Öneri veya İstekleriniz</label>
-                <textarea id="feedback-text" class="custom-input" style="height:120px; resize:none; margin-bottom:20px;" placeholder="Atölyemizle paylaşmak istediğiniz her şeyi buraya yazabilirsiniz..."></textarea>
-                <button type="button" onclick="sendFeedbackEmail()" class="btn-email"><i class="fa-solid fa-envelope"></i> Öneriyi Atölyeye İlet</button>
+            <div class="custom-order-box">
+                <h2 class="section-title">Özel Konsept &amp; Kurumsal Sipariş</h2>
+                <div class="section-subtitle" style="margin-bottom: 18px;">Size Özel Tasarlayalım</div>
+                <p>
+                    Katalog dışındaki özel renk kombinasyonları, bebek odası karşılamaları, söz/nişan hatıraları veya kurumsal etkinlik hediyeleri için atölyemizle doğrudan iletişime geçebilirsiniz.
+                </p>
+                <a href="https://wa.me/905373568453?text=Merhaba%2C%20ki%C5%9Fiye%20%C3%B6zel%20konsept%20veya%20toplu%20sipari%C5%9F%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn-custom-wa">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.15rem;"></i> WhatsApp'tan Özel Tasarım Sor
+                </a>
             </div>
         </div>
     </section>
@@ -1230,12 +1434,20 @@
     </section>
 
     <footer>
+        <div class="footer-hours">
+            <i class="fa-regular fa-clock"></i> Çalışma Saatleri: Her Gün 09:00 – 21:00
+        </div>
+        <div class="footer-socials">
+            <a href="https://instagram.com/hislibalon" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/905373568453" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:hislibalon@gmail.com" aria-label="E-Posta"><i class="fa-solid fa-envelope"></i></a>
+        </div>
         <div class="footer-legal-links">
             <button type="button" onclick="openLegalModal('teslimat')">Teslimat ve İade Koşulları</button>
             <button type="button" onclick="openLegalModal('mesafeli')">Mesafeli Satış Sözleşmesi</button>
             <button type="button" onclick="openLegalModal('gizlilik')">Gizlilik Politikası</button>
         </div>
-        <div>Hisli Balon Atölyesi • Söke & Kuşadası | Kişiye Özel Tasarım</div>
+        <div>Hisli Balon Atölyesi • Söke &amp; Kuşadası | Kişiye Özel Tasarım</div>
     </footer>
 
     <!-- SABİT WHATSAPP HIZLI İLETİŞİM BUTONU -->
@@ -1269,7 +1481,6 @@
 
     <script>
         const WHATSAPP_NUMBER = "905373568453";
-        const EMAIL_ADDRESS = "hislibalon@gmail.com";
         const SHEET_ID = "1ii4RrMqvNBm9HMlfVJI4x2riVtWP14J-9MfCAn2b9-0";
 
         const ATOLYE_VIDEOLARI = [
@@ -1585,7 +1796,7 @@
                 : `<video src="${reel.videoUrl}" poster="${reel.posterUrl}" controls autoplay playsinline></video>`;
 
             const actionBtn = reel.productIndex >= 0
-                ? `<button type="button" class="btn-shopier-rose" style="margin-top:14px;margin-bottom:0;border:none;cursor:pointer;" onclick="closeReelModal();openProduct(${reel.productIndex});"><i class="fa-solid fa-bag-shopping"></i> Bu Tasarımı İncele & Sipariş Ver</button>`
+                ? `<button type="button" class="btn-shopier-rose" style="margin-top:14px;margin-bottom:0;border:none;cursor:pointer;" onclick="closeReelModal();openProduct(${reel.productIndex});"><i class="fa-solid fa-bag-shopping"></i> Bu Tasarımı İncele &amp; Sipariş Ver</button>`
                 : `<a href="https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Merhaba, Atölyeden Canlı vitrindeki "${reel.title}" videosu hakkında bilgi almak istiyorum.`)}" target="_blank" rel="noopener noreferrer" class="btn-wa-luxury" style="display:block;text-align:center;text-decoration:none;margin-top:14px;"><i class="fa-brands fa-whatsapp"></i> WhatsApp'tan Bilgi Al</a>`;
 
             document.getElementById('reel-modal-body').innerHTML = `
@@ -1706,6 +1917,7 @@
                     const i = obj.originalIndex;
                     const urunAdi = getField(product, 'UrunAdi');
                     const fiyat = getField(product, 'Fiyat');
+                    const aciklama = getField(product, 'Aciklama');
                     const imgUrl = getField(product, 'ResimURL') || FALLBACK_IMG;
                     const imgUrl2 = getField(product, 'ResimURL2');
                     const videoUrl = getVideoField(product);
@@ -1724,6 +1936,7 @@
                             ${videoUrl ? `<span class="video-badge"><i class="fa-solid fa-play"></i> Video</span>` : ''}
                         </div>
                         <h3 class="product-title">${urunAdi}</h3>
+                        ${aciklama ? `<p class="product-excerpt">${aciklama}</p>` : ''}
                         <p class="product-price">${fiyat ? fiyat + ' TL' : ''}</p>
                     `;
                     grid.appendChild(card);
@@ -1789,6 +2002,7 @@
         function updateModalTotal() {
             const priceEl = document.getElementById('modal-dynamic-price');
             const addonNote = document.getElementById('addon-shopier-note');
+            const shopierBtn = document.getElementById('modal-shopier-btn');
             if (!priceEl || activeModalBasePrice <= 0) return;
 
             let extraTotal = 0;
@@ -1798,8 +2012,13 @@
 
             const finalTotal = activeModalBasePrice + extraTotal;
             priceEl.textContent = `${formatPriceTR(finalTotal)} TL`;
-            if (addonNote) {
-                addonNote.style.display = extraTotal > 0 ? 'block' : 'none';
+
+            if (extraTotal > 0) {
+                if (shopierBtn) shopierBtn.style.display = 'none';
+                if (addonNote) addonNote.style.display = 'block';
+            } else {
+                if (shopierBtn) shopierBtn.style.display = 'block';
+                if (addonNote) addonNote.style.display = 'none';
             }
         }
 
@@ -1828,7 +2047,7 @@
 
             const deliveryTimeHTML = `
                 <div class="detay-grup">
-                    <label class="group-label"><i class="fa-regular fa-calendar-check"></i> Teslimat Zamanı (Söke & Kuşadası)</label>
+                    <label class="group-label"><i class="fa-regular fa-calendar-check"></i> Teslimat Zamanı (Söke &amp; Kuşadası)</label>
                     <select id="delivery-time" class="custom-select">
                         <option value="Bugün (Aynı Gün Teslimat)">Bugün (Aynı Gün Teslimat)</option>
                         <option value="Yarın">Yarın</option>
@@ -1858,17 +2077,17 @@
                         <label class="addon-item">
                             <span class="addon-item-left">
                                 <input type="checkbox" class="addon-checkbox" value="Hediye Not Kartı & Zarfı (Ücretsiz)" data-price="0" onchange="updateModalTotal()">
-                                <span>Hediye Not Kartı & Zarfı</span>
+                                <span>Hediye Not Kartı &amp; Zarfı</span>
                             </span>
                             <span class="addon-price">Ücretsiz</span>
                         </label>
                     </div>
-                    <p id="addon-shopier-note" class="addon-note">* Ekstra ücretli dokunuş seçildiğinde güncel tutar üzerinden WhatsApp ile hızlı sipariş verebilirsiniz.</p>
+                    <p id="addon-shopier-note" class="addon-note"><i class="fa-solid fa-circle-info"></i> Ekstra dokunuş seçildiği için güncel tutar üzerinden <strong>WhatsApp Sipariş</strong> butonuyla kolayca sipariş verebilirsiniz.</p>
                 </div>
             `;
 
             const rawShopier = getField(p, 'ShopierLink');
-            const shopierBtn = (rawShopier && !stock.isSoldOut) ? `<a href="${rawShopier.startsWith('http') ? rawShopier : 'https://' + rawShopier}" target="_blank" rel="noopener noreferrer" class="btn-shopier-rose"><i class="fa-solid fa-credit-card"></i> Kredi Kartı İle Al</a>` : '';
+            const shopierBtn = (rawShopier && !stock.isSoldOut) ? `<a id="modal-shopier-btn" href="${rawShopier.startsWith('http') ? rawShopier : 'https://' + rawShopier}" target="_blank" rel="noopener noreferrer" class="btn-shopier-rose"><i class="fa-solid fa-credit-card"></i> Kredi Kartı İle Al</a>` : '';
 
             const hasGallery = imgUrl2 || videoUrl;
             const thumbsHTML = hasGallery ? `
@@ -1982,15 +2201,6 @@
             if (note && note.value.trim()) message += `\n*Müşteri İstek Notu:* ${note.value.trim()}`;
 
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
-        }
-
-        function sendFeedbackEmail() {
-            const name = document.getElementById('feedback-name').value.trim();
-            const text = document.getElementById('feedback-text').value.trim();
-            if (!text) { alert('Lütfen öneri alanını boş bırakmayınız.'); return; }
-            const subject = encodeURIComponent('Hisli Balon Sitesinden Yeni Öneri / Tavsiye');
-            const body = `Gönderen: ${name || 'Ziyaretçi'}\n\nMesaj:\n${text}`;
-            window.location.href = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${encodeURIComponent(body)}`;
         }
 
         renderLiveReelsShowcase();
