@@ -96,7 +96,7 @@
         }
         .delivery-banner i { margin-right: 8px; color: var(--rose); }
 
-        /* HERO KARŞILAMA ALANI (Ekran hizası için optimize edilmiş yükseklik) */
+        /* HERO KARŞILAMA ALANI */
         .hero {
             text-align: center;
             padding: 26px 20px 18px;
@@ -2611,7 +2611,7 @@
            ATÖLYEDEN CANLI SİPARİŞ BİLDİRİMİ (TOAST)
            ========================================================= */
         let atelierToastDismissed = false;
-        let atelierToastStep = 0;
+        let atelierToastStep = Math.floor(Math.random() * 16);
 
         function dismissAtelierToast() {
             atelierToastDismissed = true;
@@ -2626,18 +2626,52 @@
             const timeEl = document.getElementById('atelier-toast-time');
             if (!toast || !msgEl || !timeEl) return;
 
-            const p1 = allProductsGlobal[0] ? getField(allProductsGlobal[0], 'UrunAdi') : 'Sonsuz Hatıra';
-            const p2 = allProductsGlobal[1] ? getField(allProductsGlobal[1], 'UrunAdi') : 'LED Işıklı Çiçek Aranjmanı';
-            const p3 = allProductsGlobal[2] ? getField(allProductsGlobal[2], 'UrunAdi') : 'Kişiye Özel Peluş Balon';
+            const fallbackNames = [
+                'Sonsuz Hatıra',
+                'LED Işıklı Çiçek Aranjmanı',
+                'Kişiye Özel Peluş Balon',
+                'Kalpli Çikolata & Balon Kutusu',
+                'İsme Özel Şeffaf Balon',
+                'Sevimli Tavşan Konsept Balon',
+                'Gül Kurusu Özel Aranjman',
+                'Işıltılı Kutlama Balonu'
+            ];
+
+            const getProd = (idx) => {
+                if (allProductsGlobal.length > 0) {
+                    const item = allProductsGlobal[idx % allProductsGlobal.length];
+                    const name = getField(item, 'UrunAdi');
+                    if (name) return name;
+                }
+                return fallbackNames[idx % fallbackNames.length];
+            };
+
+            const p1 = getProd(0);
+            const p2 = getProd(1);
+            const p3 = getProd(2);
+            const p4 = getProd(3);
+            const p5 = getProd(4);
+            const p6 = getProd(5);
+            const p7 = getProd(6);
+            const p8 = getProd(7);
 
             const notifications = [
                 { msg: `Kuşadası'ndan Azra H. az önce "${p1}" tasarımını inceledi`, time: 'Az önce • Atölye Vitrini' },
                 { msg: `Söke içi 1 özel balon siparişi aynı gün teslimata çıktı`, time: '3 dk önce • Söke & Kuşadası Kurye' },
                 { msg: `Kuşadası'ndan Emre B. "${p2}" için özel yazı önizledi`, time: '1 dk önce • Canlı Tasarım' },
-                { msg: `Söke'den Zeynep K. "${p3}" tasarımını favorilerine ekledi`, time: '1 dk önce • Hisli Balon Atölyesi' }
-                { msg: `Söke'den Misafir "${p4}" tasarımını favorilerine ekledi`, time: '1 dk önce • Hisli Balon Atölyesi' }
-                { msg: `Kuşadası Misafir "${p4}" tasarımını favorilerine ekledi`, time: '10 sn önce • Hisli Balon Atölyesi' }
-                { msg: `Söke'den Misafir "${p6}" tasarımını favorilerine ekledi`, time: '15 sn önce • Hisli Balon Atölyesi' }
+                { msg: `Söke'den Misafir "${p3}" tasarımını favorilerine ekledi`, time: '1 dk önce • Hisli Balon Atölyesi' },
+                { msg: `Söke'den Misafir "${p4}" tasarımını favorilerine ekledi`, time: '1 dk önce • Hisli Balon Atölyesi' },
+                { msg: `Kuşadası'ndan Misafir "${p4}" tasarımını favorilerine ekledi`, time: '10 sn önce • Hisli Balon Atölyesi' },
+                { msg: `Söke'den Misafir "${p6}" tasarımını favorilerine ekledi`, time: '15 sn önce • Hisli Balon Atölyesi' },
+                { msg: `Kuşadası'ndan Misafir "${p5}" için balon üzeri yazı denedi`, time: '22 sn önce • Canlı Tasarım' },
+                { msg: `Kuşadası içi 1 sürpriz sipariş özenle hazırlanıyor`, time: '2 dk önce • Atölye Hazırlık' },
+                { msg: `Söke'den Burak T. "${p7}" tasarımını inceledi`, time: '35 sn önce • Atölye Vitrini' },
+                { msg: `Kuşadası'ndan Selin D. "${p1}" için LED ışık seçeneğini ekledi`, time: '4 dk önce • Kişiye Özel' },
+                { msg: `Söke'den Misafir "${p8}" tasarımını inceledi`, time: '12 sn önce • Atölye Vitrini' },
+                { msg: `Kuşadası'ndan Mert A. "${p3}" için hediye notu oluşturdu`, time: '5 dk önce • Hisli Balon Atölyesi' },
+                { msg: `Söke'den Misafir "${p2}" tasarımını favorilerine ekledi`, time: '45 sn önce • Hisli Balon Atölyesi' },
+                { msg: `Kuşadası'ndan Misafir "${p5}" tasarımını inceledi`, time: '18 sn önce • Atölye Vitrini' },
+                { msg: `Söke'den Misafir "${p6}" için özel isim baskısı önizledi`, time: '2 dk önce • Canlı Tasarım' }
             ];
 
             const current = notifications[atelierToastStep % notifications.length];
