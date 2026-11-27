@@ -73,7 +73,7 @@
         }
         .nav-logo {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem; font-weight: 700; letter-spacing: 3px;
+            font-size: 1.5rem; font-weight: 700; letter-spacing: 2.5px;
             background: var(--rose-gradient);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             text-decoration: none; text-transform: uppercase;
@@ -93,45 +93,9 @@
             text-align: center; padding: 8px 20px;
             font-size: 0.76rem; font-weight: 600; letter-spacing: 1.8px;
             text-transform: uppercase; border-bottom: 1px solid var(--rose-border);
+            margin-bottom: 24px;
         }
         .delivery-banner i { margin-right: 8px; color: var(--rose); }
-
-        /* HERO KARŞILAMA ALANI */
-        .hero {
-            text-align: center;
-            padding: 26px 20px 18px;
-            position: relative;
-        }
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 5px 16px; border-radius: 30px;
-            border: 1px solid var(--rose-border);
-            background: var(--rose-soft);
-            color: var(--rose-dark);
-            font-size: 0.68rem; letter-spacing: 2.3px; text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-        .hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.85rem; margin: 0; letter-spacing: 3.5px; font-weight: 700;
-            text-transform: uppercase;
-            background: var(--rose-gradient);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero p {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic; font-size: 1.24rem;
-            color: var(--text-muted); margin: 6px auto 0; max-width: 650px;
-        }
-        .hero-ornament {
-            display: flex; align-items: center; justify-content: center; gap: 12px;
-            margin: 12px auto 0; max-width: 220px;
-        }
-        .hero-ornament span {
-            flex: 1; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--rose), transparent);
-        }
-        .hero-ornament i { color: var(--rose); font-size: 0.8rem; }
 
         /* =========================================================
            ATÖLYEDEN CANLI VİDEOLU VİTRİN (EN ÜST VİTRİN)
@@ -1518,17 +1482,10 @@
             .reviews-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 6px; padding: 8px 12px; }
-            .nav-logo { font-size: 1.25rem; letter-spacing: 2px; }
+            .navbar { flex-direction: column; gap: 6px; padding: 10px 12px; }
+            .nav-logo { font-size: 1.25rem; letter-spacing: 1.8px; }
             .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; font-size: 0.7rem; }
-            .delivery-banner { padding: 6px 12px; font-size: 0.66rem; letter-spacing: 1.1px; }
-
-            /* Kompakt mobil karşılama alanı: videolar ve ürünler hemen görünür */
-            .hero { padding: 14px 14px 10px; }
-            .hero-badge { font-size: 0.6rem; padding: 3px 12px; letter-spacing: 1.6px; margin-bottom: 6px; }
-            .hero h1 { font-size: 1.55rem; letter-spacing: 1.5px; line-height: 1.2; }
-            .hero p { font-size: 0.96rem; margin-top: 4px; }
-            .hero-ornament { margin-top: 8px; max-width: 150px; }
+            .delivery-banner { padding: 6px 12px; font-size: 0.66rem; letter-spacing: 1.1px; margin-bottom: 14px; }
 
             .live-showcase-section { margin: 0 12px 24px 12px; padding: 16px 12px; border-radius: 18px; }
             .live-header { margin-bottom: 12px; }
@@ -1611,7 +1568,7 @@
 <body>
 
     <nav class="navbar">
-        <a href="#" class="nav-logo">Hisli Balon</a>
+        <a href="#" class="nav-logo">Hisli Balon Atölyesi</a>
         <ul class="nav-links">
             <li><a href="#canli-vitrin">Atölyeden</a></li>
             <li><a href="#urunlerimiz">Koleksiyon</a></li>
@@ -1623,17 +1580,6 @@
     <div class="delivery-banner">
         <i class="fa-solid fa-truck-ramp-box"></i> Söke ve Kuşadası'na aynı gün hızlı teslimat yapılır
     </div>
-
-    <header class="hero">
-        <div class="hero-badge"><i class="fa-solid fa-sparkles"></i> Kişiye Özel Tasarım Atölyesi</div>
-        <h1>Hisli Balon Atölyesi</h1>
-        <p>“Masalsı anları, estetik detaylarla buluşturuyoruz.”</p>
-        <div class="hero-ornament">
-            <span></span>
-            <i class="fa-solid fa-heart"></i>
-            <span></span>
-        </div>
-    </header>
 
     <!-- ATÖLYEDEN CANLI VİDEOLU VİTRİN (EN ÜST VİTRİN) -->
     <section class="live-showcase-section" id="canli-vitrin">
@@ -3119,7 +3065,6 @@
             if (toast) toast.classList.remove('show');
         }
 
-        // Kullanıcı sayfayı aşağı kaydırıp ürünleri incelerken bildirimi gizle
         window.addEventListener('scroll', () => {
             if (window.scrollY > 180) {
                 const toast = document.getElementById('atelier-toast');
